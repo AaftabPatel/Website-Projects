@@ -1,0 +1,113 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>routeit</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair Display">
+	<link rel="stylesheet" href="routeItStyle.css">
+	<link rel="icon" type="image" href="routeit_images\logo.png">
+
+</head>
+<body>
+<!--navigation part-->
+	<nav id="nav_bar">
+		<img src="routeit_images\logo.png" id="logo">
+		<a href="#find.htm" id="nav_link">Find</a>
+		<a href="#popular.htm" id="nav_link">Popular</a>
+		<a href="#addloc.htm" id="nav_link">Add a Location</a>
+		<a href="#contact.htm" id="nav_link">Contact Us</a>
+		<a href="#about.htm" id="nav_link">About Us</a>
+	</nav>
+
+<!--home part-->
+	<div id="home">
+		<div id="bgimg_effect">
+			<img src="routeit_images/routebg.jpg" id="bg_img">
+		</div>
+		<div id="content">
+			<img src="routeit_images/logo_text.png" id="logo_text">
+	    	<h2 id="quote">“If you don’t know where you’re going, <br> any road will get you there.”
+				<font style="color: #36D1DC;">— Lewis Carroll</font>
+			</h2>
+	    	<div id="search_bar"> 
+		      	<input type="text" id="search" placeholder="What Are You Looking For...">
+		      	<i class="material-icons" id="search_icon">search</i>
+		      	</input>
+    		</div>
+    	</div>
+    
+    </div>
+
+<!-- route part -->
+	<div id="findRoute">
+		<h1 id="findHeading">...Find... </h1>
+	    <form id="findForm">
+		    <input type="text" id="search2" placeholder="Enter Starting Location...">
+		    <i class="material-icons" id="search_icon2">search</i>
+		    <input type="text" id="search2" placeholder="Enter Destination...">
+		    <i class="material-icons" id="search_icon2">search</i>
+	    </form>
+
+	    <canvas id="routeCanvas">
+			Sorry, your browser does not support canvas.
+		</canvas>
+	</div>
+
+<!--footer part-->
+	<div id="footer">
+		<img src="routeit_images/routeFooter.jpg" id="footer_img">
+		<div id="footer_content">
+			<img src="routeit_images/logo.png" alt="logo" id="footer_logo">
+			<img src="routeit_images/logo_text.png" alt="site_name" id="name">
+			<button id="footer_donate">Donate</button>
+			<div id="popular_searches">
+					<h3 id="popular_title">Popular Searches:</h3>	
+					<div id="search_links">
+						<a href="#routeit_travel" id="list_link">Travel</a>
+						<a href="#routeit_tour" id="list_link">Tour</a>
+						<a href="#routeit_fun" id="list_link">Fun</a>
+						<a href="#routeit_restaurant" id="list_link">Restaurant</a>
+						<a href="#routeit_food" id="list_link">Food</a>
+						<a href="#routeit_study" id="list_link">Study</a>
+						<a href="#routeit_clothes" id="list_link">Clothes</a>
+						<a href="#routeit_games" id="list_link">Games</a>
+						<a href="#routeit_lifestyle" id="list_link">Lifestyle</a>
+						<a href="#routeit_mall" id="list_link">Mall</a>
+						<a href="#routeit_supermarket" id="list_link">Supermarket</a>
+						<a href="#routeit_mart" id="list_link">Mart</a>
+						<a href="#routeit_theatre" id="list_link">Theatre</a>
+						<a href="#routeit_shoes" id="list_link">Shoes</a>
+						<a href="#routeit_elctronics" id="list_link">Eloctronics</a>
+						<a href="#list_tos" id="list_link">TermsofService</a>
+						<a href="#list_dmca" id="list_link">DMCA</a>
+						<a href="#list_contact" id="list_link">Contact</a><br>
+					</div>
+					<p id="footer_info">
+						routeit is a freely-usable route searching website using dijakstra algorithm. For the lovers of travel and people in need.<br>
+						Powered by us to take you where ou want..<br>
+						&#169routeIt
+					</p>
+			</div>
+	</div>	
+
+<script>
+//navigation on scroll
+	var navbar = document.getElementById("nav_bar");
+		window.onscroll = function() {
+			navColor();
+	};
+	
+	//function to add background to nav bar on scroll
+    function navColor(){
+		if (window.pageYOffset != 0) {
+	    	navbar.style.backgroundColor = "rgba(0,0,0,0.7)";
+	  	} 
+	  	else if(window.pageYOffset == 0){
+	    	navbar.style.backgroundColor = "";
+	  	}	
+	}
+
+
+</script>
+</body>
+</html>
