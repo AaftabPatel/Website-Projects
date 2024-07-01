@@ -1,0 +1,452 @@
+/*pizza palace stylesheet*/
+    body {
+        font-family: "Raleway", sans-serif;
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    /* removing scrollbar */
+        body::-webkit-scrollbar {
+            display: none;
+        }
+    
+/*navigation bar style*/
+    /*navigation bar container style*/
+    .navigation{
+        background: #1B2023;
+        color: #fff;
+        padding: 2em;
+    }
+
+    /*navigation bar logo style*/
+    #headerLogo{
+        height: 3em;
+    }
+
+    /*navigation bar container style*/
+    header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /*navigation bar list container style*/
+    nav ul {
+        position: absolute;
+        top: 1.3em;
+        right: 0;
+        font-size: 1.3em;
+    }
+
+    /*navigation bar list style*/
+    nav ul li {
+        display: inline;
+        padding-right: 2em;
+    }
+
+    /*navigation bar list item style*/
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        transition: all 0.2s ease;
+    }
+
+    /*navigation bar list item hover style*/
+    nav ul li a:hover {
+        color: #ff9900;
+    }
+
+/*home style*/
+    #home {
+        background: url('pizzaPalaceImages/pizzabg1.jpg') no-repeat center center/cover;
+        color: #fff;   
+        text-align: center;
+        padding: 100px 0;
+    }
+
+    #homeHeading{
+        font-size: 3.2em;
+        text-align: left;
+        margin-left: 2em;
+    }
+
+    #homeText{
+        font-size: 1.5em;
+        text-align: left;
+        margin-left: 4em;
+    }
+
+    #orderButton {
+        background: #e65c00;  
+        background: linear-gradient(to left, #F9D423, #e65c00); 
+        color: #fff;
+        padding: 1em 2em;
+        transform: translate(0%);
+        text-decoration: none;
+        border-radius: 3em;
+        cursor: pointer;
+        overflow: hidden;
+        transition: background-color 2s ease;
+    }
+    /*order before style*/
+    #orderButton:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        z-index: -1;
+        transition: left 0.5s ease;
+    }
+
+    /*order hover effect*/
+    #orderButton:hover{
+        button:hover;
+        border: 2px solid orange;
+        background-color: white;
+        color: #ff9900;
+    }
+
+    /*order before hover style*/
+    #orderButton:hover::before {
+        left: 0;
+        color: white;
+    }
+
+    .homeOrder{
+        position: absolute;
+        left: 6em;
+    }
+
+/*menu style*/
+    /*menu container style*/
+    #menu{
+        padding: 1em;
+        text-align: center;
+        margin-top: 5em;
+    }
+
+    /*menu item buttons style*/
+    #itemBtn{
+        border: 2px solid #e65c00;
+        padding: 1em 2em;
+        background: none;
+        border-radius: 3em;  
+        font-size: 1.2em;
+        margin: 0.5em 1em;
+        color: #e65c00;
+        transition: all 0.3s ease;;
+    }
+
+    /*menu item buttons hover style*/
+    #itemBtn:hover{
+        cursor: pointer;
+        color: white;
+        background-color: #e65c00;
+    }
+
+    /*menu items container style*/
+    .menu-items{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 3em;
+        padding: 5em;
+    }
+
+    /*menu item style*/
+    .menu-item{
+        text-align: center;
+        background: whitesmoke;
+        border-radius: 2.5em;
+        border-right: 0.3em solid #ff9900;
+        border-bottom: 0.3em solid #ff9900;
+    }
+
+    /*pizza button style*/
+    .pizzaBtn{
+        margin-left: -4em;
+        margin-top: -1em;
+        position: absolute;
+    }
+
+    /*menu  size button style*/
+    #radioBtn{
+        border: none;
+        background-color: black;
+    }
+
+    /*menu pizza name style*/
+    h1#pizzaHeading{
+        color: #e65c00;
+    }
+
+    /*menu size label style*/
+    label#size  {
+      display: inline-block;
+      width: 2em;
+      cursor: pointer;
+      border-radius: 2em;
+      font-size: 0.8em;
+      padding: 10px;
+      border: solid 2px #ccc;
+      transition: all 0.3s;
+    }
+    input.size[type="radio"] {
+      display: none;
+    }
+
+    /*menu size button active style*/
+    input.size[type="radio"]:checked + label {
+      background-color: black;
+      color: white;
+    }
+
+    /*menu  count style*/
+    input#counter{
+        background: none;
+        border: none;
+        width: 2em;
+        font-size: 1.3em;
+    }
+
+/*aboutUs style*/
+    /*aboout us container style*/
+    section#aboutUs{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3em;
+        margin-top: 5em;
+        background-color: #f2f2f2;
+        border-radius: 3em;
+    }
+
+    /*info s=container padding*/
+    .container2{
+        padding: 5em 2em;
+    }
+    /*aboout us image style*/
+    img#aboutUsImg{
+        width: 28em;
+        border-radius: 25%;
+        padding: 4em 6em;
+    }
+
+    /*aboout us info style*/
+    p#aboutUsInfo{
+        font-size: 1.1em;
+        width: 29em;
+        color: #737373;
+    }
+
+/*chef part style*/
+    /*chef container style*/
+    section#chefs{
+        padding: 1em;
+        margin-top: 5em;
+        text-align: center;
+    }
+
+    /*chef part info style*/
+    #info{
+        font-size: 1.2em;
+    }
+
+    /*chef part item style*/
+    div.chef-item{
+        display: inline-block;
+        margin-left: 3em;
+        width: 20%;
+        height: 50%;
+        overflow: hidden;
+    }
+
+    /*chef part image style*/
+    img#chefImg{
+        width: 100%;
+        border-radius: 15%;
+    }
+
+    /*chef part info style*/
+    span#chefInfo{
+        position: relative;
+        top: -4em;
+        text-align: center;
+        padding: 1em 2em ;
+        border-radius: 1em;
+        font-size: 1.2em;
+        background-color: rgba(256, 256, 256, 0.7);
+    }
+
+    /*chef part info hover style*/
+    span#chefInfo:hover{
+        background-color: rgba(255, 219, 172, 0.8);
+    }
+
+/*reservation part style*/
+    /*reservation part container style*/
+    section#reservation{
+        background-image: url(pizzaPalaceImages/reservation.jpg);
+        width: 100%;
+        margin-top: 5em;
+        height: 40em;
+        background-size: cover;
+    }
+
+    /*reservation part info style*/
+    div#reservationInfo{
+        padding-bottom: 2em;
+        position: relative;
+        top: 7em;
+        left: 45em;
+        width: 30%;
+        font-size: 1.2em;
+        text-align: center;
+        border-radius: 2em;
+        background-color: rgba(256, 256, 256, 0.9);
+    }
+
+    /*reservation part heading style*/
+    span#reservationHeading{
+        color: white;
+        width: 100%;
+        padding: 1em 6.5em;
+        border-radius: 2em 2em 0em 0em;
+        font-size: 1.2em;
+        background-color: #ff9900;
+    }
+
+/*location part style*/
+    /*location part container style*/
+   section#location {
+        position: relative;
+        width: 100%;
+        height: 45em;
+        text-align: center;
+        overflow: hidden; /* Ensure content doesn't overflow */
+    }
+
+    /*image in background*/
+    section#location::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('pizzaPalaceImages/location.jpg');
+        background-size: cover;
+        opacity: 0.5;
+        z-index: -1; /* Ensure the pseudo-element stays behind the content */
+    }
+
+    /*content positioning*/
+    section#location .content {
+        position: relative;
+        z-index: 1; /* Ensure the content is above the pseudo-element */
+    }
+
+    /*offer style*/
+    h1#offer{
+        position: relative;
+        font-size: 3em;
+        top: 4em;
+    }
+
+    /*ht line positioning*/
+    hr#line{
+        background-color: #ff9900;
+        border: none;
+        position: relative;
+        height: 0.1em;
+        top: 18em;
+        width: 20em;
+    }
+
+/*footer part*/
+    /*footer container style*/
+    footer{
+      position: relative;
+      background-color: #1B2023;
+      display: block;
+      width: 100%;
+      height: 13em;
+      padding: 4em 0.5em;
+    }
+    
+    /*footer logo style*/
+    img#footer_logo{
+      position: relative;
+      left: 0;
+      width: auto;
+      height: 8em;
+      top: 1em;
+    }
+
+    /*site name style*/
+    img#logoName{
+      position: relative;
+      height: 4em;
+    }
+
+    /*social media site style*/
+    img#icon{
+      position: relative;
+      border-radius: 51%;
+      height: 3em;
+      width: 3em;
+    } 
+
+    /*social media icons positioning*/
+    div#social_icons{
+      position: relative;
+      display: block;
+      width: 20em;
+      top: -8em;
+      left: 60em;
+    }
+
+    /*all content of footer style*/
+    div#footer_content{
+      position: relative;
+      top: -3em;
+      display: block;
+      width: 80em;
+      height: 20em;
+      z-index: 1;
+      left: 3em;
+      color: white;
+      background-color: none;
+    }
+
+    div#searchLinks{
+        margin-left: 2.5em;
+    }
+
+    /*footer links style*/
+    a#list_link{
+      position: relative;
+      text-decoration: none;
+      color: white;
+      padding: 0.3em 0.5em;
+      font-size: 1.2em;
+      margin-left: 1em;
+      border-radius: 2em;
+      background-color: rgba(255, 219, 172, 0.7);
+      transition: all 0.5s ease 0s;
+    }
+
+    /*footer links hover style*/
+    a#list_link:hover{
+      background-color: #FF9900;
+      cursor: pointer;
+      color: white;
+    }
+
+    /*footer info*/
+    span#footerInfo{
+      font-size: 1em;
+      margin-left: 9em;
+    }

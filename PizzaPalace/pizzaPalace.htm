@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PizzaPalace</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100&family=Playwrite+IS:wght@100..400&family=Playwrite+NG+Modern:wght@100..400&family=Playwrite+NZ:wght@100..400&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image" href="pizzaPalaceImages\logo.png">  
+    <link rel="stylesheet" href="pizzaPalace.css">
+</head>
+<body>
+    <!-- header navigation bar -->
+    <header>
+        <div class="navigation">
+            <nav>
+                <img src="pizzaPalaceImages/logoText.png" id="headerLogo">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#specials">Specials & Coupons</a></li>
+                    <li><a href="#contactUs">Contact Us</a></li>
+                    <li><a href="#aboutUs">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- home part  -->
+    <section  id="home">
+        <div class="container">
+            <h1 id="homeHeading">It's Not Just A Pizza, It's <br>An <font style="color: #ff9900;">Experience</font></h1>
+            <p id="homeText">Come experience our wide variety of pizzas and <br>delightful sides that will leave you wanting more<br>at PizzaPalace.</p>
+            <a href="#menu" id="orderButton" class="homeOrder">Order Now</a>
+        </div>
+    </section>
+
+    <!-- menu section -->
+    <section class="menu" id="menu">
+        <div class="container">
+            <font style="color:#e65c00;">OUR MENU</font>            
+            <h1>Discover Our Menu</h1>
+
+            <button id="itemBtn">Pizza</button>
+            <button id="itemBtn">Calzones</button>
+            <button id="itemBtn">Wraps</button>
+            <button id="itemBtn">Salads</button>
+            <button id="itemBtn">Sides</button><br>
+            <button id="itemBtn">Pasta</button>
+            <button id="itemBtn">Dinner</button>
+            <button id="itemBtn">Grill</button>
+            <button id="itemBtn">Ice Cream</button>
+            <button id="itemBtn">Kids</button>
+
+            <div class="menu-items">
+                <div class="menu-item">
+                    <img src="pizzaPalaceImages/pepperoni_pizza.png" alt="Pepperoni Pizza">
+                    <h1 id="pizzaHeading">Pepperoni Pizza</h1>
+                    
+                    <form>
+                        <input type="radio" class="size" id="20" name="size" value="20cm" checked="checked">
+                        <label id="size" for="20">20cm</label>
+                        <input type="radio" class="size" id="40" name="size" value="20cm">
+                        <label id="size" for="40">40cm</label>
+                        <input type="radio" class="size" id="50" name="size" value="20cm">
+                        <label id="size" for="50">50cm</label>
+                        <br>
+                        <input type="number" id="counter" value="1"><font style="color:#e65c00; font-size: 1.3em;">| ₹120</font>
+
+                        <label id="count" for="counter"></label>
+                    </form>
+                    <br>
+                    <a href="#menu" id="orderButton" class="pizzaBtn">Order Now</a>
+                </div>
+                <div class="menu-item">
+                    <img src="pizzaPalaceImages/cheese-pizza.png" alt="Cheese Pizza">
+                    <h1 id="pizzaHeading">Cheese Pizza</h1>
+                    
+                    <form>
+                        <input type="radio" class="size" id="20" name="size" value="20cm" checked="checked">
+                        <label id="size" for="20">20cm</label>
+                        <input type="radio" class="size" id="40" name="size" value="20cm">
+                        <label id="size" for="40">40cm</label>
+                        <input type="radio" class="size" id="50" name="size" value="20cm">
+                        <label id="size" for="50">50cm</label>
+                        <br>s
+                        <input type="number" id="counter" value="1"><font style="color:#e65c00; font-size: 1.3em;">| ₹100</font>
+                    </form>
+                    <br>
+                    <a href="#menu" id="orderButton" class="pizzaBtn">Order Now</a>
+                </div>
+                <div class="menu-item">
+                    <img src="pizzaPalaceImages/sweet-pizza.png" alt="Sweet Pizza">
+                    <h1 id="pizzaHeading">Sweet Pizza</h1>
+                    <form>
+                        <input type="radio" class="size" id="20" name="size" value="20cm" checked="checked">
+                        <label id="size" for="20">20cm</label>
+                        <input type="radio" class="size" id="40" name="size" value="20cm">
+                        <label id="size" for="40">40cm</label>
+                        <input type="radio" class="size" id="50" name="size" value="20cm">
+                        <label id="size" for="50">50cm</label>
+                        <br>
+                        <input type="number" id="counter" value="1"><font style="color:#e65c00; font-size: 1.3em;">| ₹110</font>
+                    </form>
+                    <br>
+                    <a href="#menu" id="orderButton" class="pizzaBtn">Order Now</a>
+                </div>
+                <div class="menu-item">
+                    <img src="pizzaPalaceImages/chicken-pizza.png" alt="Meat Pizza">
+                    <h1 id="pizzaHeading">Meat Pizza</h1>
+
+                    <form>
+                        <input type="radio" class="size" id="20" name="size" value="20cm" checked="checked">
+                        <label id="size" for="20">20cm</label>
+                        <input type="radio" class="size" id="40" name="size" value="20cm">
+                        <label id="size" for="40">40cm</label>
+                        <input type="radio" class="size" id="50" name="size" value="20cm">
+                        <label id="size" for="50">50cm</label>
+                        <br>
+                        <input type="number" id="counter" value="1"><font style="color:#e65c00; font-size: 1.3em;">| ₹130</font>
+                    </form>
+                    <br>
+                    <a href="#menu" id="orderButton" class="pizzaBtn">Order Now</a>
+                </div>
+            </div>
+            <a href="#view-all" id="orderButton" class="pizzaBtn">View All</a>
+        </div>
+    </section>
+    
+    <!-- about us section -->
+    <section class="aboutUs" id="aboutUs">
+        <div class="container1">
+            <img src="pizzaPalaceImages/aboutUs.jpg" id="aboutUsImg">
+        </div>
+        <div class="container2">
+            <font style="color: #ff9900;">ABOUT US</font>
+            <h2>This Is Our Story</h2><hr color="#ff9900">
+            <p id="aboutUsInfo">Welcome to Pizza Palace, where every slice is a piece of culinary art! At Pizza Palace, we are passionate about crafting the perfect pizza using the finest ingredients and traditional recipes. Our menu offers a wide variety of delicious pizzas, from classic favorites like Pepperoni and Margherita to our signature gourmet creations. Whether you’re dining in with family and friends or ordering for a cozy night at home, our commitment to quality and flavor ensures an unforgettable experience. Join us at Pizza Palace, where great taste and warm hospitality come together to create the ultimate pizza experience!</p>
+        </div>
+    </section>
+        
+    <!-- our chefs section -->
+    <section class="chefs" id="chefs">
+        <div class="container">
+            <font style="color:#ff9900;">OUR CHEFS</font>
+            <h1 id="chefsHeading">Meet Our Great Chefs</h1>
+            <p id="info">Are you a Pizza Lover?<br>
+            you are at thre right place with our top and experienced chefs only at Pizz Palace</p>
+            <div class="chef-item">
+                <img src="pizzaPalaceImages/chef1.jpg" id="chefImg" alt="Chef Jenny Wilson">
+                <span id="chefInfo">Jenny Wilson</span>
+            </div>
+            <div class="chef-item">
+                <img src="pizzaPalaceImages/chef2.jpg" id="chefImg" alt="Chef Amella Black">
+                <span id="chefInfo">Amella Black</span>
+            </div>
+            <div class="chef-item">
+                <img src="pizzaPalaceImages/chef3.jpg" id="chefImg" alt="Chef Theresa Webb">
+                <span id="chefInfo">Theresa Webb</span>
+            </div>
+            <div class="chef-item">
+                <img src="pizzaPalaceImages/chef4.jpg" id="chefImg" alt="Chef Jared Slater">
+                <span id="chefInfo">Jared Slater</sapn>
+            </div>
+        </div>
+    </section>
+    
+    <!-- reservation info section -->
+    <section class="reservation" id="reservation">
+        
+        <div class="container">
+            <hr color="#ff9900">
+            <div id="reservationInfo">
+                <span id="reservationHeading">Reservation</span><br>
+                <h1>Opening Timing</h1>
+                <font style="color:#ff9900;">Open 7 Days a Week</font>
+                <p>
+                Week Days 10:00am-9:pm<br>
+                <font style="color:#ff9900;">------------------------------------</font><br>
+                Saturday  11:30am-10:00pm<br>
+                <font style="color:#ff9900;">------------------------------------</font><br>
+                Sunday  11:30am-10:00pm<br>
+
+                <font style="color:grey; font-size: 1em;">Book your Table for Lunch or Dinner</font>
+                </p><br>
+                <a href="#order" id="orderButton" class="btn">Book Now</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- location info section -->
+    <section class="location" id="location">
+        <div class="container">
+            <hr id="line">
+            <h1 id="offer">
+                <font style="color: #ff9900; font-size: 0.5em;">PIZZA PALACE</font><br>
+                SPECIAL OFFER <br>
+                <font style="color: #ff9900;">50%</font> Off on every <br>
+                Wednesday <font style="color: #ff9900;">&</font> Saturday
+            </h1>
+            
+        </div>
+    </section>
+
+<!--Footer-->
+    <footer>
+    <div id="footer_content">
+      <img src="pizzaPalaceImages/logo.png" alt="logo" id="footer_logo">
+      <img src="pizzaPalaceImages/logoText.png" alt="site_name" id="logoName">
+      <div id="social_icons">
+        <a href="#instagram"><img src="pizzaPalaceImages/instagram_icon.png" id="icon" alt="instagram icon"></a>
+        <a href="#facebook"><img src="pizzaPalaceImages/facebook_icon.png" id="icon" alt="facebook icon"></a>
+        <a href="#gmail"><img src="pizzaPalaceImages/gmail_icon.png" id="icon" alt="gmail icon"></a>
+        <a href="#pintrest"><img src="pizzaPalaceImages/pintrest_icon.png" id="icon" alt="pintrest icon"></a>
+        <a href="#linkedin"><img src="pizzaPalaceImages/linkedin_icon.png" id="icon" alt="linkedin icon"></a>
+        <a href="#twitter"><img src="pizzaPalaceImages/twitter_icon.png" id="icon" alt="twitter icon"></a>
+      </div>
+
+      <div id="popular_search">
+        <div id="searchLinks">
+          <a href="#pizzas.htm" id="list_link">Pizzas</a>
+          <a href="#wraps.htm" id="list_link">Wraps</a>
+          <a href="#rolls.htm" id="list_link">Rolls</a>
+          <a href="#salads.htm" id="list_link">Salads</a>
+          <a href="#grills.htm" id="list_link">Grills</a>
+          <a href="#lunch.htm" id="list_link">Lunch</a>
+          <a href="#dinner.htm" id="list_link">Dinner</a>
+          <a href="#list_tos" id="list_link">Terms of Service</a>
+          <a href="#list_dmca" id="list_link">DMCA</a>
+          <a href="#aboutUs.htm" id="list_link">About Us</a>
+          <a href="#contactUs.htm" id="list_link">Contact Us</a><br>
+        </div><br><br><br>
+        <hr width="90%">
+        <span id="footerInfo">
+          Pizza Palace is a one stop destination for all yourr piza cravings
+          just sit and let the experts in pizza making do what they do best.
+          &#169PizzaPalace
+        </span>
+      </div>
+    </div>
+    </footer>
+</body>
+</html>
