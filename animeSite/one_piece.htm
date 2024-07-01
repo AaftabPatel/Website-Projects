@@ -1,0 +1,521 @@
+<html>
+<head>
+<title>LuffyAnime/OnePiece</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Hammersmith One">
+<link rel="icon" type="image" href="D:\projects\anime_site\images\logo_nobg.png">
+<link rel="stylesheet" href="luffy_nav_and_footer.css">
+<link rel="stylesheet" href="luffy_episode_card.css">
+<style>
+	/*background color*/
+	body{
+		background-color: #1B1B1B;
+		font-family:"Hammersmith One";
+		overflow-x: hidden;
+	}
+
+/*main content style*/
+	/*blur image style*/
+	img#blur_img{
+		position: absolute;
+		width: 100%;
+		height: 110%;
+		object-fit: cover;
+		object-position: 0% 48%;
+		background-color: rgba(0, 0, 0, 1);
+		filter: blur(25px) brightness(50%);
+	}
+
+	/*anime image style*/
+	img#anime_img{
+		position: absolute;
+		top: 8em;
+		left: 4em;
+		width: 11.5em;
+		height: 17em;
+	}
+
+	/*anime name style*/
+	span#anime_name{
+		position: absolute;
+		top: 2em;
+		left: 4.9em;
+		color: white;
+		width: 15em;
+		font-size: 4em;
+	}
+
+	/*manga logo style*/
+	img#manga_img{
+		position: absolute;
+		top: 26em;
+		left: 3em;
+		height: 4em;
+		width: 4em;
+	}
+
+	/*manga link style*/
+	a#manga_link{
+		text-decoration: none;
+		color: white;
+		display: block;
+		width: 7em;
+		position: absolute;
+		top: 27em;
+		left: 6.5em;
+	}
+
+	/*anime information tags style*/
+	div#anime_info{
+		position: absolute;
+		display: inline-block;
+		color: white;
+		left: 20em;
+		top: 14em;
+		word-spacing: 1em;
+	}
+
+	/*info tags style*/
+	span.info{
+		display: inline-block;
+		background-color: rgba(0, 0, 0, 0.5);
+		width: auto;
+		border-radius: 20%;
+		padding: 0.1em;
+	}
+
+	/*watch and add to list button style*/
+	a.play_button{
+		position: relative;
+		color: white;
+		left: 18.7em;
+		top: 17em;
+		padding: 0.6em 1.3em;
+		margin-left: 1em;
+	  	font-size: 1em;
+	  	letter-spacing: 2.5px;
+	  	font-weight: 500;
+	  	color: #fff;
+	  	text-decoration: none;
+	  	border-radius: 45px;
+	  	transition: all 0.3s ease 0s;
+	  	cursor: pointer;
+	  	outline: none;
+	}
+
+	/*background color style*/
+	a#watch{background-color: #FF3333;}
+	a#addtolist{background-color: rgba(0, 0, 0, 0.6);}
+
+	/*hover style*/
+	a#watch:hover{background-color: white; color: red;}
+	a#addtolist:hover{background-color: grey; color: black;}
+
+	/*summary style*/
+	div#summary{
+		position: relative;
+		color: white;
+		top: 20em;
+		left: 19.5em;
+		display: block;
+		width: 45%;
+	}
+
+	/*more summary style-display to set at none*/
+	div#more_summary{
+		display: none;
+	}
+
+	/*more button style*/
+	button#more_button{
+		position: relative;
+		background: none;
+		color: #ff3333;
+		cursor: pointer;
+		border: none;
+	}
+
+	/*side panel style*/
+	div#panel{
+		position: absolute;
+		right: 1em;
+		display: block;
+		width: 16em;
+		top: 0;
+		height: 80%;
+		line-height: 2em;
+		background-color: rgba(0, 0, 0, 0.2);
+		padding: 12em 2em 0em 2em;
+		color: white;
+	}
+
+	/*genre link style*/
+	a#genre_link{
+		text-decoration: none;
+		color: white;
+	}
+
+	/*color styling*/
+	span#color_style{
+		color: #ff3333;
+	}
+
+	/*genre link style*/
+	a#genre_link{
+		background-color: rgba(0, 0, 0, 0.2);
+		border: 1px solid black;
+		border-radius: 0.5em;
+		padding: 0.1em;
+	}
+
+	/*new anime heading*/
+	span#new_heading{
+		color: #ff3333;
+		position: relative;
+		top: 20em;
+		left: 0.8em;
+		font-size: 2em;
+	}
+
+
+</style>
+</head>
+<body>
+	<!-- NAVIGATION BAR -->
+	<div id="nav">
+		<div id="mySidenav" class="sidenav">
+		  <button class="closebtn" onclick="closeNav()">&times;</button>
+		  <a href="#luffyanime.htm">Home</a>
+		  <a href="#about.htm">About</a>
+		  <a href="#subbed_anime.htm">Subbed</a>
+		  <a href="#dubbed_anime.htm">dubbed</a>
+		  <a href="#anime_movie.htm">Movie</a>
+		  <a href="#anime_OVA.htm">OVAs</a>
+		  <a href="#anime_ONA.htm">ONAs</a>
+		  <a href="#anime_specials.htm">Special</a>
+		  <a href="#contact.htm">Contact</a>
+		  <a href="#" onclick="showList()">Genre</a>
+		  <div class="genre_list" id="list">
+		  	<!--genres--> 
+		  	<table>
+		  	<tr><td><a href="#action_anime.htm" style="color: red;">Action</a></td>
+		  	<td><a href="#adventure_anime.htm" style="color: cyan;">Adventure</a></td></tr>
+			<tr><td><a href="#comedy_anime.htm" style="color: green;">Comedy</a></td>
+			<td><a href="#drama_anime.htm" style="color: yellow;">Drama</a></td></tr>
+			<tr><td><a href="#sliceoflife_anime.htm" style="color: purple;">Slice of Life</a></td>
+			<td><a href="#fantasy_anime.htm" style="color: cyan;">Fantasy</a></td></tr>
+			<tr><td><a href="#magic_anime.htm" style="color: #b5651d;">Magic</a></td>
+			<td><a href="#supernatural_anime.htm" style="color: turquoise;">Supernatural</a></td></tr>
+			<tr><td><a href="#horror_anime.htm" style="color: red;">Horror</a></td>
+			<td><a href="#mystery_anime.htm" style="color: green;">Mystery</a></td></tr>
+			<tr><td><a href="#psychological_anime.htm" style="color: yellow;">Psychological</a></td>
+			<td><a href="#romance_anime.htm" style="color: purple;">Romance</a></td></tr>
+			<tr><td><a href="#scifi_anime.htm" style="color: cyan;">Sci-Fi</a></td>
+			<td><a href="#cyberpunk_anime.htm" style="color: #b5651d;">Cyberpunk</a></td></tr>
+			<tr><td><a href="#game_anime.htm" style="color: turquoise;">Game</a></td>
+			<td><a href="#ecchi_anime.htm" style="color: red;">Ecchi</a></td></tr>
+			<tr><td><a href="#demons_anime.htm" style="color: green;">Demons</a></td>
+			<td><a href="#harem_anime.htm" style="color: yellow;">Harem</a></td></tr>
+			<tr><td><a href="#josei_anime.htm" style="color: purple;">Josei</a></td>
+			<td><a href="#martialarts_anime.htm" style="color: cyan;">Martial Arts</a></td></tr>
+			<tr><td><a href="#kids_anime.htm" style="color: #b5651d;">Kids</a></td>
+			<td><a href="#historical_anime.htm" style="color: turquoise;">Historical</a></td></tr>
+			<tr><td><a href="#isekai_anime.htm" style="color: red;">Isekai</a></td>
+			<td><a href="#military_anime.htm" style="color: green;">Military</a></td></tr>
+			<tr><td><a href="#mecha_anime.htm" style="color: yellow;">Mecha</a></td>
+			<td><a href="#music_anime.htm" style="color: purple;">Music</a></td></tr>
+			<tr><td><a href="#parody_anime.htm" style="color: cyan;">Parody</a></td>
+			<td><a href="#police_anime.htm" style="color: #b5651d;">Police</a></td></tr>
+			<tr><td><a href="#postapocalyptic_anime.htm" style="color: turquoise;">Post-Apocalyptic</a></td>
+			<td><a href="#reverseharem_anime.htm" style="color: red;">Reverse Harem</a></td></tr>
+			<tr><td><a href="#school_anime.htm" style="color: green;">School</a></td>
+			<td><a href="#seinen_anime.htm" style="color: yellow;">Seinen</a></td></tr>
+			<tr><td><a href="#shoujo_anime.htm" style="color: purple;">Shoujo</a></td>
+			<td><a href="#shounen_anime.htm" style="color: cyan;">Shounen</a></td></tr>
+			<tr><td><a href="#space_anime.htm" style="color: #b5651d;">Space</a></td>
+			<td><a href="#sports_anime.htm" style="color: turquoise;">Sports</a></td></tr>
+			<tr><td><a href="#superpower_anime.htm" style="color: red;">Super Power</a></td>
+			<td><a href="#tragedy_anime.htm" style="color: green;">Tragedy</a></td></tr>
+			<tr><td><a href="#vampire_anime.htm" style="color: yellow;">Vampire</a></td></tr>
+			</table>
+		  </div>
+		</div>
+		<button id="menu" onclick="openNav()">
+			<i class="material-icons" style="color: #FF3333; font-size: 3em; position:relative; top: -0.1em;">menu</i></button>
+		<img src="D:/projects/anime_site/images/logo_nobg.png" alt="logo" id="logo">
+		<img src="D:/projects/anime_site/images/name.png" alt="site_name" id="name">
+		<input type="search" id="search_bar" placeholder="Search Anime ..."><i id="search_icon" class="material-icons">search</i></input>
+		<a href="#instagram"><img src="D:/projects/anime_site/images/instagram_icon.png" id="icon" alt="instagram icon"></a>
+		<a href="#facebook"><img src="D:/projects/anime_site/images/facebook_icon.jpg" id="icon" alt="facebook icon"></a>
+		<a href="#gmail"><img src="D:/projects/anime_site/images/mail_icon.png" id="icon" alt="gmail icon"></a>
+		<a href="#pintrest"><img src="D:/projects/anime_site/images/pintrest_icon.png" id="icon" alt="pintrest icon"></a>
+		<a href="#linkedin"><img src="D:/projects/anime_site/images/linkedin_icon.png" id="icon" alt="linkedin icon"></a>
+		<a href="#twitter"><img src="D:/projects/anime_site/images/twitter_icon.png" id="icon" alt="twitter icon"></a>
+		<button id="donate" class="nav_button">Donate</button>
+		<button id="login" class="nav_button">Login</button>
+	</div>
+
+	<!--Main Content part-->
+	<div id="main_content">
+		<img src="D:\projects\anime_site\images\card_img1.jpg" id="blur_img">
+		<img src="D:\projects\anime_site\images\card_img1.jpg" id="anime_img">
+		<img src="D:\projects\anime_site\images\manga_logo_nobg.png" id="manga_img">
+		<a href="#manga-onepiece" id="manga_link">click to read manga version</a>
+		<span id="anime_name">One Piece</span>
+		<div id="anime_info">
+			<span id="info_age" class="info" style="color:red;">PG-13</span>
+			<span id="info_quality" class="info" >HD</span>
+			<span id="info_sub" class="info">SUB</span>
+			<span id="info_dub" class="info">DUB</span>
+			<span style="color: red;">TV</span> Ep1030 24m
+		</div>
+		<a href="#watch_one_piece.htm" id="Watch" class="play_button">
+			<i class="material-icons" style="position: relative; top: 0.25em;">play_circle</i>Watch Now</a>
+		<a href="#list.htm.htm" id="addtolist" class="play_button">+Add To List</a>
+		<div id="summary">
+			Gold Roger was known as the "Pirate King," the strongest and most infamous being to have sailed the Grand Line. The capture and execution of Roger by the World Government brought a change throughout the world. His last words before his death revealed the existence of the greatest treasure in the world, One Piece. It was this revelation that <div id="more_summary">brought about the Grand Age of Pirates, men who dreamed of finding One Piece—which promises an unlimited amount of riches and fame—and quite possibly the pinnacle of glory and the title of the Pirate King. Enter Monkey Luffy, a 17-year-old boy who defies your standard definition of a pirate. Rather than the popular persona of a wicked, hardened, toothless pirate ransacking villages for fun, Luffy's reason for being a pirate is one of pure wonder: the thought of an exciting adventure that leads him to intriguing people and ultimately, the promised treasure. Following in the footsteps of his childhood hero, Luffy and his crew travel across the Grand Line, experiencing crazy adventures, unveiling dark mysteries and battling strong enemies, all in order to reach the most coveted of all fortunes—One Piece. 
+			</div>
+			<button onclick="more()" id="more_button">...More</button>
+		</div>
+
+		<!--side information panel-->
+		<div id="panel">	
+			<span id="color_style">Japanese:</span> ONE PIECE<br>
+			<span id="color_style">Synonyms:</span> OP<br>
+			<span id="color_style">Aired:</span> Oct 20, 1999 to ?<br>
+			<span id="color_style">Premiered:</span> Fall 1999<br>
+			<span id="color_style">Duration:</span> 24m<br>
+			<span id="color_style">Status:</span> Currently Airing<br>
+			<span id="color_style">MAL Score:</span> 8.62<br>
+			<span id="color_style">Genres:</span> <a href="#action_anime.htm" id="genre_link">Action</a>
+				<a href="#adventure_anime.htm" id="genre_link">Adventure</a>
+				<a href="#comedy_anime.htm" id="genre_link">Comedy</a>
+				<a href="#drama_anime.htm" id="genre_link">Drama</a>
+				<a href="#fantasy_anime.htm" id="genre_link">Fantasy</a> 
+				<a href="#shounen_anime.htm" id="genre_link">Shounen</a>
+				<a href="#superpower_anime.htm" id="genre_link">Super Power</a><br>
+			<span id="color_style">Studios:</span> Toei Animation<br>
+			<span id="color_style">Producers:</span> Fuji TV, TAP, Shueisha, Toei Animation, Funimation, 4Kids Entertainment
+		</div>
+	</div>
+	
+	<!--Latest Episodes-->
+	<span id="new_heading"> New On Luffy</span>
+	<div id="new">
+		
+		<div id="episode_card">
+			<div class="img_gradient">
+				<a href="#lupin_the_third_part6.htm">
+				<img src="D:\projects\anime_site\images\new_ep_img1.jpg" id="ep_img">
+			</div>
+			<span id="ep_sub" class="ep_info">sub</span>
+			<span id="ep_dub" class="ep_info">dub</span>
+			<span id="ep_no" class="ep_info">Ep 24/24</span>
+			<span id="ep_name">LUPIN THE 3rd PART 6</span></a>
+			<span id="ep_detail">TV 25m</span>
+		</div>
+		
+		<div id="episode_card">
+			<div class="img_gradient">
+				<a href="#steins_gate0.htm">
+				<img src="D:\projects\anime_site\images\new_ep_img2.jpg" id="ep_img">
+			</div>
+			<span id="ep_sub" class="ep_info">sub</span>
+			<span id="ep_dub" class="ep_info">dub</span>
+			<span id="ep_no" class="ep_info">Ep 23/23</span>
+			<span id="ep_name">Steins;Gate 0</span></a>
+			<span id="ep_detail">TV 23m</span>
+		</div>
+		<div id="episode_card">
+			<div class="img_gradient">
+				<a href="#natsumes_book_of_Friends.htm">
+					<img src="D:\projects\anime_site\images\new_ep_img3.jpg" id="ep_img">
+				</a>
+			</div>
+			<span id="ep_sub" class="ep_info">sub</span>
+			<span id="ep_dub" class="ep_info">dub</span>
+			<span id="ep_no" class="ep_info">Ep 13/13</span>
+			<span id="ep_name">Natsume's Book of Friends</span></a>
+			<span id="ep_detail">TV 24m</span>
+		</div>
+		<div id="episode_card">
+			<div class="img_gradient">
+				<a href="#thousands_of_worlds.htm">
+				<img src="D:\projects\anime_site\images\new_ep_img4.jpg" id="ep_img">
+			</div>
+			<span id="ep_sub" class="ep_info">sub</span>
+			<span id="ep_no" class="ep_info">Ep 26/26</span>
+			<span id="ep_name">Thousands of worlds</span></a>
+			<span id="ep_detail">TV 24m</span>
+		</div>
+
+		<div id="episode_card">
+			<div class="img_gradient">
+				<a href="#higehiro_after_being _rejected_I_shaved_and_took_in_a_high_school_runaway.htm">
+				<img src="D:\projects\anime_site\images\new_ep_img5.jpg" id="ep_img">
+			</div>
+			<span id="ep_sub" class="ep_info">sub</span>
+			<span id="ep_dub" class="ep_info">dub</span>
+			<span id="ep_no" class="ep_info">Ep 13/13</span>
+			<span id="ep_name">Higehiro: After Being Rejected, I Shaved and Took in a High School Runaway</span></a>
+			<span id="ep_detail">TV 23m</span>
+		</div>		
+		<div id="episode_card">
+			<div class="img_gradient">
+				<a href="#life_with_an_ordinary_guy_who_reincarnated_into_a_total_fantasy_knockout.htm">
+				<img src="D:\projects\anime_site\images\new_ep_img6.png" id="ep_img">
+			</div>
+			<span id="ep_sub" class="ep_info">sub</span>
+			<span id="ep_dub" class="ep_info">dub</span>
+			<span id="ep_no" class="ep_info">Ep 12/12</span>
+			<span id="ep_name">Life With an Ordinary Guy Who Reincarnated Into a Total Fantasy Knockout</span></a>
+			<span id="ep_detail">TV 24m</span>
+		</div>
+		<div id="episode_card">
+			<div class="img_gradient">
+				<a href="#the_slime_diaries_that_time_I_got_reincarnated_as_a_slime.htm">
+				<img src="D:\projects\anime_site\images\new_ep_img7.jpg" id="ep_img">
+			</div>
+			<span id="ep_sub" class="ep_info">sub</span>
+			<span id="ep_dub" class="ep_info">dub</span>
+			<span id="ep_no" class="ep_info">Ep 12/12</span>
+			<span id="ep_name">The Slime Diaries: That Time I Got Reincarnated as a Slime</span></a>
+			<span id="ep_detail">TV 23m</span>
+		</div>
+		<div id="episode_card">
+			<div class="img_gradient">
+				<a href="#dont_hurt_me_my_healer.htm">
+				<img src="D:\projects\anime_site\images\new_ep_img8.jpg" id="ep_img">
+			</div>
+			<span id="ep_sub" class="ep_info">sub</span>
+			<span id="ep_dub" class="ep_info">dub</span>
+			<span id="ep_no" class="ep_info">Ep 12/12</span>
+			<span id="ep_name">Don't Hurt Me, My Healer!</span></a>
+			<span id="ep_detail">TV 24m</span>
+		</div>
+		<div id="episode_card">
+			<div class="img_gradient">
+				<a href="#moriarty_the_patriot.htm">
+				<img src="D:\projects\anime_site\images\new_ep_img9.jpg" id="ep_img">
+			</div>
+			<span id="ep_sub" class="ep_info">sub</span>
+			<span id="ep_dub" class="ep_info">dub</span>
+			<span id="ep_no" class="ep_info">Ep 13/13</span>
+			<span id="ep_name">Moriarty the Patriot</span></a>
+			<span id="ep_detail">TV 23m</span>
+		</div>
+
+		<div id="episode_card">
+			<div class="img_gradient">
+				<a href="#tekken_bloodline.htm">
+				<img src="D:\projects\anime_site\images\new_ep_img10.jpg" id="ep_img">
+			</div>
+			<span id="ep_age" class="ep_info">18+</span>
+			<span id="ep_sub" class="ep_info">sub</span>
+			<span id="ep_dub" class="ep_info">dub</span>
+			<span id="ep_no" class="ep_info">Ep 6/6</span>
+			<span id="ep_name">Tekken: Bloodline</span></a>
+			<span id="ep_detail">ONA 25m</span>
+		</div>
+	</div>
+
+
+	<!--Footer-->
+	<div id="footer">
+		<div id="footer_gradient"></div>
+		<img src="D:\projects\anime_site\images\luffy_footer2.jpg" id="footer_img">
+		<div id="footer_content">
+			<img src="D:/projects/anime_site/images/logo_nobg.png" alt="logo" id="logo">
+			<img src="D:/projects/anime_site/images/name.png" alt="site_name" id="name">
+			<div id="social_icons">
+				<a href="#instagram"><img src="D:/projects/anime_site/images/instagram_icon.png" id="icon" alt="instagram icon"></a>
+				<a href="#facebook"><img src="D:/projects/anime_site/images/facebook_icon.jpg" id="icon" alt="facebook icon"></a>
+				<a href="#gmail"><img src="D:/projects/anime_site/images/mail_icon.png" id="icon" alt="gmail icon"></a>
+				<a href="#pintrest"><img src="D:/projects/anime_site/images/pintrest_icon.png" id="icon" alt="pintrest icon"></a>
+				<a href="#linkedin"><img src="D:/projects/anime_site/images/linkedin_icon.png" id="icon" alt="linkedin icon"></a>
+				<a href="#twitter"><img src="D:/projects/anime_site/images/twitter_icon.png" id="icon" alt="twitter icon"></a>
+			</div>
+			<span id="search_option"><h3>A-Z LIST</h3>
+				Searching anime order by alphabet name A to Z<br><br>
+				<div id="search_links">
+					<a href="#list_" id="list_link">All</a>
+					<a href="#list_hash" id="list_link">#</a> <a href="#list_0to9" id="list_link">0-9</a>
+					<a href="#list_A" id="list_link">A</a> <a href="#list_B" id="list_link">B</a>
+					<a href="#list_C" id="list_link">C</a> <a href="#list_D" id="list_link">D</a>
+					<a href="#list_E" id="list_link">E</a> <a href="#list_F" id="list_link">F</a>
+					<a href="#list_G" id="list_link">G</a> <a href="#list_H" id="list_link">H</a>
+					<a href="#list_I" id="list_link">I</a> <a href="#list_J" id="list_link">J</a>
+					<a href="#list_K" id="list_link">K</a> <a href="#list_L" id="list_link">L</a>
+					<a href="#list_M" id="list_link">M</a> <a href="#list_N" id="list_link">N</a>
+					<a href="#list_O" id="list_link">O</a> <a href="#list_O" id="list_link">O</a>
+					<a href="#list_P" id="list_link">P</a> <a href="#list_Q" id="list_link">Q</a>
+					<a href="#list_R" id="list_link">R</a> <a href="#list_S" id="list_link">S</a>
+					<a href="#list_T" id="list_link">T</a> <a href="#list_U" id="list_link">U</a>
+					<a href="#list_V" id="list_link">V</a> <a href="#list_W" id="list_link">W</a>
+					<a href="#list_X" id="list_link">X</a> <a href="#list_Y" id="list_link">Y</a>
+					<a href="#list_Z" id="list_link">Z</a><br><br>
+					<a href="#list_tos" id="list_link">TermsofService</a>
+					<a href="#list_dmca" id="list_link">DMCA</a>
+					<a href="#list_contact" id="list_link">Contact</a><br>
+				</div>
+				<p id="luffy_footer_info">
+					Luffy.to does not store any files on our server, we only linked to the media which is hosted on 3rd party services.<br>
+					&#169Luffy.to
+				</p>
+			</span>
+		</div>
+	</div>
+
+<script>
+//navigation color on scroll
+    var navbar = document.getElementById("nav");
+	window.onscroll = function() {navColor()};
+    function navColor(){
+		if (window.pageYOffset != 0) {
+	    	navbar.style.backgroundColor = "rgba(0,0,0,0.7)";
+	  	} 
+	  	else if(window.pageYOffset == 0){
+	    	navbar.style.backgroundColor = "";
+	  	}	
+	}
+//side navigation script
+	let slideIndex = 1;
+	showSlides(slideIndex);
+	//open side navigation 	
+	function openNav() {
+	  document.getElementById("mySidenav").style.width = "300px";
+	}
+
+	//close side navigation 
+	function closeNav() {
+	  document.getElementById("mySidenav").style.width = "0";
+	  document.getElementById("list").style.display = "none";
+	}
+
+	//list of genre 
+	function showList() {
+	  var x = document.getElementById("list");
+	  if (x.style.display === "none") {
+	    x.style.display = "block";
+	  } 
+	  else {
+	    x.style.display = "none";
+	  }
+	}
+
+//more summary script
+	function more() {
+		var summ = document.getElementById("more_summary");
+		var btn = document.getElementById("more_button");
+		if(btn.innerHTML == "...More"){
+			summ.style.display = "block";
+			btn.innerHTML = "...Less";
+		}
+		else{
+			summ.style.display = "none";
+			btn.innerHTML = "...More";
+		}
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+/*navigation bar part*/
+	/*navigation bar*/
+	div#nav{
+		height: 4em;
+		position: fixed;
+		top: 0;
+		left: 0;
+		padding-top: 0.7em;
+		padding-left: 0.5em;
+		width: 100%;
+		z-index: 2;
+		background-color: none;
+	}
+
+	/*button design for menu open and close*/
+	button#menu, .closebtn{
+		background: none;
+		border: none;
+		cursor: pointer;
+		color: #818181;
+	}
+
+	/*removing scrollbar*/
+	.sidenav::-webkit-scrollbar {
+  		display: none;
+	}
+
+	/*sidenav design*/
+	.sidenav {
+	  height: 98%; /* 100% Full-height */
+	  width: 0; /* 0 width - change this with JavaScript */
+	  position: fixed; /* Stay in place */
+	  z-index: 1; /* Stay on top */
+	  top: 0; /* Stay at the top */
+	  left: 0;
+	  background-color: #111; /* Black*/
+	  overflow-x: hidden; /* Disable horizontal scroll */
+	  padding-top: 1em; /* Place content 60px from the top */
+	  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+	}
+
+	/* The navigation menu links */
+	.sidenav a {
+	  	padding: 0.5em 0em 0.3em 1.5em;/* top right bottom left padding */
+	  	text-decoration: none;
+	  	font-size: 1.6em;
+	  	color: #818181;/*grey*/
+	  	display: block;
+	  	transition: 0.3s;
+	}
+
+	/* When you mouse over the navigation links, change their color */
+	.sidenav a:hover ,.closebtn:hover{
+	  	color: #FF3333;/*red*/
+	}
+
+	/*genre list div*/
+	#list{
+		display: none;
+	}
+
+	/*genre list links*/
+	.genre_list a{
+		padding: 0.5em 0em 0.3em 1.2em;
+	  	text-decoration: none;
+	  	font-size: 1em;
+	}
+
+	/* Position and style the close button (top right corner) */
+	.sidenav .closebtn {
+	  	position: sticky;
+	  	top: 0%;
+	  	font-size: 2.5em;
+	  	left: 90%;
+	}
+
+	/*site logo style*/
+	img#logo{
+		height: 3em;
+		width: 3em;
+	}
+
+	/*site name style*/
+	img#name{
+		height: 3em;
+		width: 9em;	
+	}
+
+	/*social media site style*/
+	img#icon{
+		position: relative;
+		top: -0.2em;
+		border-radius: 51%;
+		height: 2em;
+		width: 2em;
+	}	
+
+	/*search bar style*/
+	input#search_bar{
+		background-color: #121212;
+		border: none;
+		position: relative;
+		top: -1.3em;
+		width: 18em;
+		height: 3em;
+		border-radius: 0.3em;
+	}
+
+	/*search icon style*/
+	i#search_icon{
+		position: relative;
+		color: #FF3333;
+		font-size: 2em;
+		top: -0.2em;
+		left: -1.2em;
+	}
+
+	/*buttos on nav bar*/
+	button.nav_button{
+		padding: 0.6em 1.3em;
+	  	font-size: 1em;
+	  	letter-spacing: 2.5px;
+	  	font-weight: 500;
+	  	color: #fff;
+	  	background-color: #23c483;
+	  	border: none;
+	  	border-radius: 45px;
+	  	transition: all 0.3s ease 0s;
+	  	cursor: pointer;
+	  	outline: none;
+	}
+   
+	/*hover effect of login/donate button*/
+	button.nav_button:hover{
+    	background-color: white;
+		box-shadow: 0px 15px 20px white;
+		color: #23c483;
+		transform: translateY(-7px);
+    }
+
+    /*positioning of donate/login button*/
+    button#login,#donate{
+    	position: relative;
+    	right: -20em;
+    	top: -1em;
+    }
+
+/*footer part*/
+	div#footer{
+		position: relative;
+		top: 50em;
+		display: block;
+		width: 100%;
+	}
+	
+	img#footer_img{
+		position: absolute;
+		top: -2em;
+		left: -0.5em;
+		display: block;	
+		width: 101%;
+		height: 25em;
+		filter: grayscale(100%);
+	}
+
+	/*image gradient class style*/
+	#footer_gradient{
+	  	position: absolute;
+		top: -2em;
+		opacity: 0.9;
+		left: -0.5em;
+		display: block;	
+		width: 101%;
+		height: 25em;
+	  	z-index: 1;
+		background: linear-gradient(to right, #8B0000, #000000); 
+	}
+
+	/*social media icons positioning*/
+	div#social_icons{
+		position: relative;
+		left: 20em;
+		top: -2.7em;
+	}
+
+	/*all content of footer style*/
+	div#footer_content{
+		position: relative;
+		z-index: 2;
+		color: white;
+		background-color: none;
+	}
+
+	/*search links div styling*/
+	div#search_links{
+		word-spacing: 0.8em;
+	}
+
+	/*footer links style*/
+	a#list_link{
+		text-decoration: none;
+		color: white;
+		padding: 0.3em;
+		border-radius: 10%;
+		background-color: rgba(256, 0, 0, 0.3);
+	}
+
+	/*luffy.to footer info*/
+	p#luffy_footer_info{
+		color: darkgray;
+	}

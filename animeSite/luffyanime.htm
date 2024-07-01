@@ -1,0 +1,1271 @@
+<html>
+<head>
+<title>LuffyAnime</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Hammersmith One">
+<link rel="icon" type="image" href="D:\projects\anime_site\images\logo_nobg.png">
+<link rel="stylesheet" href="luffy_nav_and_footer.css">
+<link rel="stylesheet" href="luffy_episode_card.css">
+<style>
+	/*background color*/
+	body{
+		background-color: #1B1B1B;
+		font-family:"Hammersmith One";
+		overflow-x: hidden;
+	}
+
+/*navigation and footer part is included as external css file*/
+/*slideshow part*/
+   	/* Slideshow container */
+    .slideshow{
+	    width: 100%;
+	    position: absolute;
+	    top: -1.1em;
+	    left: 0em;
+	    z-index: -1;
+	    margin: auto;
+    }
+
+    /*slides style*/
+	.slides {
+ 		display: none;
+	}
+
+	/*slideshow images style*/
+    img#slide_img{
+        width: 100%;
+        height: 32em;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    /*vignette class style*/
+	#vignette{
+	  position: absolute;
+	  height: 32em;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  display: block;
+	  background-size: cover;
+	}
+
+	/*vignette effect*/
+	#vignette:after {
+	  content: '';
+	  position: absolute;
+	  top: 0; left: 0; bottom: 0; right: 0;
+	  background: radial-gradient(at 70% , transparent 7%, rgba(0,0,0,0.8) 70%);
+	}
+
+	/*spotlight style*/
+	span#spotlight{
+		position: relative;
+		top: -18em;
+		left: 2em;
+		font-size: 1.3em;
+		color: #FF3333;/*red*/
+	}
+
+	/*anime name style*/
+	span.anime_name{
+		position: relative;
+		top: -8.5em;
+		left: 1em;
+		display: block;
+		width: 12em;
+		color: white;
+		font-size: 2.7em;
+	}
+
+	/*anime summary style*/
+	div.summary{
+		position: relative;
+		display: block;
+		left: 3.5em;
+		top: -25em;
+		width: 40em;
+		height: 6em;
+		overflow: hidden;
+		color: white;
+		font-size: 0.8em;
+	}
+
+	/*watch and details button style*/
+	a#watch,a#details{
+		position: relative;
+		color: white;
+		left: 2.85em;
+		top: -18em;
+		padding: 0.6em 1.3em;
+	  	font-size: 1em;
+	  	letter-spacing: 2.5px;
+	  	font-weight: 500;
+	  	color: #fff;
+	  	text-decoration: none;
+	  	border: none;
+	  	border-radius: 45px;
+	  	transition: all 0.3s ease 0s;
+	  	cursor: pointer;
+	  	outline: none;
+	}
+
+	/*watch and details button background color*/
+	a#watch{background-color: #FF3333;}
+	a#details{background-color: grey;}
+
+	/*icons style*/
+	i.material-icons{
+		color: white; 
+		position: relative; 
+		top: 0.25em;
+	}
+
+	/*all info logos style*/
+	div.info{
+		color: white;
+		position: relative;
+		top: -22em;
+		left: 2.5em;
+	}
+
+	/*sub/dub logo style*/
+	span#sub{
+		background-color: #1B1B1B;
+		border-radius: 0.3em;
+		padding: 0.1em;
+	}
+
+	/*hd logo style*/
+	span#hd{
+		background-color: #ff3333;
+		border-radius: 0.3em;
+		padding: 0.1em;
+	}
+
+    /* Next & previous buttons */
+    a#change_slide{
+    	position: relative;
+    	cursor: pointer;
+    	background-color: red;
+	    padding: 1em;
+	    color: white;
+	    font-weight: bold;
+	    transition: 0.6s ease;
+	    border-radius: 0.2em;
+    }
+
+    /*positioning next*/
+    a.next{
+    	top: 55%;
+    	left: 90%;
+    	font-size: 1em;
+    }
+
+    /*positioning prev*/
+    a.prev{
+    	top: 65%;
+    	left: 93.3%;
+    	font-size: 1em;
+    }
+
+    /*hover effect of next and prev*/
+	a#change_slide:hover{
+    	background-color: white;
+    	color: red;
+    }
+
+/*trending part*/
+    #trending{
+		padding: 0.6em;
+	}
+
+    /*trend title style*/
+    span#trend_title{
+    	color: #ff3333;
+    	font-size: 2em;
+    	position: relative;
+    	top: 9.5em;
+    	left: 1em;
+    }
+
+	/*image card style*/
+    div.card{
+    	position: relative;
+    	display: inline-block;
+    	top: 36em;
+    	left: -8em;
+    	margin-left: 2em;
+    	border-radius: 1em 0.1em;
+    	height: 13em;
+    	width: 10em;
+    	padding-right: 2em;
+    	background-color: #353935;
+    	color: white;
+    }
+
+    /*card image style*/
+    img#card_img{
+    	height: 13em;
+    	width: 10em;
+    	position: relative;
+    	top: -1.85em;
+    	padding-left: 2em;
+    }
+
+	/*card anime name style*/
+	span#name{
+		writing-mode: vertical-lr;
+        transform: rotate(-180deg);
+        position: absolute;
+        overflow: hidden;
+        bottom: 2em;
+        left: 0.5em;
+        display: block;
+        width: 1em;
+    }
+
+    /*card number style*/
+    span#trending_no{
+    	position: relative;
+    	left: 0.01em;
+    	top: 7.5em;
+    	color: #ff3333;
+    	font-size: 1.5em;
+    }
+
+    /*positioning next card button*/
+    a.next_card{
+    	top: 60%;
+    	left: 84.5%;
+    	font-size: 1.7em;
+    }
+
+    /*positioning prev card button*/
+    a.prev_card{
+    	top: 77%;
+    	left: 90%;
+    	font-size: 1.7em;
+    }
+
+/*About luffy.to part*/
+    /*about luffy*/
+    div#about{
+    	background: #000000;  
+		background: linear-gradient(to right, #8B0000, #000000); 
+    	position: relative;
+    	top: 34em;
+    	text-align: right;
+    	width: 101.17%;
+    	height: 25em;
+    	left: -0.5em;
+    	color: white;
+    }
+
+    /*about luffy image style*/
+    img#aboutluffy_img{
+    	height: 25em;
+    	position: relative;
+		left: -50%;
+		top: 0em;
+    }
+
+    /*title style*/
+    span#about_title{
+    	position: relative;
+    	font-size: 3.5em;
+    	top: -5.8em;
+    	right: 0.35em;
+    }
+
+    /*about information style*/
+    div#about_info{
+    	position: relative;
+    	display: block;
+    	width: 40em;
+    	top: -20em;
+    	left: 51%;
+    }
+
+    /*link to about page*/
+    a#about_link{
+    	color: red;
+    	font-size: 1.2em;
+    }
+
+    /*donate button on about*/
+    button#donate_about{
+    	position: relative;
+    	top: -18em;
+    	left: -1.2em;
+    	background-color: #ff3333;
+    }	
+
+    /*donate button hover effect*/
+    button#donate_about:hover{
+    	background-color: white;
+		box-shadow: 0px 15px 20px white;
+		color: #ff3333;
+		transform: translateY(-7px);
+    }
+
+/*anime list tables part*/
+    /*tables for top anime style*/
+    table.top_table{
+    	background-color: #121212;
+    	position: relative;
+    	display: inline-block;
+    	top: 37em;
+    	border: 0;
+    	border-radius: 0em 1em 0em 1em;
+    	color: white;
+    	margin-left: 1.5em;
+    }
+
+    /*table image style*/
+    img#table_img{
+    	width: 3em;
+    	height: 4em;
+    }
+
+    /*table anime data style*/
+    span#table_aname{
+    	display: block;
+    	position: relative;
+    	top: -3.8em;
+    	left: 3.5em;
+    }
+
+    /*table links style*/
+    a#table_alink{
+    	display: block;
+    	height: 2.5em;
+    	width: 10em;
+    	overflow: hidden;
+    	text-decoration: none;
+    	color: white;
+    }
+
+    /*hover effect on link on names*/
+    a#table_alink:hover{
+    	color: #ff3333;
+    }
+  
+    /*table heading style*/
+    th#heading{
+    	color: #ff3333;
+    	padding: 0.5em;
+    	text-align: left;
+    	font-size: 1.2em;
+    }
+
+    /*table data style*/
+    td#list_data{
+    	padding: 0.5em;
+    	display: block;
+    	width: 17em;
+    	height: 4em;
+    }
+
+    /*even color change*/
+    tr#list_row:nth-child(even) {
+		background-color: #282C35;
+	}
+
+	/*view more style*/
+	td#more{
+		text-align: center;
+		display: block;
+		height: 2em;	
+	}
+
+	/*more hiver effect*/
+	td#more:hover{
+		cursor: pointer;
+		color: #ff3333;
+	}
+
+/*latest episodes part*/
+	/*latest heading*/
+	span#latest_heading{
+		color: #ff3333;
+		position: relative;
+		top: 20em;
+		left: 0.8em;
+		font-size: 2em;
+	}
+
+	/*latest episode card style*/
+	div#episode_card{
+		background-color: #121212;
+		position: relative;
+		top: 41em;
+		left: 0em;
+		margin-left: 1em;
+		margin-top: 1em;
+		display: inline-block;
+		height: 25em;
+		width: 15em;
+	}
+
+	/*latest episode image style*/
+	img#ep_img{
+		height: 20em;
+		width: 15em;
+	}
+
+	/*gradient class style*/
+	div.img_gradient{
+	  position: absolute;
+	  height: 20em;	
+	  width: 15em;
+	  display: block;
+	}
+
+	/*gradient effect*/
+	div.img_gradient:after {
+	  content: '';
+	  position: absolute;
+	  top: 0; left: 0; bottom: 0; right: 0;
+	  background: linear-gradient(to bottom , transparent 50%, #121212);
+	}
+
+	/*hiver effect on image with play icon display to block*/
+	div.img_gradient:hover {
+		opacity: 0.3;
+		cursor: pointer;
+	}
+
+	/*all info boxes basic style*/
+	span.ep_info{
+		position: absolute;
+		z-index: 1;
+		color: white;
+		display: block;
+		width: 2.4em;
+		padding: 0em 0em 0em 0.4em;
+		border-radius: 0.3em;
+		height: 1.2em;
+	}
+
+	/*episode no info style*/
+	span#ep_no{
+		background-color: #ff3333;
+		top: 17.1em;
+		left: 11em;
+	}
+
+	/*episode sub info style*/
+	span#ep_sub{
+		background-color: black;
+		top: 17.3em;
+		left: 0.2em;
+	}
+
+	/*episode sub info style*/
+	span#ep_dub{
+		background-color: black;
+		top: 17.3em;
+		left: 3.5em;
+	}
+
+	/*episode 18+ info style*/
+	span#ep_age{
+		background-color: white;
+		top: 0.5em;
+		left: 0.5em;
+		color: ff3333;
+	}
+
+	/*latest episode name/detail style*/
+	span#ep_name{
+		position: absolute;
+		top: 20em;
+		color: white;
+		left: 0.5em;
+		display: block;
+		width: 14em;
+	}
+
+	/*episode name hover effect*/
+	span#ep_name:hover{
+		color: #ff3333;
+		cursor: pointer;
+	}
+
+	/*latest episode details style*/
+	span#ep_detail{
+		position: absolute;
+		word-spacing: 2em;
+		top: 29em;
+		left: 0.7em;
+		font-size: 0.8em;
+		color: lightgray;
+	}
+
+</style>
+</head>
+<body>
+	<!-- NAVIGATION BAR -->
+	<div id="nav">
+		<div id="mySidenav" class="sidenav">
+		  <button class="closebtn" onclick="closeNav()">&times;</button>
+		  <a href="#luffyanime.htm">Home</a>
+		  <a href="#about.htm">About</a>
+		  <a href="#subbed_anime.htm">Subbed</a>
+		  <a href="#dubbed_anime.htm">dubbed</a>
+		  <a href="#anime_movie.htm">Movie</a>
+		  <a href="#anime_OVA.htm">OVAs</a>
+		  <a href="#anime_ONA.htm">ONAs</a>
+		  <a href="#anime_specials.htm">Special</a>
+		  <a href="#contact.htm">Contact</a>
+		  <a href="#" onclick="showList()">Genre</a>
+		  <div class="genre_list" id="list">
+		  	<!--genres--> 
+		  	<table>
+		  	<tr><td><a href="#action_anime.htm" style="color: red;">Action</a></td>
+		  	<td><a href="#adventure_anime.htm" style="color: cyan;">Adventure</a></td></tr>
+			<tr><td><a href="#comedy_anime.htm" style="color: green;">Comedy</a></td>
+			<td><a href="#drama_anime.htm" style="color: yellow;">Drama</a></td></tr>
+			<tr><td><a href="#sliceoflife_anime.htm" style="color: purple;">Slice of Life</a></td>
+			<td><a href="#fantasy_anime.htm" style="color: cyan;">Fantasy</a></td></tr>
+			<tr><td><a href="#magic_anime.htm" style="color: #b5651d;">Magic</a></td>
+			<td><a href="#supernatural_anime.htm" style="color: turquoise;">Supernatural</a></td></tr>
+			<tr><td><a href="#horror_anime.htm" style="color: red;">Horror</a></td>
+			<td><a href="#mystery_anime.htm" style="color: green;">Mystery</a></td></tr>
+			<tr><td><a href="#psychological_anime.htm" style="color: yellow;">Psychological</a></td>
+			<td><a href="#romance_anime.htm" style="color: purple;">Romance</a></td></tr>
+			<tr><td><a href="#scifi_anime.htm" style="color: cyan;">Sci-Fi</a></td>
+			<td><a href="#cyberpunk_anime.htm" style="color: #b5651d;">Cyberpunk</a></td></tr>
+			<tr><td><a href="#game_anime.htm" style="color: turquoise;">Game</a></td>
+			<td><a href="#ecchi_anime.htm" style="color: red;">Ecchi</a></td></tr>
+			<tr><td><a href="#demons_anime.htm" style="color: green;">Demons</a></td>
+			<td><a href="#harem_anime.htm" style="color: yellow;">Harem</a></td></tr>
+			<tr><td><a href="#josei_anime.htm" style="color: purple;">Josei</a></td>
+			<td><a href="#martialarts_anime.htm" style="color: cyan;">Martial Arts</a></td></tr>
+			<tr><td><a href="#kids_anime.htm" style="color: #b5651d;">Kids</a></td>
+			<td><a href="#historical_anime.htm" style="color: turquoise;">Historical</a></td></tr>
+			<tr><td><a href="#isekai_anime.htm" style="color: red;">Isekai</a></td>
+			<td><a href="#military_anime.htm" style="color: green;">Military</a></td></tr>
+			<tr><td><a href="#mecha_anime.htm" style="color: yellow;">Mecha</a></td>
+			<td><a href="#music_anime.htm" style="color: purple;">Music</a></td></tr>
+			<tr><td><a href="#parody_anime.htm" style="color: cyan;">Parody</a></td>
+			<td><a href="#police_anime.htm" style="color: #b5651d;">Police</a></td></tr>
+			<tr><td><a href="#postapocalyptic_anime.htm" style="color: turquoise;">Post-Apocalyptic</a></td>
+			<td><a href="#reverseharem_anime.htm" style="color: red;">Reverse Harem</a></td></tr>
+			<tr><td><a href="#school_anime.htm" style="color: green;">School</a></td>
+			<td><a href="#seinen_anime.htm" style="color: yellow;">Seinen</a></td></tr>
+			<tr><td><a href="#shoujo_anime.htm" style="color: purple;">Shoujo</a></td>
+			<td><a href="#shounen_anime.htm" style="color: cyan;">Shounen</a></td></tr>
+			<tr><td><a href="#space_anime.htm" style="color: #b5651d;">Space</a></td>
+			<td><a href="#sports_anime.htm" style="color: turquoise;">Sports</a></td></tr>
+			<tr><td><a href="#superpower_anime.htm" style="color: red;">Super Power</a></td>
+			<td><a href="#tragedy_anime.htm" style="color: green;">Tragedy</a></td></tr>
+			<tr><td><a href="#vampire_anime.htm" style="color: yellow;">Vampire</a></td></tr>
+			</table>
+		  </div>
+		</div>
+		<button id="menu" onclick="openNav()">
+			<i class="material-icons" style="color: #FF3333; font-size: 3em; position:relative; top: -0.1em;">menu</i></button>
+		<img src="D:/projects/anime_site/images/logo_nobg.png" alt="logo" id="logo">
+		<img src="D:/projects/anime_site/images/name.png" alt="site_name" id="name">
+		<input type="search" id="search_bar" placeholder="Search Anime ..."><i id="search_icon" class="material-icons">search</i></input>
+		<a href="#instagram"><img src="D:/projects/anime_site/images/instagram_icon.png" id="icon" alt="instagram icon"></a>
+		<a href="#facebook"><img src="D:/projects/anime_site/images/facebook_icon.jpg" id="icon" alt="facebook icon"></a>
+		<a href="#gmail"><img src="D:/projects/anime_site/images/mail_icon.png" id="icon" alt="gmail icon"></a>
+		<a href="#pintrest"><img src="D:/projects/anime_site/images/pintrest_icon.png" id="icon" alt="pintrest icon"></a>
+		<a href="#linkedin"><img src="D:/projects/anime_site/images/linkedin_icon.png" id="icon" alt="linkedin icon"></a>
+		<a href="#twitter"><img src="D:/projects/anime_site/images/twitter_icon.png" id="icon" alt="twitter icon"></a>
+		<button id="donate" class="nav_button">Donate</button>
+		<button id="login" class="nav_button">Login</button>
+	</div>
+
+	<!--SLIDESHOW--> 
+	<div class="slideshow">
+	    <div class="slides">
+	    	<div id="vignette"></div>
+	        <img src="D:\projects\anime_site\images\my_stepsister_is_my_ex_girlfriend.jpg" id="slide_img">
+	        <span id="spotlight">#1 Spotlight</span>
+		    <span class="anime_name">My Stepsister is My Ex-Girlfriend</span>
+		    <div class="info">
+	        	<i class="material-icons">play_circle</i>TV &nbsp
+	        	<i class="material-icons">schedule</i>23m &nbsp
+	        	<i class="material-icons">event</i>July 6, 2022 &nbsp
+	        	<span id="hd">HD</span> &nbsp
+	        	<span id="sub">sub</span> &nbsp
+				    	
+	        </div>
+		    <div class="summary">
+		    	A certain boy and girl in middle school became lovers, flirted with each other, disagreed on trivial things, 	became more frequently irritated with each other rather than excited... and ended up breaking up at graduation. And so the two of them, Mizuto Irido and Yume Ayai, wound up meeting each other in the most unexpected fashion. "Isn't it obvious that I'm the elder brother?" "Isn't it obvious that I'm the elder sister?" The children of the partner of their parents' remarriage were ex-lovers?! The former couple, mindful of their parent's feelings, decided on a "sibling rule" where the one who becomes conscious of the other as the opposite sex loses, but... When they encounter each other in the bathroom, commute to and from school together... along with the memories of the past and living under the same roof, just how do they disregard each other?! 
+			</div>
+		  	<a href="#watch_my_stepsister_is_my_ex_girlfriend.htm" id="Watch">
+		  		<i class="material-icons">play_circle</i>Watch Now</a>
+		  	<a href="#my_stepsister_is_my_ex_girlfriend.htm" id="details">Details ></a>
+	    </div>
+	    
+
+	    <div class="slides">
+	    	<div id="vignette"></div>
+	        <img src="D:\projects\anime_site\images\shadow_house2.jpg"  id="slide_img">
+	        <span id="spotlight">#2 Spotlight</span>
+	        <span class="anime_name">Shadows House 2nd Season</span>
+
+	        <div class="info">
+	        	<i class="material-icons">play_circle</i>TV &nbsp
+	        	<i class="material-icons">schedule</i>23m &nbsp
+	        	<i class="material-icons">event</i>July 6, 2022 &nbsp
+	        	<span id="hd">HD</span> &nbsp
+	        	<span id="sub">sub</span> &nbsp
+				<span id="sub">dub</span> &nbsp     	
+	        </div>
+
+	  		<div class="summary">
+	  			After finishing their "debut," Kate, Emilico and three other pairs who started with them begin a new life as adults.
+	  		</div>
+	  		<a href="#watch_shadow_house2.htm" id="Watch">
+	  			<i class="material-icons" style="color: white;">play_circle</i>Watch Now</a>
+	  		<a href="#shadow_house2.htm" id="details">Details ></a>
+	    </div>
+
+	    <div class="slides">
+	    	<div id="vignette"></div>
+	        <img src="D:\projects\anime_site\images\spyxfamily.jpg" id="slide_img">
+	        <span id="spotlight">#3 Spotlight</span>
+	        <span class="anime_name">Spy x Family</span>
+	        
+	        <div class="info">
+	        	<i class="material-icons">play_circle</i>TV &nbsp
+	        	<i class="material-icons">schedule</i>23m &nbsp
+	        	<i class="material-icons">event</i>July 6, 2022 &nbsp
+	        	<span id="hd">HD</span> &nbsp
+	        	<span id="sub">sub</span> &nbsp
+				<span id="sub">dub</span> &nbsp     	
+	        </div>
+
+	        <div class="summary">
+	        	For the agent known as "Twilight," no order is too tall if it is for the sake of peace. Operating as Westalis' master spy, Twilight works tirelessly to prevent extremists from sparking a war with neighboring country Ostania. For his latest mission, he must investigate Ostanian politician Donovan Desmond by infiltrating his son's school: the prestigious Eden Academy. Thus, the agent faces the most difficult task of his career: get married, have a child, and play family. Twilight, or "Loid Forger," quickly adopts the unassuming orphan Anya to play the role of a six-year-old daughter and prospective Eden Academy student. For a wife, he comes across Yor Briar, an absent-minded office worker who needs a pretend partner of her own to impress her friends. However, Loid is not the only one with a hidden nature. Yor moonlights as the lethal assassin "Thorn Princess." For her, marrying Loid creates the perfect cover. Meanwhile, Anya is not the ordinary girl she appears to be; she is an esper, the product of secret experiments that allow her to read minds. Although she uncovers their true identities, Anya is thrilled that her new parents are cool secret agents! She would never tell them, of course. That would ruin the fun. Under the guise of "The Forgers," the spy, the assassin, and the esper must act as a family while carrying out their own agendas. Although these liars and misfits are only playing parts, they soon find that family is about far more than blood relations
+	        </div>
+	  		<a href="#watch_spyxfamily.htm" id="Watch">
+	  			<i class="material-icons" style="color: white;">play_circle</i>Watch Now</a>
+	  		<a href="#spyxfamily.htm" id="details">Details ></a>
+	    </div>
+
+	    	
+	    <div class="slides">
+	    	<div id="vignette"></div>
+	        <img src="D:\projects\anime_site\images\date_a_live4.jpg" id="slide_img">
+	        <span id="spotlight">#4 Spotlight</span>
+	        <span class="anime_name">Date A Live IV</span>
+	        
+	        <div class="info">
+	        	<i class="material-icons">play_circle</i>TV &nbsp
+	        	<i class="material-icons">schedule</i>23m &nbsp
+	        	<i class="material-icons">event</i>July 6, 2022 &nbsp
+	        	<span id="hd">HD</span> &nbsp
+	        	<span id="sub">sub</span> &nbsp
+				<span id="sub">dub</span> &nbsp     	
+	        </div>
+
+	        <div class="summary">
+	        	Fourth season of Date A Live. The story begins in the world of Eurasia, where a phenomenon known as a “spatial quake” causes the death of about 150 million people. 30 years after this tragedy, we follow our protagonist Shido Itsuka and the world is still suffering from these quakes, albeit they are much smaller. One day, Shido comes across a mysterious girl at ground zero of a spatial quake. From his adoptive sister, he learns the girl is one of the “Spirits.” Beings from different dimensions that cause these quakes. So Shido is tasked to seal these beings’ powers to save the world. But to do so, he must woo and kiss these girls. And thus begins the journey of our protagonist as he continues to increase his harem of superpowered girls who all try to take Shido for themselves.
+	        </div>
+	  		<a href="#watch_date_a_live4.htm" id="Watch">
+	  			<i class="material-icons" style="color: white;">play_circle</i>Watch Now</a>
+	  		<a href="#date_a_live4.htm" id="details">Details ></a>
+	    </div>
+
+	    <div class="slides">
+	    	<div id="vignette"></div>
+	        <img src="D:\projects\anime_site\images\tomodachi_game.jpg" id="slide_img">
+	        <span id="spotlight">#5 Spotlight</span>
+	        <span class="anime_name">Friends Game</span>
+	        
+	        <div class="info">
+	        	<i class="material-icons">play_circle</i>TV &nbsp
+	        	<i class="material-icons">schedule</i>23m &nbsp
+	        	<i class="material-icons">event</i>July 6, 2022 &nbsp
+	        	<span id="hd">HD</span> &nbsp
+	        	<span id="sub">sub</span> &nbsp
+				<span id="sub">dub</span> &nbsp     	
+	        </div>
+	        
+	        <div class="summary">
+	        	Yuuichi Katagiri has battled financial hardships his whole life but has learned to stay content and positive thanks to his close circle of friends. To keep a promise he made to them, Yuuichi saves up enough money to join them on the school trip. But when the gathered money mysteriously goes missing, suspicion falls on two of Yuuichi's friends: Shiho Sawaragi and Makoto Shibe, who were in charge of collecting the payments. Although innocent, Shiho and Makoto take responsibility for the failure to protect the money when no one else comes forward. A few days later, Yuuichi and his friends receive mysterious letters which trick each of them into meeting up. Upon arrival, they are ambushed and knocked unconscious. They wake up in a mysterious room in the presence of "Manabu-kun," a character from a controversial children's show that stopped airing due to its malicious content. He informs the group that one of them indirectly gathered them together in order to settle a large debt. They are to play a "friendship game": a series of games that will test the strength of their bond and trust in each other. As the group's faith wavers due to the growing number of secrets and betrayals, Yuuichi must figure out who of his "friends" he can actually trust and ultimately discover the identity of the traitor.
+	        </div>
+	  		<a href="#watch_tomodachi_game.htm" id="Watch">
+	  			<i class="material-icons" style="color: white;">play_circle</i>Watch Now</a>
+	  		<a href="#tomodachi_game.htm" id="details">Details ></a>
+	    </div>
+
+	</div>
+			<a id="change_slide" class="prev" onclick="plusSlides(-1)">❮</a>
+			<a id="change_slide" class="next" onclick="plusSlides(1)">❯</a>	    
+
+	<!--TRENDING-->
+	<div id="trending">
+		<span id="trend_title">Trending</span>
+		<div class="card">
+			<span id="name">One Piece</span>
+			<span id="trending_no">01</span>
+			<a href="#one_piece.htm">
+				<img src="D:\projects\anime_site\images\card_img1.jpg" id="card_img">
+			</a>
+		</div>
+		<div class="card">
+			<span id="name">Kaguya Sama:Love Is War</span>
+			<span id="trending_no">02</span>
+			<a href="#kaguya_sama_love_is_war.htm">
+				<img src="D:\projects\anime_site\images\card_img2.jpg" id="card_img">
+			</a>
+		</div>
+		
+		<div class="card">
+			<span id="name">Classroom Of The Elite</span>
+			<span id="trending_no">03</span>
+			<a href="#classroom_of_the_elite.htm">
+				<img src="D:\projects\anime_site\images\card_img3.png" id="card_img">
+			</a>
+		</div>
+		
+		<div class="card">
+			<span id="name">Rent A Girlfriend Season 2</span>
+			<span id="trending_no">04</span>
+			<a href="#rent_a_girlfriend_season_2.htm">
+				<img src="D:\projects\anime_site\images\card_img4.png" id="card_img">
+			</a>
+		</div>
+		
+		<div class="card">
+			<span id="name">Overlord IV</span>
+			<span id="trending_no">05</span>
+			<a href="#overlord_IV.htm">
+				<img src="D:\projects\anime_site\images\card_img5.jpg" id="card_img">
+			</a>
+		</div>
+		
+		<div class="card">
+			<span id="name">Spy X Family</span>
+			<span id="trending_no">06</span>
+			<a href="#spyxfamily.htm">
+				<img src="D:\projects\anime_site\images\card_img6.jpg" id="card_img">
+			</a>
+		</div>
+		
+		<div class="card">
+			<span id="name">The Yakuza's Guide to Babysitting</span>
+			<span id="trending_no">07</span>
+			<a href="#the_yakuzas_guide_to_babysitting.htm">
+				<img src="D:\projects\anime_site\images\card_img7.jpg" id="card_img">
+			</a>
+		</div>
+
+		<div class="card">
+			<span id="name">Made in Abyss: The Golden City of the Scorching Sun</span>
+			<span id="trending_no">08</span>
+			<a href="#made_in_abyss_the_golden_city_of_the_scorching_sun.htm">
+				<img src="D:\projects\anime_site\images\card_img8.jpg" id="card_img">
+			</a>
+		</div>
+		
+		<div class="card">
+			<span id="name">Vermeil in Gold</span>
+			<span id="trending_no">09</span>
+			<a href="#vermeil_in_gold.htm">
+				<img src="D:\projects\anime_site\images\card_img9.jpg" id="card_img">
+			</a>
+		</div>
+		
+		<div class="card">
+			<span id="name">Harem in the Labyrinth of Another World</span>
+			<span id="trending_no">10</span>
+			<a href="#harem_in_the_labyrinth_of_another_world.htm">
+				<img src="D:\projects\anime_site\images\card_img10.jpg" id="card_img">
+			</a>
+		</div>
+	</div>
+		<a id="change_slide" class="prev_card" onclick="plusCard(-1)">❮</a>
+	    <a id="change_slide" class="next_card" onclick="plusCard(1)">❯</a>	    
+
+	<!--about-->
+	<div id="about">
+		<img src="D:\projects\anime_site\images\about_luffy.png" id="aboutluffy_img">
+		<span id="about_title">About</span>
+		<div id="about_info">
+			Luffy.to is a free site to watch anime and you can even download subbed or dubbed anime in ultra HD quality without any registration or payment. By having No Ads in all kinds, we are trying to make it the safest site for free anime.Before building Luffy.to, I've checked many other free anime sites, and learnt from them. I only keep the good things and remove all the bad things from all the competitors, to put it in my Luffy website.<a href="#about" id="about_link">more..</a>
+		</div>
+		<button id="donate_about" class="nav_button">Donate</button>
+	</div>
+	
+	<!--tables-->
+		<!--Top Airirng Table-->
+		<table id="airing" class="top_table">
+			<th id="heading">Top Airing</th>
+			<tr id="list_row"><td id="list_data">
+				<img src="D:\projects\anime_site\images\TA_img1.jpg" id="table_img">
+				<span id="table_aname">
+					<a href="#kingdom_4th_season.htm" id="table_alink">Kingdom 4th Season</a>	
+				TV  Ep 19  24m</span>
+			</td></tr>
+			<tr id="list_row"><td id="list_data">
+				<img src="D:\projects\anime_site\images\TA_img2.jpg" id="table_img">
+				<span id="table_aname">
+					<a href="#Made_in_Abyss_the_golden_city_of_the_scorching_sun.htm" id="table_alink">Made in Abyss: The Golden City of the Scorching Sun</a>
+				TV  Ep 7  24m</span>
+			</td></tr>
+			<tr id="list_row"><td id="list_data">
+				<img src="D:\projects\anime_site\images\TA_img3.jpg" id="table_img">
+				<span id="table_aname">
+					<a href="#one_piece.htm" id="table_alink">One Piece</a>
+				TV  Ep 1029 24m</span>
+			</td></tr>
+			<tr id="list_row"><td id="list_data">
+				<img src="D:\projects\anime_site\images\TA_img4.png" id="table_img">
+				<span id="table_aname">
+					<a href="#summer_time_rendering.htm" id="table_alink">Summer Time Rendering</a>
+				TV  Ep 18  24m</span>
+			</td></tr>
+			<tr id="list_row"><td id="list_data">
+				<img src="D:\projects\anime_site\images\TA_img5.jpg" id="table_img">
+				<span id="table_aname">
+					<a href="#overlord_IV.htm" id="table_alink">Overlord IV</a>
+				TV  Ep 7  23m</span>
+			</td></tr>
+			<tr id="list_row"><td id="more">
+				View More >
+			</td></tr>
+		</table>
+
+		<!--Most Popular Table-->
+		<table id="popular" class="top_table">
+			<th id="heading">Most Popular</th>
+			<tr id="list_row"><td id="list_data">
+				<img src="D:\projects\anime_site\images\MP_img1.jpg" id="table_img">
+				<span id="table_aname">
+					<a href="#attack_on_titan.htm" id="table_alink">Attack on Titan</a>	
+				TV  Ep 25/25  24m</span>
+			</td></tr>
+			<tr id="list_row"><td id="list_data">
+				<img src="D:\projects\anime_site\images\MP_img2.jpg" id="table_img">
+				<span id="table_aname">
+					<a href="#death_note.htm" id="table_alink">Death Note</a>
+				TV  Ep 37/37  23m</span>
+			</td></tr>
+			<tr id="list_row"><td id="list_data">
+				<img src="D:\projects\anime_site\images\MP_img3.jpeg" id="table_img">
+				<span id="table_aname">
+					<a href="#fullmetal_alchemist_brotherhood.htm" id="table_alink">Fullmetal Alchemist: Brotherhood</a>
+				TV  Ep 64/64 24m</span>
+			</td></tr>
+			<tr id="list_row"><td id="list_data">
+				<img src="D:\projects\anime_site\images\MP_img4.jpg" id="table_img">
+				<span id="table_aname">
+					<a href="#one_punch_man.htm" id="table_alink">One Punch Man</a>
+				TV  Ep 12/12  24m</span>
+			</td></tr>
+			<tr id="list_row"><td id="list_data">
+				<img src="D:\projects\anime_site\images\MP_img5.jpg" id="table_img">
+				<span id="table_aname">
+					<a href="#sword_art_online.htm" id="table_alink">Sword Art Online</a>
+				TV  Ep 25/25  23m</span>
+			</td></tr>
+			<tr id="list_row"><td id="more">
+				View More >
+			</td></tr>
+		</table>
+
+		<!--Most favourite Table-->
+		<table id="favourite" class="top_table">
+			<th id="heading">Most favourite </th>
+			<tr id="list_row"><td id="list_data">
+				<img src="D:\projects\anime_site\images\MF_img1.jpeg" id="table_img">
+				<span id="table_aname">
+					<a href="#fullmetal_alchemist_brotherhood.htm" id="table_alink">Fullmetal Alchemist: Brotherhood</a>	
+				TV  Ep 64/64  24m</span>
+			</td></tr>
+			<tr id="list_row"><td id="list_data">
+				<img src="D:\projects\anime_site\images\MF_img2.jpg" id="table_img">
+				<span id="table_aname">
+					<a href="#hunterxhunter.htm" id="table_alink">Hunter X Hunter</a>
+				TV  Ep 148/148  23m</span>
+			</td></tr>
+			<tr id="list_row"><td id="list_data">
+				<img src="D:\projects\anime_site\images\MF_img3.jpg" id="table_img">
+				<span id="table_aname">
+					<a href="#one_piece.htm" id="table_alink">One Piece</a>
+				TV  Ep 1029 24m</span>
+			</td></tr>
+			<tr id="list_row"><td id="list_data">
+				<img src="D:\projects\anime_site\images\MF_img4.jpg" id="table_img">
+				<span id="table_aname">
+					<a href="#steins_gate.htm" id="table_alink">Steins;Gate</a>
+				TV  Ep 24/24  24m</span>
+			</td></tr>
+			<tr id="list_row"><td id="list_data">
+				<img src="D:\projects\anime_site\images\MF_img5.jpg" id="table_img">
+				<span id="table_aname">
+					<a href="death_note.htm" id="table_alink">Death Note</a>
+				TV  Ep 37/37  23m</span>
+			</td></tr>
+			<tr id="list_row"><td id="more">
+				View More >
+			</td></tr>
+		</table>
+
+		<!--Completed Table-->
+		<table id="completed" class="top_table">
+			<th id="heading">Completed</th>
+			<tr id="list_row"><td id="list_data">
+				<img src="D:\projects\anime_site\images\com_img1.jpg" id="table_img">
+				<span id="table_aname">
+					<a href="#kikis_delivery_service.htm" id="table_alink">Kiki's Delivery Sevice</a>	
+				Movie  Ep Full  103m</span>
+			</td></tr>
+			<tr id="list_row"><td id="list_data">
+				<img src="D:\projects\anime_site\images\com_img2.jpg" id="table_img">
+				<span id="table_aname">
+					<a href="#street_fighter_alpha_the_movie.htm" id="table_alink">Street Fighter Alpha:the Movie</a>
+				Movie  Ep Full  90m</span>
+			</td></tr>
+			<tr id="list_row"><td id="list_data">
+				<img src="D:\projects\anime_site\images\com_img3.jpg" id="table_img">
+				<span id="table_aname">
+					<a href="#super_street_fighter_IV.htm" id="table_alink">Super Street Fighter IV</a>
+				OVA  Ep 1/1 35m</span>
+			</td></tr>
+			<tr id="list_row"><td id="list_data">
+				<img src="D:\projects\anime_site\images\com_img4.jpg" id="table_img">
+				<span id="table_aname">
+					<a href="#street_fighter_IV_the_ties_that_bind.htm" id="table_alink">Street Fighter IV:The Ties That Bind</a>
+				OVA  Ep 1/1  65m</span>
+			</td></tr>
+			<tr id="list_row"><td id="list_data">
+				<img src="D:\projects\anime_site\images\com_img5.jpg" id="table_img">
+				<span id="table_aname">
+					<a href="street_fighter_alpha_generation.htm" id="table_alink">Street Fighter Alpha:Generation</a>
+				Movie  Ep Full  42m</span>
+			</td></tr>
+			<tr id="list_row"><td id="more">
+				View More >
+			</td></tr>
+		</table>
+
+	<!--Latest Episodes-->
+	<span id="latest_heading">Latest Episode</span>
+	<div id="latest">
+		
+		<div id="episode_card">
+			<div class="img_gradient">
+				<a href="#super_dragon_ball_heros_ultra_god_mission.htm">
+				<img src="D:\projects\anime_site\images\latest_ep_img1.png" id="ep_img">
+			</div>
+			<span id="ep_sub" class="ep_info">sub</span>
+			<span id="ep_no" class="ep_info">Ep 3</span>
+			<span id="ep_name">Super Dragon Ball Heros:Ultra God Mission</span></a>
+			<span id="ep_detail">TV 10m</span>
+		</div>
+		
+		<div id="episode_card">
+			<div class="img_gradient">
+				<a href="#harem_in_the_labyrinth_of_another_world_uncesored.htm">
+				<img src="D:\projects\anime_site\images\latest_ep_img2.jpg" id="ep_img">
+			</div>
+			<span id="ep_age" class="ep_info">18+</span>
+			<span id="ep_sub" class="ep_info">sub</span>
+			<span id="ep_no" class="ep_info">Ep 7</span>
+			<span id="ep_name">Harem In The Labyrinth of Another World (Uncesored)</span></a>
+			<span id="ep_detail">TV 23m</span>
+		</div>
+		<div id="episode_card">
+			<div class="img_gradient">
+				<a href="#night_with_a_cat.htm">
+					<img src="D:\projects\anime_site\images\latest_ep_img3.png" id="ep_img">
+				</a>
+			</div>
+			<span id="ep_sub" class="ep_info">sub</span>
+			<span id="ep_no" class="ep_info">Ep 5</span>
+			<span id="ep_name">Night With a Cat</span></a>
+			<span id="ep_detail">TV 2m</span>
+		</div>
+		<div id="episode_card">
+			<div class="img_gradient">
+				<a href="#the_prince_of_tennis_II.htm">
+				<img src="D:\projects\anime_site\images\latest_ep_img4.jpg" id="ep_img">
+			</div>
+			<span id="ep_sub" class="ep_info">sub</span>
+			<span id="ep_dub" class="ep_info">dub</span>
+			<span id="ep_no" class="ep_info">Ep 7</span>
+			<span id="ep_name">The Prince of Tennis II: U-17 World Cup</span></a>
+			<span id="ep_detail">TV 23m</span>
+		</div>
+		<div id="episode_card">
+			<div class="img_gradient">
+				<a href="#harem_in_the_labyrinth_of_another_world.htm">
+				<img src="D:\projects\anime_site\images\latest_ep_img5.jpg" id="ep_img">
+			</div>
+			<span id="ep_age" class="ep_info">18+</span>
+			<span id="ep_sub" class="ep_info">sub</span>
+			<span id="ep_no" class="ep_info">Ep 7</span>
+			<span id="ep_name">Harem In The Labyrinth of Another World</span></a>
+			<span id="ep_detail">TV 23m</span>
+		</div>
+		<div id="episode_card">
+			<div class="img_gradient">
+				<a href="#ojisan_in_another_world.htm">
+				<img src="D:\projects\anime_site\images\latest_ep_img6.jpg" id="ep_img">
+			</div>
+			<span id="ep_sub" class="ep_info">sub</span>
+			<span id="ep_no" class="ep_info">Ep 5</span>
+			<span id="ep_name">Ojisan in Another World</span></a>
+			<span id="ep_detail">TV 22m</span>
+		</div>
+		<div id="episode_card">
+			<div class="img_gradient">
+				<a href="#made_in_abyss_the_golden_city_of_the_scorching_sun.htm">
+				<img src="D:\projects\anime_site\images\latest_ep_img7.jpg" id="ep_img">
+			</div>
+			<span id="ep_age" class="ep_info">18+</span>
+			<span id="ep_sub" class="ep_info">sub</span>
+			<span id="ep_no" class="ep_info">Ep 7</span>
+			<span id="ep_name">Made in Abyss: The Golden City of the Scorching Sun</span></a>
+			<span id="ep_detail">TV 24m</span>
+		</div>
+		<div id="episode_card">
+			<div class="img_gradient">
+				<a href="#my_stepsister_is_my_ex_girlfriend.htm">
+				<img src="D:\projects\anime_site\images\latest_ep_img8.jpg" id="ep_img">
+			</div>
+			<span id="ep_sub" class="ep_info">sub</span>
+			<span id="ep_no" class="ep_info">Ep 7</span>
+			<span id="ep_name">My Stepsister is My Ex-Girlfriend</span></a>
+			<span id="ep_detail">TV 23m</span>
+		</div>
+		<div id="episode_card">
+			<div class="img_gradient">
+				<a href="#smile_of_the_arsnotoria_the_animation.htm">
+				<img src="D:\projects\anime_site\images\latest_ep_img9.png" id="ep_img">
+			</div>
+			<span id="ep_sub" class="ep_info">sub</span>
+			<span id="ep_dub" class="ep_info">dub</span>
+			<span id="ep_no" class="ep_info">Ep 7</span>
+			<span id="ep_name">Smile of The Arsnotoria The Animation</span></a>
+			<span id="ep_detail">TV 23m</span>
+		</div>
+		<div id="episode_card">
+			<div class="img_gradient">
+				<a href="#overlord_le_ple_pleiades_4.htm">
+				<img src="D:\projects\anime_site\images\latest_ep_img10.jpg" id="ep_img">
+			</div>
+			<span id="ep_sub" class="ep_info">sub</span>
+			<span id="ep_no" class="ep_info">Ep 7</span>
+			<span id="ep_name">Overlord: Ple Ple Pleiades 4</span></a>
+			<span id="ep_detail">TV 2m</span>
+		</div>
+		<div id="episode_card">
+			<div class="img_gradient">
+				<a href="#shine_post.htm">
+				<img src="D:\projects\anime_site\images\latest_ep_img11.jpg" id="ep_img">
+			</div>
+			<span id="ep_sub" class="ep_info">sub</span>
+			<span id="ep_no" class="ep_info">Ep 6</span>
+			<span id="ep_name">Shine Post</span></a>
+			<span id="ep_detail">TV 23m</span>
+		</div>
+		<div id="episode_card">
+			<div class="img_gradient">
+				<a href="#dropkick_on_my_devillX.htm">
+				<img src="D:\projects\anime_site\images\latest_ep_img12.png" id="ep_img">
+			</div>
+			<span id="ep_sub" class="ep_info">sub</span>
+			<span id="ep_no" class="ep_info">Ep 7</span>
+			<span id="ep_name">Dropkick on My Devill!! X</span></a>
+			<span id="ep_detail">TV 23m</span>
+		</div>
+		<div id="episode_card">
+			<div class="img_gradient">
+				<a href="#overlord_IV.htm">
+				<img src="D:\projects\anime_site\images\latest_ep_img13.jpg" id="ep_img">
+			</div>
+			<span id="ep_age" class="ep_info">18+</span>
+			<span id="ep_sub" class="ep_info">sub</span>
+			<span id="ep_no" class="ep_info">Ep 7</span>
+			<span id="ep_name">Overlord IV</span></a>
+			<span id="ep_detail">TV 23m</span>
+		</div>
+		<div id="episode_card">
+			<div class="img_gradient">
+				<a href="#vermeil_in_gold.htm">
+				<img src="D:\projects\anime_site\images\latest_ep_img14.jpg" id="ep_img">
+			</div>
+			<span id="ep_sub" class="ep_info">sub</span>
+			<span id="ep_no" class="ep_info">Ep 7</span>
+			<span id="ep_name">Vermeil in Gold</span></a>
+			<span id="ep_detail">TV 24m</span>
+		</div>
+		<div id="episode_card">
+			<div class="img_gradient">
+				<a href="#god_troubles_me.htm">
+				<img src="D:\projects\anime_site\images\latest_ep_img15.png" id="ep_img">
+			</div>
+			<span id="ep_sub" class="ep_info">sub</span>
+			<span id="ep_no" class="ep_info">Ep 4/12</span>
+			<span id="ep_name">God Troubles Me</span></a>
+			<span id="ep_detail">OVA 15m</span>
+		</div>
+	</div>
+
+	<!--Footer-->
+	<div id="footer">
+		<div id="footer_gradient"></div>
+		<img src="D:\projects\anime_site\images\luffy_footer2.jpg" id="footer_img">
+		<div id="footer_content">
+			<img src="D:/projects/anime_site/images/logo_nobg.png" alt="logo" id="logo">
+			<img src="D:/projects/anime_site/images/name.png" alt="site_name" id="name">
+			<div id="social_icons">
+				<a href="#instagram"><img src="D:/projects/anime_site/images/instagram_icon.png" id="icon" alt="instagram icon"></a>
+				<a href="#facebook"><img src="D:/projects/anime_site/images/facebook_icon.jpg" id="icon" alt="facebook icon"></a>
+				<a href="#gmail"><img src="D:/projects/anime_site/images/mail_icon.png" id="icon" alt="gmail icon"></a>
+				<a href="#pintrest"><img src="D:/projects/anime_site/images/pintrest_icon.png" id="icon" alt="pintrest icon"></a>
+				<a href="#linkedin"><img src="D:/projects/anime_site/images/linkedin_icon.png" id="icon" alt="linkedin icon"></a>
+				<a href="#twitter"><img src="D:/projects/anime_site/images/twitter_icon.png" id="icon" alt="twitter icon"></a>
+			</div>
+			<span id="search_option"><h3>A-Z LIST</h3>
+				Searching anime order by alphabet name A to Z<br><br>
+				<div id="search_links">
+					<a href="#list_" id="list_link">All</a>
+					<a href="#list_hash" id="list_link">#</a> <a href="#list_0to9" id="list_link">0-9</a>
+					<a href="#list_A" id="list_link">A</a> <a href="#list_B" id="list_link">B</a>
+					<a href="#list_C" id="list_link">C</a> <a href="#list_D" id="list_link">D</a>
+					<a href="#list_E" id="list_link">E</a> <a href="#list_F" id="list_link">F</a>
+					<a href="#list_G" id="list_link">G</a> <a href="#list_H" id="list_link">H</a>
+					<a href="#list_I" id="list_link">I</a> <a href="#list_J" id="list_link">J</a>
+					<a href="#list_K" id="list_link">K</a> <a href="#list_L" id="list_link">L</a>
+					<a href="#list_M" id="list_link">M</a> <a href="#list_N" id="list_link">N</a>
+					<a href="#list_O" id="list_link">O</a> <a href="#list_O" id="list_link">O</a>
+					<a href="#list_P" id="list_link">P</a> <a href="#list_Q" id="list_link">Q</a>
+					<a href="#list_R" id="list_link">R</a> <a href="#list_S" id="list_link">S</a>
+					<a href="#list_T" id="list_link">T</a> <a href="#list_U" id="list_link">U</a>
+					<a href="#list_V" id="list_link">V</a> <a href="#list_W" id="list_link">W</a>
+					<a href="#list_X" id="list_link">X</a> <a href="#list_Y" id="list_link">Y</a>
+					<a href="#list_Z" id="list_link">Z</a><br><br>
+					<a href="#list_tos" id="list_link">TermsofService</a>
+					<a href="#list_dmca" id="list_link">DMCA</a>
+					<a href="#list_contact" id="list_link">Contact</a><br>
+				</div>
+				<p id="luffy_footer_info">
+					Luffy.to does not store any files on our server, we only linked to the media which is hosted on 3rd party services.<br>
+					&#169Luffy.to
+				</p>
+			</span>
+		</div>
+	</div>
+
+<script>
+	var navbar = document.getElementById("nav");
+	window.onscroll = function() {navColor()};
+	
+//navigation color on scroll
+    function navColor(){
+		if (window.pageYOffset != 0) {
+	    	navbar.style.backgroundColor = "rgba(0,0,0,0.7)";
+	  	} 
+	  	else if(window.pageYOffset == 0){
+	    	navbar.style.backgroundColor = "";
+	  	}	
+	}
+
+//side navigation script
+	let slideIndex = 1;
+	showSlides(slideIndex);
+	//open side navigation 	
+	function openNav() {
+	  document.getElementById("mySidenav").style.width = "300px";
+	}
+
+	//close side navigation 
+	function closeNav() {
+	  document.getElementById("mySidenav").style.width = "0";
+	  document.getElementById("list").style.display = "none";
+	}
+
+	//list of genre 
+	function showList() {
+	  var x = document.getElementById("list");
+	  if (x.style.display === "none") {
+	    x.style.display = "block";
+	  } 
+	  else {
+	    x.style.display = "none";
+	  }
+	}
+
+//slideshow script
+	// Next/previous controls
+	 function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    //current slide 
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+    
+    //show slide 
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("slides");
+        
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slides[slideIndex-1].style.display = "block";  
+    }
+    
+//multiple slideshow script
+    //card index
+	let cardIndex = 5;
+	showCard(cardIndex);
+
+	// Next/previous controls
+	 function plusCard(n) {
+        showCard(cardIndex += n);
+    }
+
+    //current cards
+    function currentCard(n) {
+        showCard(cardIndex = n);
+    }
+    
+    //show cards
+    function showCard(n) {
+        let i;
+        let cards = document.getElementsByClassName("card");
+        
+        if (n > cards.length) {cardIndex = cards.length;}    
+        if (n < 5) {cardIndex = 5;}
+        /*to display all as none*/
+        for (i = 0; i < cards.length; i++) {
+            cards[i].style.display = "none";  
+        }
+        /*to set all visible cards as inline-block*/
+        for (i = cardIndex-5; i < cardIndex; i++) {
+            cards[i].style.display = "inline-block";  
+        } 
+    }
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

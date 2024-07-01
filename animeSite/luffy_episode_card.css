@@ -1,0 +1,109 @@
+/*episode card css*/
+	/* episode card style*/
+	div#episode_card{
+		background-color: #121212;
+		position: relative;
+		top: 41em;
+		left: 0em;
+		margin-left: 1em;
+		margin-top: 1em;
+		display: inline-block;
+		height: 25em;
+		width: 15em;
+	}
+
+	/* episode image style*/
+	img#ep_img{
+		height: 20em;
+		width: 15em;
+	}
+
+	/*gradient class style*/
+	div.img_gradient{
+	  position: absolute;
+	  height: 20em;	
+	  width: 15em;
+	  display: block;
+	}
+
+	/*gradient effect*/
+	div.img_gradient:after {
+	  content: '';
+	  position: absolute;
+	  top: 0; left: 0; bottom: 0; right: 0;
+	  background: linear-gradient(to bottom , transparent 50%, #121212);
+	}
+
+	/*hover effect on image with play icon display to block*/
+	div.img_gradient:hover {
+		opacity: 0.3;
+		cursor: pointer;
+	}
+
+	/*all info boxes basic style*/
+	span.ep_info{
+		position: absolute;
+		z-index: 1;
+		color: white;
+		display: block;
+		padding: 0em 0.5em 0em 0.4em;
+		border-radius: 0.3em;
+		height: 1.2em;
+	}
+
+	/*episode no info style*/
+	span#ep_no{
+		background-color: #ff3333;
+		top: 17.1em;
+		right: 0.4em;
+	}
+
+	/*episode sub info style*/
+	span#ep_sub{
+		background-color: black;
+		top: 17.3em;
+		left: 0.2em;
+	}
+
+	/*episode sub info style*/
+	span#ep_dub{
+		background-color: black;
+		top: 17.3em;
+		left: 3.5em;
+	}
+
+	/*episode 18+ info style*/
+	span#ep_age{
+		background-color: white;
+		top: 0.5em;
+		left: 0.5em;
+		color: ff3333;
+	}
+
+	/* episode name/detail style*/
+	span#ep_name{
+		position: absolute;
+		top: 20em;
+		color: white;
+		left: 0.5em;
+		display: block;
+		width: 14em;
+		height: 2.5em;
+		overflow-y: hidden;
+	}
+
+	/* name hover effect*/
+	span#ep_name:hover{
+		color: #ff3333;
+		cursor: pointer;
+	}
+
+	/*episode details style*/
+	span#ep_detail{
+		position: absolute;
+		word-spacing: 2em;
+		top: 29em;
+		left: 0.7em;
+		font-size: 0.8em;
+		color: lightgray;
+	}
