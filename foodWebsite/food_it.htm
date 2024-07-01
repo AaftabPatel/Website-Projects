@@ -1,0 +1,316 @@
+<html>
+<head>
+<title>FOOD-IT</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+  }
+
+  #content1{
+    z-index: 2;
+    color: white;
+    font-size: 2em;
+    text-align: center;
+    position: relative;
+    top: -75%;
+    }
+
+  i#smartphone{
+    position: absolute;
+    top: 1.5%;
+    color: red;
+    left: 1.8%;
+  }
+
+  button#get_app{
+    position: relative;
+    font-size: 1em;
+    top: -98%;
+    left: 3%;
+    background: none;
+    cursor: pointer;
+    color: ghostwhite;
+    border: none;
+  }
+
+  #p1{
+    background-image: url('file:///D:/projects/food_website/food_bg1.jpg');
+    height: 100%; 
+  }
+  
+  #p2{
+    background: #121212;
+    height: 60%; 
+  }
+
+  #p3{
+    background-image: url('file:///D:/projects/food_website/food_bg8.jpg');
+    height: 100%; 
+  }
+
+  #p4{
+    background-color: #121212;
+    height: 30%; 
+  }
+
+  #container1{
+    height: 100%;
+    margin: 0;
+    background-color: black;
+    opacity: 0.5;
+  }
+
+  .parallax {
+    /* Full height */
+    height: 100%; 
+    overflow: hidden;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  ul{
+    position: absolute;
+    font-size: 25px;
+    top: 0px;
+    right: 0px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0px;
+    overflow: hidden;
+    background-color: none;
+  }
+    
+  li{
+    float: right;
+    padding: 0px 20px 0px 5px;
+    
+  }
+
+  li a{
+    display: block;
+    transition: all .4  s ease;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  li a:hover{
+    background-color: rgb(252, 246, 246);
+    color: black;
+  }
+    
+  .active{
+    background-color: #04AA6D;
+  }
+
+  i{
+    position: absolute;
+    top: 46.5%;
+  }
+
+  i#location_icon{
+    left: 26%;
+    color: red;
+  }
+
+  i#search_icon{
+    left: 36%;
+  }
+
+  input{
+    background: none;
+    position: absolute;
+    font-size: 0.7em;
+    border: none;
+    margin-left: -2%;
+    top: 46%;
+  }
+
+  input#search{
+    width: 35%;
+    left: 40%;
+  }
+
+  input#location{
+    width: 8%;
+    left: 30%;
+  }
+
+  input.active{
+    border: none;
+  }
+
+  div#search_bar{
+    background-color: #121212;
+    width: 50%;
+    margin-left: 25%;
+    height: 8%;
+    border: 1px solid grey;
+    border-radius: 0.3em;
+  }
+
+  img{
+    height: 45%;
+    width: 35%;
+    position: relative;
+  }
+
+  div.desc{
+    padding: 0;
+    width: 33%;
+    text-align: center;
+    color: white;
+    position: relative;
+  }
+
+  div#desc1{
+    top: 5%;
+    left: 0%;
+  }
+
+  div#desc2{
+    top: -82%;
+    left: 30%;
+  }
+
+  div#desc3{
+    top: -164%;
+    left: 65%;
+  }
+
+  img#store{
+    width: 13%;
+    border-radius: 1em;
+    height: 10%;
+  }
+
+  div#container2{
+    position: relative;
+    color: white;
+    top: -90%;
+    left: 2%;
+  }
+
+  h1#heading1{
+    font-size: 4em;
+  }
+
+  h3#heading1{
+    font-size: 1.9em;
+  }
+
+  img#ss1{
+    width: 35%;
+    border: 13px solid white;
+    border-radius: 1em;
+    position: relative;
+    top: -150%;
+    left: 35%; 
+  }
+
+  img#ss2{
+    width: 35%;
+    position: relative;
+    border-radius: 1em;
+    border: 13px solid white; 
+    top: -130%;
+    left: 22%; 
+  }
+
+  div#footer{
+    color: white;
+    text-align: center;
+  }
+
+  img#icon{
+    position: relative; 
+    border-radius: 3%;
+    height: 20%;
+    width: 5%;
+    padding: 0.5em;
+  }
+
+</style>
+</head>
+<body>
+  <div class="parallax" id="p1">
+    <div id="container1">
+    </div>
+    <i class="material-icons" id="smartphone">smartphone</i>
+    <button id="get_app">Get the App</button>
+    <ul>
+      <li><a href = "#home"><font color="red">Home</font></a></li>
+      <li><a href = "#addrestaurant">Add Restaurant</a></li>
+      <li><a href = "#login">Log In</a></li>
+      <li><a href = "#signin">Sign Up</a></li>
+      <li><a href = "#contact">Contact</a></li>
+    </ul>
+    <div id="content1">
+      <h1>FOOD <font color="red">IT</font ></h1>
+      <div id="search_bar"> 
+        <i class="material-icons" id="location_icon">pin_drop</i>
+        <input type="text" id="location" placeholder="location"></input>
+        <i class="material-icons" id="search_icon">search</i>
+        <input type="text" id="search" placeholder="search for Restaurant, cuisine or a dish">
+        </input>
+      </div>
+      <h4>There Is Nothing More <font color="red">Romantic</font> Than Delicious Food <br>
+        Find It <font color="red">On</font> Food It</h4>
+    </div>      
+  </div>
+
+  <div class="parallax" id="p2">
+    <div id="desc1" class="desc">
+    <img src="D:/projects/food_website/order.png" id="order" alt="No Minimum Order"><br><br>
+    <h2>No Minimum Order</h2><br>
+    Order in for yourself or for the group, <br>with no restrictions on order value
+    </div>
+
+    <div id="desc2" class="desc">
+    <img src="D:/projects/food_website/tracking.png" id="tracking" alt="Live Order Tracking"><br><br><br>
+    <h2>Live Order Tracking</h2><br>  
+    Know where your order is at all times, <br>from the restaurant to your doorstep
+    </div>
+
+    <div id="desc3" class="desc">
+    <img src="D:/projects/food_website/delivery.png" id="delivery" alt="Lightning Fast Delivery"><br><br>
+    <h2>Lightning-Fast Delivery</h2><br>
+    Experience Swiggy's superfast delivery <br>for food delivered fresh & on time
+    </div>
+  </div>
+
+  <div class="parallax" id="p3">
+    <div id="container1">
+    </div>
+    <div id="container2">
+      <h1 id="heading1">Restaurant In <br>Your Bag</h1>
+      <h3 id="heading1">Order from your favorite <br>restaurants & track on the go, <br>with the FOOD 
+        <font color="red">IT</font>.</h3> 
+      <a href="#playstore"><img src="D:/projects/food_website/playstore.png" alt="get it on playstore" id="store"></a>
+      <a href="#applestore"><img src="D:/projects/food_website/apple_store.png" alt="get it on apple store" id="store"></a>
+    </div>
+    <img src="D:/projects/food_website/food_bg6.jpg" alt="screen" id="ss1">
+    <img src="D:/projects/food_website/food_bg7.jpg" alt="screen" id="ss2">
+  </div>
+
+  <div class="parallax" id="p4">
+    <div id="footer">
+      <h1>FOOD <font color="red">IT</font></h1><h2>©2022</h2>
+      <a href="#instagram"><img src="D:/projects/images/instagram_icon.png" id="icon" alt="instagram icon"></img></a>
+      <a href="#facebook"><img src="D:/projects/images/facebook_icon.png" id="icon" alt="facebook icon"></img></a>
+      <a href="#gmail"><img src="D:/projects/images/gmail_icon.png" id="icon" alt="gmail icon"></img></a>
+      <a href="#pintrest"><img src="D:/projects/images/pintrest_icon.png" id="icon" alt="pintrest icon"></img></a>
+      <a href="#linkedin"><img src="D:/projects/images/linkedin_icon.png" id="icon" alt="linkedin icon"></img></a>
+      <a href="#twitter"><img src="D:/projects/images/twitter_icon.png" id="icon" alt="twitter icon"></img></a>
+    </div>
+  </div>
+
+</body>
+</html>
+
