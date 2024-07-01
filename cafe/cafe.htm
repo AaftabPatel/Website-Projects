@@ -1,0 +1,305 @@
+<html>
+<head>
+<title>THE-CAFE</title>
+<style>
+	body, html {
+    height: 100%;
+    margin: 0;
+  }
+
+  a{
+  	text-decoration: none;
+  	padding: 2%;
+  	font-size: 2em;
+  }
+  a:link, a:visited {
+  	color: #FC6;
+  } 
+    
+    #p1{
+       /* The image used */
+      background-image: url('file://D:/projects/cafe site/cafe_images/antique-cafe-bg-01.jpg');
+    }
+    
+    #p2{
+       /* The image used */
+      background-image: url('file:///D:/projects/cafe site/cafe_images/antique-cafe-bg-02.jpg');
+      height: 145%;
+    }
+
+    #p3{
+       /* The image used */
+      background-image: url('file:///D:/projects/cafe site/cafe_images/antique-cafe-bg-03.jpg');
+      height: 145%;
+    }
+
+    #p4{
+       /* The image used */
+      background-image: url('file:///D:/projects/cafe site/cafe_images/antique-cafe-bg-04.jpg');
+    }
+    .parallax {
+     
+      /* Full height */
+      height: 100%; 
+      overflow: hidden;
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    nav{
+	  	position: sticky;
+	  	height: 5%;
+	  	display: flex;
+  		justify-content: right;
+  }
+  #name{
+  	background-color: rgba(0, 0, 0, 0.5);	
+  	padding: 2em 4em;
+  	text-align: center;
+  	position: relative;
+  	top: 20%;
+  	height: 35%;
+  	margin: auto;
+  	width: 22%;
+  	color:  #FC6;
+  }
+
+  h1#cafe_name{
+  	font-size: 3em;
+  	color: white;
+  	text-decoration: underline;
+  }
+
+  img#logo{
+  	position: absolute;
+  	width: 12%;
+	border-radius: 70%;
+  }
+
+  button#explore{
+  	background-color: rgba(0, 0, 0, 0.5);
+  	border-radius: 10px;
+  	position: relative;
+  	left: 43%;
+  	font-size: 1.3em;
+  	top: 23%;
+  	border: none;
+  	color: #FC6;
+  	padding: 1em;	
+  }
+
+  p#slogan{
+  	font-size: 1.2em;
+  }
+
+  #our_menu{
+  	background-color: white;
+  	border-radius: 10px;
+  	padding: 0.5em 1em;
+  	margin: auto;
+  	width: 6em;
+  }
+
+  h2{
+  	color: #FC6;
+  }
+  .grid-container {
+	display: grid;
+  	grid-template-columns: auto auto;
+  	padding: 7%;
+  }
+
+  table{
+  	background-color: #544639;
+  	padding: 2em;
+  	width: 30em;
+  	border-radius: 10px;
+  	color: white;
+  }
+
+  td{
+  	padding: 1em;
+  }
+
+  #about,#contact{
+  	color: #007C7D;
+  }
+
+  #about_box,#contact_box	{
+  	background-color: rgba(256,256, 256, 0.8);
+  	width: 40%;
+  	padding: 2em;
+  	font-size: 18px;	
+  	border-radius: 10px;
+  }
+  #about_box{
+  	position: relative;
+  	top: 10%;
+  	height: 50%;
+  	left: 53%;
+
+  }
+  #contact_box{
+  	position: relative;
+  	top: 10%;
+  	left: 2%;
+  	height: 70%;
+  }
+
+  #contact_btn,#maps_btn{
+  	background-color: #007C7D;
+  	border-radius: 5px;
+  	color: white;
+  	padding: 0.5em 1em; 
+  	font-size: 20px; 
+  	border: none;
+  }
+  #contact_btn{
+  	position: relative;
+  	left: 55%;
+  	top: 13%;
+  }
+  #maps_btn{
+  	position: relative;
+  	left: -0%;	
+  	top: 53%;
+  }
+
+  #msg_box{
+  	position: relative;
+  	background-color: rgba(0,0, 0, 0.5);
+  	width: 40%;
+  	padding: 1em;
+  	height: 75%;
+  	left: 55%;
+  	border-radius: 10px;
+  	top: -70%;
+  }
+
+  input{
+  	background: none;
+  	width: 100%;
+  	height: 20%;
+  	padding: 1em;
+  	border: none;
+  	font-size: 1.3em;
+  	border-bottom: 1px solid #FC6; 
+  }
+  #txt_area{
+  	background: none;
+  	width: 100%;
+  	height: 40%;
+  	outline-color: #FC6;
+  	padding: 0.5em;
+  	border: none;
+  	font-size: 1.5em;
+  	border-bottom: 1px solid #FC6; 
+  }
+
+  #send_btn{
+  	border: none;
+  	background: none;
+  	color: white;
+  	float: right;
+  	padding: 1em;
+  	font-size: 1.2em;
+  	cursor: pointer;
+  }
+  #send_btn:hover{
+  	color: rgba(256, 256, 256, 0.8);
+  }
+</style>
+</head>
+<body>
+	<img src="cafe_images/cafe_logo.jpg" id="logo"></img>
+	<div class="parallax" id="p1">
+    	<nav><a href="#p1">Intro</a><a href="#p2">Menu</a><a href="#p3">About</a><a href="#p4">Contact</a></nav>
+    	<div id="name">
+    		<h1 id="cafe_name">THE-CAFE</h1><br>
+    		<p id="slogan">your daily energy booster</p>
+    	</div>
+    	<button id="explore">Let's Explore...	</button>     
+  	</div>
+
+  	<div class="parallax" id="p2">
+    <h1 id="our_menu">OUR MENU</h1>
+    <div class="grid-container">
+	    <table id="pg1" class="grid-item">
+	    	<tr>
+	    		<td><img src="cafe_images/menu-item-1.jpg" alt="hot cappuccino"></img></td>
+	    		<td><h2>Hot Cappuccino</h2><br>S ₹150<br>L ₹250</td>
+	    	</tr>
+	    	<tr>
+	    		<td><img src="cafe_images/menu-item-2.jpg" alt="hot americano"></img></td>
+	    		<td><h2>Hot Americano</h2><br>S ₹200<br>L ₹350</td>
+	    	</tr>
+	    	<tr>
+	    		<td><img src="cafe_images/menu-item-3.jpg" alt="hot latte"></img></td>
+	    		<td><h2>Hot Latte</h2><br>M ₹175<br>L ₹275</td>
+	    	</tr>
+	    	<tr>
+	    		<td><img src="cafe_images/menu-item-4.jpg" alt="hot espresso"></img></td>
+	    		<td><h2>Hot Espresso<br>Hot Chocolate</h2><br>Size M ₹125 . L ₹225</td>
+	    	</tr>
+	    </table>
+	  	<table id="pg2" class="grid-item">
+	    	<tr>
+	    		<td><img src="cafe_images/menu-item-5.jpg" alt="iced cappuccino"></img></td>
+	    		<td><h2>Iced Cappuccino</h2><br>Small ₹160<br>Large ₹275</td>
+	    	</tr>
+	    	<tr>
+	    		<td><img src="cafe_images/menu-item-6.jpg" alt="iced americano"></img></td>
+	    		<td><h2>Iced Americano</h2><br>Small ₹220<br>Large ₹370</td>
+	    	</tr>
+	    	<tr>
+	    		<td><img src="cafe_images/menu-item-7.jpg" alt="iced latte"></img></td>
+	    		<td><h2>Iced Milky Latte</h2><br>Small ₹185<br>Large ₹285</td>
+	    	</tr>
+	    	<tr>
+	    		<td><img src="cafe_images/menu-item-8	.jpg" alt="iced espresso"></img></td>
+	    		<td><h2>Iced Espresso<br>Iced Mocha</h2><br>Small ₹140 . Large ₹250</td>
+	    	</tr>
+	    </table>
+  	</div>
+  </div>
+
+  <div class="parallax" id="p3">
+    <div id="about_box">
+    	<h1 id="about">About our cafe</h1>
+  		The Cafe offers a unique coffee house environment unlike any other. We are not only a place to drop in and get your 
+  		morning cup of coffee , we are a place where you can sit down and enjoy that tailor-made cup of coffee. If you need 
+  		to work, we have a seating area created specifically for you. If you need to rest, we have a soft-seating area in 
+  		front of a stone fire place that is perfect for your weary mind and body. <br><br>
+  		We offer a delicious variety of coffee from Safehouse Coffee made by our professionally trained baristas. We have everything from classic coffee to our house made specialty beverages ensuring you the highest quality in taste health.  You can complete your coffee with one of our delicious sweet treats made by our very own baker. We look forward to serving you at The Cafe!
+  	</div>
+  	<button id="contact_btn">Contact</button>
+  </div>
+
+  <div class="parallax" id="p4">
+  	
+	    <div id="contact_box" >
+	    	<h1 id="contact">Conact Us</h1>
+	    	To get in touch or to order via call use the below given number.<br>
+	    	we are all ears for any feedbacks and advices to improve yoyr thaughts means a lot so please tel us if any...
+	    	<br><br>
+	    	Tel: 0104-9875<br>
+	    	mob: 9516765423<br>
+			Email: thecafe@gmail.com
+			<button id="maps_btn">Open Maps</button>
+		</div>
+		<div id="msg_box"> 
+			<form id="msg">
+				<input type="text" placeholder="Name"></input>
+				<input type="email" placeholder="Email"></input>	
+			</form>
+			<textarea rows="6" cols="30" id="txt_area" placeholder ="message..." form="msg"></textarea>
+			<button id="send_btn">Send it</button>
+	</div>
+  </div>
+<script>
+</script>
+</body>
+</html>	
