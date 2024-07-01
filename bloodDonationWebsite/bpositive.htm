@@ -1,0 +1,373 @@
+<html>
+<head>
+<title>B+POSITIVE</title>
+<style>
+    body, html {
+        height: 100%;
+        margin: 0;
+    }
+
+    #p1{
+       /* The image used */
+      background-image: url('file:///D:/projects/blood_donation_website/blood_bg8.jpg');
+      height: 100%;
+    }
+    
+    #p2{
+        height: 50%;
+        background-color: #121212;
+    }
+
+    #p3{
+       /* The image used */
+      background-image: url('file:///D:/projects/blood_donation_website/blood_bg2.jpg');
+      height: 100%;
+    }
+    
+    #p4{
+        height: 50%;
+        background-color: #121212;
+    }
+
+    #p5{
+       /* The image used */
+      background-image: url('file:///D:/projects/blood_donation_website/blood_bg9.jpg');
+      height: 100%;
+    }
+    
+    #p6{
+        height: 40%;
+        background-color: #121212;
+    }
+
+    .parallax {  
+      overflow: hidden;
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    #container1{
+        height: 100%;
+        margin: 0;
+        z-index: 2;
+        background-color: black;
+        opacity: 0.4;
+    }
+
+	#logo{
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 2;
+        height: 150px;
+    }
+    
+    ul#nav1{
+        position: absolute;
+        top: 0px;
+        right: 0px;
+    }
+    
+    ul#nav2{
+        position: relative;
+        top: -20%;
+        right: 0;
+    }
+
+    ul{
+        font-size: 25px;
+        list-style-type: none;
+        margin: 0;
+        padding: 0px;
+        overflow: hidden;
+        background-color: none;
+    }
+
+    li{
+        float: right;
+        padding: 0px 20px 0px 5px;
+    }
+
+    li a{
+        display: block;
+        color: white;
+        padding: 24px 25px;
+        text-decoration: none;
+    }
+
+    li a:hover{
+        background-color: rgb(252, 246, 246);
+        color: black;
+    }
+    .active{
+        background-color: #04AA6D;
+    }
+
+    #content1{
+    	color: white;
+    	position: absolute;
+    	top: 35%;
+    	left: 10%;
+    	font-size: 4em;
+    }
+    button {
+		padding: 1.3em 3em;
+		font-size: 12px;
+		margin-top: -3em;
+		margin-left: 7em;
+		text-transform: uppercase;
+		letter-spacing: 2.5px;
+		font-weight: 500;
+		color: #000;
+		background-color: #fff;
+		border: none;
+		border-radius: 45px;
+		box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+		transition: all 0.3s ease 0s;
+		cursor: pointer;
+		outline: none;
+	}
+
+	button:hover {
+		background-color: #B90E0A;
+	    box-shadow: 0px 15px 20px #E3242B;
+	    color: #fff;
+	    transform: translateY(-7px);
+	}
+
+	button:active {
+	    transform: translateY(-1px);
+	}
+    #varta1{
+        position: relative;
+        left: 5%;
+        top: 10%;
+    }
+
+    #varta2{
+        position: relative;
+        left: 75%;
+        top: -120%;
+    }
+    span#jdb{
+        position: relative;
+        text-align: center;
+        color:  #E3242B;
+    }
+
+    #content2{
+        position: relative;
+        text-align: center;
+        top: -40%;
+        color: white;
+    }
+
+    .search{
+        position: relative;
+        left: -6%;
+    }
+
+    .logo{
+        position: relative;
+        left: 0px;
+        top: 0px;
+        z-index: 1;
+        height: 150px;
+    }
+
+    #content3{
+        color: white;
+        position: relative;
+        top: 15%;
+        left: 53%;
+        font-size: 3em;
+    }
+
+    
+
+    #content4 {
+        position: relative;
+        top: -60%;
+        text-align: center;
+        color: white;
+    }
+
+    #vart3a1{
+        position: relative;
+        top: 5%;
+        left: 5%;
+    }
+
+    #vart3a2{
+        position: relative;
+        top: -139%;
+        left: 75%;
+    }
+
+    #container3{
+        height: 100%;
+        margin: 0;
+        position: relative;
+        top:    0;
+        z-index: 1;
+        background-color: rgba(0,0,0,0.5);
+    }
+
+    #content5{
+        color: white;
+        font-size: 1.8em;
+        position: relative;
+        top: -100%;
+        z-index: 2;
+        left: 50%;
+    }
+    
+    #logo3{
+        position: relative;
+        top: -100%;
+    }
+
+    .test{
+        z-index: 2;
+        position: relative;
+        left: -6%;
+    }
+
+    .test:hover{
+        background-color: #23c483;
+        box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    }
+
+    a#flinks{
+        text-decoration: none;
+        color: white;
+        padding-left: 2%;   
+    }
+
+    #icon{
+        border-radius: 3%;
+        height: 30%;
+        padding: 1em;
+    }
+
+    #links{
+        position: relative;
+        left: 8%;
+    }
+
+    #copyright{
+        position: relative;
+        left: 15%;
+    }
+
+    #footer{
+        position: relative;
+        top: -80%;
+        color: white;
+        left: 50%;
+    }
+
+    #calligraphy{
+        position: relative;
+        height: 90%;
+        width: 49.8%;
+    }
+
+</style>
+</head>
+<body>
+    <div class="parallax" class="Container1" id="p1">
+        <div id="container1">
+        </div>
+        <img src="D:\projects\blood_donation_website\bpositive_logo.png" id="logo" alt="logo"></img>
+        <ul id="nav1">
+            <li><a href = "#contact">Contact</a></li>
+            <li><a href = "#service">Service</a></li>
+            <li><a href = "#about">About</a></li>
+            <li><a href = "#home">Home</a></li>
+        </ul>
+        <div id="content1">
+            <p>Save a Life,<br>
+            Donate Blood.</p>
+            <button id="donate">DONATE</button>
+        </div>
+        
+    </div>
+
+    <div class="parallax" id="p2">
+        <img src="D:\projects\blood_donation_website\blood_vart.png" id="varta1" alt="donate blood"></img>
+        <div id="content2">
+            <h1>You Don't Have<br> 
+                to be A Doctor<br>
+                to SAVE LIVES.<br><br>
+                <span id="jdb">JUST DONATE BLOOD.</span></h1>
+        </div>
+        <img src="D:\projects\blood_donation_website\blood_vart.png" id="varta2" alt="donate blood"></img>
+    </div> 
+
+    <div class="parallax" id="p3">
+        <img src="D:\projects\blood_donation_website\bpositive_logo.png" class="logo" alt="logo"></img>
+    
+        <ul id="nav2">
+            <li><a href = "#contact">Contact</a></li>
+            <li><a href = "#service">Service</a></li>
+            <li><a href = "#about">About</a></li>
+            <li><a href = "#home">Home</a></li>
+        </ul>
+        <div id="content3">
+            <h1>Find A Donar</h1>
+            <button id="donate" class="search">SEARCH  </button>
+        </div> 
+    </div>
+
+    <div class="parallax" id="p4">
+        <img src="D:\projects\blood_donation_website\blood_vart3.png" id="vart3a1" alt="donate blood"></img>
+        <div id="content4">
+            <h1>Donate Your <font color="red">Blood</font><br> 
+                For A Reaon, Let The<br>
+                Reason Be LIFE.<br><br>
+                <span id="jdb">JUST DONATE BLOOD.</span></h1>
+        </div>
+        <img src="D:\projects\blood_donation_website\blood_vart3.png" id="vart3a2" alt="donate blood"></img>
+    </div>
+
+
+    <div class="parallax" id="p5">
+        <div id="container3">
+        </div>
+        <img src="D:\projects\blood_donation_website\bpositive_logo.png" id="logo3" class="logo" alt="logo"></img>
+        
+        <div id="content5">
+            <h1>Don't Know Your Type!<br>
+                Take A Blood Test<br>
+                At Home.</h1>
+            <button id="donate" class="test">TEST</button>
+        </div>
+    </div>
+
+    <div class="parallax" id="p6">
+        <img src="D:\projects\blood_donation_website\donate_calligraphy2.png" id="calligraphy" alt="donate blood"></img>
+        <div id="footer">
+            <a href="#instagram"><img src="D:/projects/images/instagram_icon.png" id="icon" alt="instagram icon"></img></a>
+            <a href="#facebook"><img src="D:/projects/images/facebook_icon.png" id="icon" alt="facebook icon"></img></a>
+            <a href="#gmail"><img src="D:/projects/images/gmail_icon.png" id="icon" alt="gmail icon"></img></a>
+            <a href="#pintrest"><img src="D:/projects/images/pintrest_icon.png" id="icon" alt="pintrest icon"></img></a>
+            <a href="#linkedin"><img src="D:/projects/images/linkedin_icon.png" id="icon" alt="linkedin icon"></img></a>
+            <a href="#twitter"><img src="D:/projects/images/twitter_icon.png" id="icon" alt="twitter icon"></img></a>
+            <hr id="line">
+            <div id="links">
+                <a href="#" id="flinks">About</a>
+                <a href="#" id="flinks">Need Help?</a>
+                <a href="#" id="flinks">Privacy</a>
+                <a href="#" id="flinks">Terms of Use </a>
+                <a href="#" id="flinks">Advertising 
+                <br><br><span id="copyright">©2022</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

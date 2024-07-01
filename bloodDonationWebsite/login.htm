@@ -1,0 +1,160 @@
+<html>
+<head>
+<title>LOGIN</title>
+<style>
+    body{
+        background-color: #121212;
+    }
+  
+    #box{
+        position: absolute;
+        top: 5%;
+        left: 30%;
+        color: white;
+        background: #ff512f;  
+		background: linear-gradient(to right , #ff512f, #dd2476); 
+        width: 30%;
+        padding: 2em 2em 0em 2em;
+        border-radius: 2em;
+    }
+
+    #close{
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5em;
+        position: absolute;
+        left: 90%;
+        cursor: pointer;
+        top: 3%;
+    }
+
+    input{
+        width: 100%;
+        margin-bottom: 0.5em;
+        padding: 1em;
+        border: none;
+        border-radius: 2em;
+        background-color: antiquewhite;
+    }
+
+    input[type="radio"]{
+        appearance: none;
+        width: 1em;
+        padding: 0.5em;
+        cursor: pointer;
+		border: 2px solid #d84835;
+		border-radius: 50%;
+	}
+
+	input[type="radio"]:checked {
+		background-color: #23c483;
+		}
+    
+    select{
+        width: 100%;
+        border-radius: 2em;
+        margin-bottom: 0.5em;
+        height: 2em;
+        background-color: antiquewhite;
+    }
+
+    #btn{
+        width: 40%;
+        margin-left: 1.5em;
+        margin-top: 1em;
+        transition: all 0.3s ease 0s;
+    }
+
+    #btn:hover{
+        background-color: #23c483;
+        color: #fff;
+        transform: translateY(-7px);
+    }
+    #btn:active {
+        transform: translateY(-1px);
+    }
+
+</style>
+</head>
+<body>
+    
+    <div id="box">
+    <form name="donate" action="#action_page.php" method="post">
+        <button id="close">X</button>
+        <label  for="fname">Full Name</label>
+        <input type="text" id="fname" placeholder="Enter your Full Name" required></input>
+        
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your Email Address" required></input>
+        
+        <label for="age">Age(*must be above 18)</label>
+        <input type="number" min="18" max="60" id="age" placeholder="Enter your Age" required></input>
+        
+        <label for="weight">Weight(*must be above 18)</label>
+        <input type="number" min="50" id="weight" placeholder="Enter your Weight" required> </input>
+        
+        <label for="mob">Mobile No.</label>
+        <input type="number" id="mob" placeholder="Enter your Mobile Number" required></input>
+        
+        <label for="addr">Address</label>
+        <input type="text" id="addr" placeholder="Enter your Address"></input>
+        
+        <label for="gender">Gender</label><br>
+        
+        <label for="male">Male</label>
+        <input type="radio" id="gender" name="gender" value="Male" required></input>
+        
+        <label for="female">Female</label>
+        <input type="radio" id="gender" name="gender" value="Female" required></input>
+        
+        <label for="other">Other</label>
+        <input type="radio" id="gender" name="gender" value="Other" required></input><br>
+        
+        <br><label for="cars">Choose Blood Group:</label>
+
+        <select name="Blood_Group" id="Blood_Group" required>
+          <option value="">A+</option>
+          <option value="">A-</option>
+          <option value="">B+</option>
+          <option value="">B-</option>
+          <option value="">AB+</option>
+          <option value="">AB-</option>
+          <option value="">O+</option>
+          <option value="">O-</option>
+        </select>
+        <label for="disease">Disease related to blood:</label><br>
+        <label for="yes">Yes</label>
+        <input type="radio" id="disease" name="disease" value="yes" required></input>
+        <label for="no">No</label>
+        
+        <input type="radio" id="disease" name="disease" value="no" required></input><br>
+        
+        <input id="btn" type="submit"></input><input id="btn" type="reset"></input>
+    </form>
+    </div>
+
+<script>
+    /*function validateForm() {
+        let x = document.forms["donate"]["fname"].value;
+        if (x == "") {
+            alert("Name must be filled out");
+            return false;
+            }
+        }*/
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
