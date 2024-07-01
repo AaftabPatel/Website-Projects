@@ -1,0 +1,1093 @@
+<html>
+<head>
+<title>Mithai</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cormorant Upright">
+<link rel="icon" type="image" href="mithai_images\logo_nobg.png">
+<style>
+body{
+		background-color: #1B1B1B;
+		margin: 0;
+		font-family:"Cormorant Upright";
+		overflow-x: hidden;
+	}
+
+	body::-webkit-scrollbar {
+  		display: none;
+	}
+
+/*navigation bar style*/
+	/*navigation logo style*/
+	img#logo_nav{
+		position: absolute;
+		left: 4em;
+		top: 0.2em;
+		width: 8em;
+		height: 4.5em;
+		filter: brightness(150%);
+	}
+	/*nav bar style*/
+	nav#nav_bar{
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 2;	
+		width: 100%;
+		text-align: right;
+		background-color: none;
+	}
+
+	/*navigation link style*/
+	a#nav_link{
+		text-decoration: none;
+		display: inline-block;
+		color: white;
+		font-size: 1.8em;
+		padding: 1em;
+		transition: all 0.4s ease 0s;
+	}
+
+	/*navigation link hover style*/
+	a#nav_link:hover{
+		background-color: gold;
+		color: #8B0000;
+	}
+
+/*slideshow part */
+   	/* Slideshow container */
+    .slideshow{
+	    width: 100%;
+	    height: 100%;
+	    position: relative;
+	    left: 0em;
+	    background: black;
+    }
+
+    /*slides style*/
+	.slides {
+ 		display: block;
+	}
+
+	/*slideshow images style*/
+    img#slide_img{
+        width: 100%;
+        height: 100%;   
+        opacity: 0.4;
+    }
+
+    /* Next & previous buttons */
+    a#change_slide{
+    	position: absolute;
+    	cursor: pointer;
+    	background-color: #8B0000;
+	    padding: 1em;
+	    color: gold;
+	    font-size: 1.7em;
+	    font-weight: bold;
+	    transition: 0.6s ease;
+	    border-radius: 0.2em;
+	    border: 2px solid #8B0000;
+    }
+
+    /*positioning next*/
+    a.next{
+    	top: 10em;
+    	left: 94.85%;
+    	font-size: 1em;
+    }
+
+    /*positioning prev*/
+    a.prev{
+    	top: 10em;
+    	left: 0;
+    	font-size: 1em;
+    }
+
+    /*hover effect of next and prev*/
+	a#change_slide:hover{
+    	background-color: white;
+    	border: 2px solid gold;
+    }
+
+    /*dots_box style*/
+    div#dots_box{
+    	position: absolute;
+    	top: 95%;
+    	left: 45%;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+	    cursor: pointer;
+	    height: 15px;
+	    width: 15px;
+	    margin: 0 2px;
+	    background-color: #bbb;
+	    border-radius: 50%;
+	    display: inline-block;
+	    transition: background-color 0.6s ease;
+    }
+
+    /*acctive dot style*/
+    .active, .dot:hover {
+    	background-color: #8B0000;
+    }
+
+/*slides style part*/
+    /*slide text style*/
+    h1.slide_text{
+    	position: relative;
+    	color: white;
+    	display: block;
+    }
+
+    /*slide1 logo style*/
+    img#logo{
+    	position: relative;
+    	top: -25.5em;
+    	left: 30.5em;
+    	height: 14em;
+    	width: 22em;
+    	border-radius: 1em;
+    }
+
+    /*shop now button style*/
+	button#shop {
+		position: absolute;
+    	background: rgba(0, 0, 0, 0.4);
+    	border: 2px solid #8B0000;
+    	border-radius: 1em;
+    	color: gold;
+    	padding: 0.3em;
+    	font-size: 2em;
+    	top: 15em;
+    	left: 3em;
+		overflow: hidden;
+		text-align: center;
+		transition: .3s;
+		z-index: 1;
+		cursor: pointer;
+	}
+	button#shop::before {
+		content: '';
+		width: 0;
+		height: 300%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%) rotate(45deg);
+		background: #8B0000;
+		transition: .5s ease;
+		display: block;
+		z-index: -1;
+	}
+	button#shop:hover::before {width: 105%;}
+	button#shop:hover {
+		color: gold;
+		border: 2px solid gold;
+	}
+
+	/*slide1 text1 style*/
+    h1#slide1_text1{
+    	font-size: 3em;
+    	top: -15.2em;
+    	left: 5em;
+    	width: 10em;
+    }
+
+    /*slide1 text2 style*/
+    h1#slide1_text2{
+    	font-size: 3em;
+    	top: -11em;
+    	left: 15em;
+    	width: 10em;
+    }
+
+	/*slide2 text1 style*/
+    h1#slide2_text1{
+    	top: -20.2em;
+    	left: 0em;
+    	text-align: center;
+    	width: 15em;
+    	height: 69.5%;
+    	padding: 6em 3.8em 0em 2em;
+    	background-color: rgba(0, 0, 0, 0.5);
+    }
+
+	/*slide2 text2 style*/
+    h1#slide2_text2{
+    	font-size: 3em;
+    	top: -19em;
+    	left: 2em;
+    }
+
+    /*slide3 text1 style*/
+    h1#slide3_text1{
+    	top: -15.3em;
+    	left: 2.8em;
+    	width: 10em;
+    }
+
+    /*golden hr style*/
+    hr#gold_line{
+    	border: 2px solid gold;
+    	width: 19em;
+    	position: relative;
+    	top: -31.5em;
+		left: -28em; 
+    }
+
+    /*slide3 text2 style*/
+    h1#slide3_text2{
+    	top: -9.5em; 	
+    	left: 1.5em;
+    	width: 12em;
+    	font-size: 3.5em;
+    }
+
+    /*slide4 text1 style*/
+    h1#slide4_text1{
+    	top: -13.5em;
+    	left: 2.5em;
+    	font-size: 2.2em;
+    	width: 17em;
+    }
+
+    /*slide4 text2 style*/
+    h1#slide4_text2{
+    	top: -9.5em;
+    	left: 1.8em;
+    	font-size: 3em;
+    	width: 10em;
+    }
+
+
+    /*golden hr style*/
+    hr#gold_line2{
+    	border: 2px solid gold;
+    	width: 25em;
+    	position: relative;
+    	top: -32.5em;
+		float: right;
+		right: 5.3em; 
+    }
+
+    /*slide5 text1 style*/
+    h1#slide5_text1{
+    	top: -15em;
+    	float: right;
+    	text-align: right;
+    	right: -9em;
+    	font-size: 2.2em;
+    	width: 14em;
+    	height: 1em;
+    }
+
+    /*slide5 text2 style*/
+    h1#slide5_text2{
+    	top: -7em;
+    	left: 2.4em;
+    	font-size: 2.6em;
+    	height: 1em;
+    }
+
+/*sugerfree part*/
+    div#suger_free{
+    	position: relative;
+    	top: 2em;
+		display: block;
+		height: 30em;
+	}
+
+    /*suger free title style*/
+    span#sf_title{
+    	color: gold;
+    	font-size: 3em;
+    	position: relative;
+    	top: 0em;
+    	left: 33%;
+    }
+
+    /*cards block style*/
+    div#cards{
+    	position: relative;
+    	top: 2em;
+		display: inline-block;
+		height: 20em;
+	}
+
+	/*image card style*/
+    div.card{
+    	position: relative;
+    	left: 2em;
+    	border-radius: 1em 1em 1em 1em;
+    	height: 15em;
+    	width: 11em;
+    	margin-right: 2.8em;
+    	background-color: #353935;
+    	color: white;
+    }
+
+    /*card image style*/
+    img#card_img{
+    	height: 13em;
+    	width: 11em;
+    	border-radius: 1em 1em 0.1em 0.1em;
+    }
+
+    /*sf style*/
+    span#sf{
+    	position: absolute;
+    	top: 0em;
+    	right: 0em;
+    	background-color: rgba(256, 219, 0, 0.7);
+    	padding: 0.2em;
+    	border-radius: 0em 0.6em;
+    }
+
+	/*card mithai name style*/
+	a#name{
+	    position: absolute;
+        overflow: hidden;
+        bottom: 0.2em; 
+        width: 10em;
+        text-align: center;
+        font-size: 1.1em;
+        color: gold;
+        cursor: pointer;
+    }
+
+    /*card mithai name hover style*/
+	a#name:hover{
+		color: white;
+	}
+
+    /*change card style*/
+    a#change_card{
+    	position: relative;
+    	top: -8em;
+    	background-color: gold;
+    	font-size: 2em;
+    	color: white;
+    	cursor: pointer;
+    	padding: 0.2em 0.55em;
+    	border-radius: 50%;
+    	transition: all 0.2s ease 0s;
+    }
+
+    /*change card hover style*/
+    a#change_card:hover{
+    	background-color: white;
+    	color: gold;
+    }
+
+    /*positioning next card button*/
+    a.next_card{
+    	left: 92%;
+    }
+
+    /*positioning prev card button*/
+    a.prev_card{
+    	left: 0.5%;
+    }
+
+/*About Mithai part*/
+    /*about mithai*/
+    div#about{
+		background: linear-gradient(to left, rgba(255,215,0,0.85), #8B0000); 
+    	position: relative;
+    	top: -2em;
+    	text-align: right;
+    	width: 100%;
+    	height: 22em;
+    	color: white;
+    	font-size: 1.3em;
+    }
+
+    /*about mithai image style*/
+    img#about_img{
+    	position: relative;
+		left: -52%;
+		top: 1em;
+		filter: brightness(160%);
+    }
+
+    /*title style*/
+    span#about_title{
+    	position: relative;
+    	font-size: 3.5em;
+    	top: -4em;
+    	right: 0.35em;
+    	color: #8B0000;
+    	text-decoration: underline 4px;
+    }
+
+    /*about information style*/
+    div#about_info{
+    	position: relative;
+    	display: block;
+    	width: 40em;
+    	top: -12em;
+    	left: 37%;
+    }
+
+    /*link to about page*/
+    a#about_link{
+    	color: #8B0000;
+    	font-size: 1.5em;
+    }
+
+/*popular sweet card css*/
+	/*popular heading style*/
+	span#popular_heading{
+		font-size: 5em;
+		position: relative;
+		left: 33%;
+		top: 5%;
+		text-decoration: underline 5px;
+	}
+
+	/* sweet card style*/
+	div#sweet_card{
+		background-color: #121212;
+		position: relative;
+		top: 4em;
+		left: 0em;
+		border-radius: 2.5em 0em 2.5em 0em;
+		margin-left: 1em;
+		margin-top: 1em;
+		display: inline-block;
+		height: 21em;
+		width: 15em;
+	}
+
+
+    /*cart icon style*/
+    i#cart{
+    	position: absolute;	
+    	color: white;
+    	font-size: 5em;
+    	top: 40%;
+    	left: 33%;
+    	display: none;
+    }
+
+	/* sweet image style*/
+	img#sweet_img{
+		height: 18em;
+		width: 15em;
+		border-radius: 2.5em 0em 0em 0em;
+		border-bottom: 2px solid #8B0000;
+	}
+
+	/*gradient class style*/
+	div.img_gradient{
+	  position: absolute;
+	  height: 18em;	
+	  width: 15em;
+	  display: block;
+	}
+
+	/*gradient effect*/
+	div.img_gradient:after {
+	  content: '';
+	  border-radius: 2.5em 0em 0em 0em;
+	  position: absolute;
+	  top: 0; left: 0; bottom: 0; right: 0;
+	  background: linear-gradient(to top , rgba(255,215,0,0.7), transparent 50%, #121212);
+	}
+
+	/*hover effect on image with cart icon display to block*/
+	div.img_gradient:hover #cart{display: block;}
+	div.img_gradient:hover #sweet_img{opacity: 0.3;}
+	div.img_gradient{cursor: pointer;}
+
+	/*sweet price style*/
+	span#sweet_price{
+		position: absolute;
+		color: white;
+		left: 7.2em;
+		color: gold;
+		font-size: 1.5em;
+		top: 12.2em;
+	}
+
+	/* sweet name/detail style*/
+	span#sweet_name{
+		position: absolute;
+		top: 12.2em;
+		color: white;
+		font-size: 1.5em;
+		width: 14em;
+		height: 1.5em;
+		left: 0.5em;
+	}
+
+	/*sweet name hover effect*/
+	span#sweet_name:hover{
+		color: gold;
+		cursor: pointer;
+	}
+
+/*footer part*/
+	div#footer{
+		position: relative;
+		top: 8em;
+		display: block;
+		width: 100%;
+	}
+	
+	/*footer image style*/
+	img#footer_img{
+		position: absolute;
+		top: -2em;
+		left: -0.5em;
+		display: block;	
+		width: 100.5%;
+		height: 25em;
+	}
+
+	/*image gradient class style*/
+	div#footer_effect{
+	  	position: absolute;
+		top: -2em;
+		left: -0.5em;
+		display: block;	
+		width: 101.1%;
+		height: 25em;
+	  	z-index: 1;
+	  	background-color: rgba(0, 0, 0, 0.8);
+	}
+
+	/*footer logo style*/
+	img#footer_logo{
+		position: relative;
+		left: -2em;
+		width: 10em;
+		height: 10em;
+		top: 1em;
+	}
+
+	/*site name style*/
+	img#name{
+		position: relative;
+		left: 62em;
+		top: 13em;
+		width: 10em;
+	}
+
+	/*social media site style*/
+	img#icon{
+		position: relative;
+		border-radius: 51%;
+		height: 3em;
+		width: 3em;
+	}	
+
+	/*social media icons positioning*/
+	div#social_icons{
+		position: relative;
+		display: block;
+		width: 20em;
+		top: -8em;
+		left: 62.5em;
+	}
+
+	/*search heading style*/
+	h3#search_heading{
+		position: relative;
+		top: -2em;
+		font-size: 2em;
+		color: gold;
+	}
+
+	/*all content of footer style*/
+	div#footer_content{
+		position: relative;
+		top: -3em;
+		display: block;
+		width: 80em;
+		height: 20em;
+		z-index: 2;
+		left: 3em;
+		color: white;
+		background-color: none;
+	}
+
+	/*footer links style*/
+	a#list_link{
+		position: relative;
+		top: -3em;
+		text-decoration: none;
+		color: white;
+		padding: 0.3em 0.5em;
+		font-size: 1.2em;
+		margin-right: 1em;
+		border-radius: 10%;
+		background-color: rgba(255, 215, 0, 0.3);
+		transition: all 0.5s ease 0s;
+	}
+
+	/*footer links hover style*/
+	a#list_link:hover{
+		background-color: gold;
+		color: #8B0000;
+	}
+
+	/*mithai footer info*/
+	p#mithai_footer_info{
+		position: relative;
+		color: white;
+		top: -1em;
+	}
+
+</style>
+</head>
+<body>
+<!--Navigaion part-->
+		<nav id="nav_bar">
+		<img src="mithai_images\logo_text_nobg.png" id="logo_nav">
+		<a href="#home" id="nav_link" class="link">Home</a>
+		<a href="#popular" id="nav_link" class="link">Sweets</a>
+		<a href="#about" id="nav_link" class="link">About</a>
+		<a href="#best_title" id="nav_link" class="link">Best Sellers</a>
+	</nav>
+
+<!--SLIDESHOW--> 
+	<div class="slideshow">
+	    <div class="slides">
+	        <img src="mithai_images/sweet_img8.png" id="slide_img">
+	        <img src="mithai_images\logo.png" id="logo">
+	    	<h1 id="slide1_text1" class="slide_text">The <font color="gold">Pride</font> of INDIA</h1>
+	    	<h1 id="slide1_text2" class="slide_text">The <font color="gold">Love</font> of INDIA</h1>
+	    </div>
+
+	    <div class="slides">
+	        <img src="mithai_images/sweet_img3.jpg" id="slide_img">
+	    	<h1 id="slide2_text1" class="slide_text">
+	    		"There Is No Better Way To Bring People Together Than With <font color="gold">MITHAI"...</font>
+	    		<br>-<font color="gold">Gail Simmons</font></h1>
+	    	<h1 id="slide2_text2" class="slide_text">Gift Some <font color="gold">MITHAI</font> Now</h1>
+	    	<button id="shop">SHOP NOW</button>
+	    </div>
+
+	    <div class="slides">
+	        <img src="mithai_images/sweet_img1.png" id="slide_img">
+	        <h1 id="slide3_text1" class="slide_text">
+	        	"No Matter How Much You Ate, There Is Always Some Room For <font color="gold">MITHAI"...</font></h1> 
+	    	<hr id="gold_line">
+	    	<h1 id="slide3_text2" class="slide_text">Order Now <font color="gold">&</font> <br>Get <font color="gold">40% 
+	    		<font>OFF</h1>
+	    	<button id="shop">SHOP NOW</button>
+	    </div>
+		
+	    <div class="slides">
+	        <img src="mithai_images/sweet_img12.png" id="slide_img">
+	    	<h1 id="slide4_text1" class="slide_text">
+	    		"There Is No <font color="gold">Love</font> More Sincere Than That For 
+	    		<font color="gold">MITHAI"...</font></h1> 
+	    	<h1 id="slide4_text2" class="slide_text">Get Your Favourite <font color="gold">Gulabjamun</font> & 
+	    		<font color="gold">Rasgulla</font></h1>
+	    	<button id="shop">SHOP NOW</button>
+	    </div>
+
+		<div class="slides">
+	        <img src="mithai_images/sweet_img4.jpg" id="slide_img">
+	        <hr id="gold_line2">
+	        <h1 id="slide5_text1" class="slide_text">
+	    		"Feel A <font color="gold">Craving</font> For your Favourite 
+	    		<font color="gold">...MITHAI"</font></h1> 
+	    	<h1 id="slide5_text2" class="slide_text">Get Your Favourite <font color="gold">MITHAI</font> Home Delivered</h1>
+	    	<button id="shop">SHOP NOW</button>
+	    </div>
+	</div>
+		<a id="change_slide" class="prev" onclick="plusSlides(-1)">❮</a>
+	    <a id="change_slide" class="next" onclick="plusSlides(1)">❯</a>	    
+	<div id="dots_box">
+		<span class="dot" onclick="currentSlide(1)"></span> 
+	  	<span class="dot" onclick="currentSlide(2)"></span> 
+	  	<span class="dot" onclick="currentSlide(3)"></span> 
+		<span class="dot" onclick="currentSlide(4)"></span> 
+		<span class="dot" onclick="currentSlide(5)"></span> 
+	</div>
+
+<!--suger free sweets-->
+	<div id="suger_free">
+		<span id="sf_title">... Sugerfree Products ...</span>
+		<div id="cards">
+			<div class="card">
+				<span id="sf">SF</span>
+				<a id="name">Kaju Katli</a>
+				<a href="#kaju_katli.htm">
+					<img src="mithai_images\card_img1.jpg" id="card_img">
+				</a>
+			</div>
+
+			<div class="card">
+				<span id="sf">SF</span>
+				<a id="name">Milk cake</a>
+				<a href="#milk_cake.htm">
+					<img src="mithai_images\card_img2.jpg" id="card_img">
+				</a>
+			</div>
+
+			<div class="card">
+				<span id="sf">SF</span>
+				<a id="name">Rasmalai</a>
+				<a href="#rasmalai.htm">
+					<img src="mithai_images\card_img3.jpg" id="card_img">
+				</a>
+			</div>
+
+			<div class="card">
+				<span id="sf">SF</span>
+				<a id="name">Cham Cham</a>
+				<a href="#cham_cham.htm">
+					<img src="mithai_images\card_img4.jpg" id="card_img">
+				</a>
+			</div>
+
+			<div class="card">
+				<span id="sf">SF</span>
+				<a id="name">Rasgulla</a>
+				<a href="#rasgulla.htm">
+					<img src="mithai_images\card_img5.jpg" id="card_img">
+				</a>
+			</div>
+			
+			<div class="card">
+				<span id="sf">SF</span>
+				<a id="name">Motichoor Laddu</a>
+				<a href="#motichoor_laddu.htm">
+					<img src="mithai_images\card_img6.jpg" id="card_img">
+				</a>
+			</div>
+
+			<div class="card">
+				<span id="sf">SF</span>
+				<a id="name">Khopra Pak</a>
+				<a href="#khopra_pak.htm">
+					<img src="mithai_images\card_img7.jpg" id="card_img">
+				</a>
+			</div>
+
+			<div class="card">
+				<span id="sf">SF</span>
+				<a id="name">Barfi</a>
+				<a href="#barfi.htm">
+					<img src="mithai_images\card_img8.jpg" id="card_img">
+				</a>
+			</div>
+
+			<div class="card">
+				<span id="sf">SF</span>
+				<a id="name">Petha</a>
+				<a href="#petha.htm">
+					<img src="mithai_images\card_img9.jpg" id="card_img">
+				</a>
+			</div>
+
+			<div class="card">
+				<span id="sf">SF</span>
+				<a id="name">Sohan Papdi</a>
+				<a href="#sohan_papdi.htm">
+					<img src="mithai_images\card_img10.jpg" id="card_img">
+				</a>
+			</div>
+		</div>
+	</div>
+		<a id="change_card" class="prev_card" onclick="plusCard(-1)">❮</a>
+	    <a id="change_card" class="next_card" onclick="plusCard(1)">❯</a>
+
+<!--about mithai-->
+	<div id="about">
+		<img src="mithai_images\logo_nobg.png" id="about_img">
+		<span id="about_title">About</span>
+		<div id="about_info">
+			You can pamper your sweet tooth with Mithai's range of sweets and cakes for occasions like Birthday, Farewell, Wedding, Festivals and for any occasion, where there's an excuse for sweets. Uncompromising quality, superb taste and superior service are the hallmarks of Mithai that keep it way ahead of its competitors and placed it in one of the sought after names in the confectionery industry, catering to a wide clientele. It delivers at every part o India. Your sweet destination, Mithai’s Badam Milk, Kaju Katli and Kesar Peda are the pick of the lot, which are prepared using quality ingredients sourced from all over India. Not to mention, no preservatives used. <a href="#about" id="about_link">more..</a>
+		</div>
+		
+	</div>
+	
+<!--popular sweets-->
+	<span id="popular_heading">...Popular Sweet...</span>
+	<div id="popular">
+		<div id="sweet_card">
+			<div class="img_gradient">
+				<a href="#sohan_halwa.htm">
+				<i class="material-icons" id="cart">shopping_cart</i>
+				<img src="mithai_images\pimg1.jpg" id="sweet_img">
+			</div>
+			<span id="sweet_name">Sohan Halwa</span></a>
+			<span id="sweet_price">₹160/-</span>
+		</div>
+		
+		<div id="sweet_card">
+			<div class="img_gradient">
+				<a href="#gulab_jamun.htm">
+				<i class="material-icons" id="cart">shopping_cart</i>
+				<img src="mithai_images\pimg2.jpg" id="sweet_img">
+			</div>
+			<span id="sweet_name">Gulab Jamun</span></a>
+			<span id="sweet_price">₹250/-</span>
+		</div>
+		
+		<div id="sweet_card">
+			<div class="img_gradient">
+				<a href="#dry_fruit_sweets.htm">
+					<i class="material-icons" id="cart">shopping_cart</i>
+					<img src="mithai_images\pimg3.jpg" id="sweet_img">
+				</a>
+			</div>
+			<span id="sweet_name">Dry Fruit Sweets</span></a>
+			<span id="sweet_price">₹265/-</span>
+		</div>
+		
+		<div id="sweet_card">
+			<div class="img_gradient">
+				<a href="#besan_laddu.htm">
+				<i class="material-icons" id="cart">shopping_cart</i>
+				<img src="mithai_images\pimg4.jpg" id="sweet_img">
+			</div>
+			<span id="sweet_name">Besan Laddu</span></a>
+			<span id="sweet_price">₹140/-</span>
+		</div>
+		
+		<div id="sweet_card">
+			<div class="img_gradient">
+				<a href="#sohan_papdi.htm">
+				<i class="material-icons" id="cart">shopping_cart</i>
+				<img src="mithai_images\pimg5.jpg" id="sweet_img">
+			</div>
+			<span id="sweet_name">Sohan Papdi</span></a>
+			<span id="sweet_price">₹145/-</span>
+		</div>
+
+		<div id="sweet_card">
+			<div class="img_gradient">
+				<a href="#kaju_katli.htm">
+				<i class="material-icons" id="cart">shopping_cart</i>
+				<img src="mithai_images\pimg6.jpg" id="sweet_img">
+			</div>
+			<span id="sweet_name">Kaju Katli</span></a>
+			<span id="sweet_price">₹235/-</span>
+		</div>
+		
+		<div id="sweet_card">
+			<div class="img_gradient">
+				<a href="#milk_cake.htm">
+				<i class="material-icons" id="cart">shopping_cart</i>
+				<img src="mithai_images\pimg7.jpg" id="sweet_img">
+			</div>
+			<span id="sweet_name">Milk Cake</span></a>
+			<span id="sweet_price">₹425/-</span>
+		</div>
+		<div id="sweet_card">
+			<div class="img_gradient">
+				<a href="#badam_katli.htm">
+				<i class="material-icons" id="cart">shopping_cart</i>
+				<img src="mithai_images\pimg8.jpg" id="sweet_img">
+			</div>
+			<span id="sweet_name">Badam Katli</span></a>
+			<span id="sweet_price">₹385/-</span>
+		</div>
+		<div id="sweet_card">
+			<div class="img_gradient">
+				<a href="#mysore_pak.htm">
+				<i class="material-icons" id="cart">shopping_cart</i>
+				<img src="mithai_images\pimg9.jpg" id="sweet_img">
+			</div>
+			<span id="sweet_name">Mysore Pak</span></a>
+			<span id="sweet_price">₹195/-</span>
+		</div>
+		
+		<div id="sweet_card">
+			<div class="img_gradient">
+				<a href="#gajak.htm">
+				<i class="material-icons" id="cart">shopping_cart</i>
+				<img src="mithai_images\pimg10.jpg" id="sweet_img">
+			</div>
+			<span id="sweet_name">Gajak</span></a>
+			<span id="sweet_price">₹140/-</span>
+		</div>
+
+		<div id="sweet_card">
+			<div class="img_gradient">
+				<a href="#til_barfi.htm">
+				<i class="material-icons" id="cart">shopping_cart</i>
+				<img src="mithai_images\pimg11.jpg" id="sweet_img">
+			</div>
+			<span id="sweet_name">Til Barfi</span></a>
+			<span id="sweet_price">₹155/-</span>
+		</div>
+
+		<div id="sweet_card">
+			<div class="img_gradient">
+				<a href="#til_patti.htm">
+				<i class="material-icons" id="cart">shopping_cart</i>
+				<img src="mithai_images\pimg12.jpg" id="sweet_img">
+			</div>
+			<span id="sweet_name">Til Patti</span></a>
+			<span id="sweet_price">₹165/-</span>
+		</div>
+		
+		<div id="sweet_card">
+			<div class="img_gradient">
+				<a href="#modak.htm">
+				<i class="material-icons" id="cart">shopping_cart</i>
+				<img src="mithai_images\pimg13.jpg" id="sweet_img">
+			</div>
+			<span id="sweet_name">Modak</span></a>
+			<span id="sweet_price">₹225/-</span>
+		</div>
+
+		<div id="sweet_card">
+			<div class="img_gradient">
+				<a href="#mango_bite.htm">
+				<i class="material-icons" id="cart">shopping_cart</i>
+				<img src="mithai_images\pimg14.jpg" id="sweet_img">
+			</div>
+			<span id="sweet_name">Karachi Halwa</span></a>
+			<span id="sweet_price">₹195/-</span>
+		</div>
+		
+		<div id="sweet_card">
+			<div class="img_gradient">
+				<a href="#besan_chakki.htm">
+				<i class="material-icons" id="cart">shopping_cart</i>
+				<img src="mithai_images\pimg15.jpg" id="sweet_img">
+			</div>
+			<span id="sweet_name">Besan Chakki</span></a>
+			<span id="sweet_price">₹165/-</span>
+		</div>
+	</div>
+
+<!--Footer-->
+	<div id="footer">
+		<div id="footer_effect"></div>
+		<img src="mithai_images/sweet_img13.png" id="footer_img">
+		<div id="footer_content">
+			<img src="mithai_images/logo_nobg.png" alt="logo" id="footer_logo">
+			<img src="mithai_images/logo_text_nobg.png" alt="site_name" id="name">
+			<div id="social_icons">
+				<a href="#instagram"><img src="mithai_images/instagram_icon.png" id="icon" alt="instagram icon"></a>
+				<a href="#facebook"><img src="mithai_images/facebook_icon.jpg" id="icon" alt="facebook icon"></a>
+				<a href="#gmail"><img src="mithai_images/mail_icon.png" id="icon" alt="gmail icon"></a>
+				<a href="#pintrest"><img src="mithai_images/pintrest_icon.png" id="icon" alt="pintrest icon"></a>
+				<a href="#linkedin"><img src="mithai_images/linkedin_icon.png" id="icon" alt="linkedin icon"></a>
+				<a href="#twitter"><img src="mithai_images/twitter_icon.png" id="icon" alt="twitter icon"></a>
+			</div>
+			<div id="popular_search"><h3 id="search_heading">Popoular Searches</h3>
+				<div id="search_links">
+					<a href="#dry_fruit_sweets.htm" id="list_link">Dry Fruit</a>
+					<a href="#suger_free_sweets.htm" id="list_link">Suger Free</a>
+					<a href="#wedding_sweets.htm" id="list_link">Wedding</a>
+					<a href="#gift_sweets.htm" id="list_link">Gift</a>
+					<a href="#festival_sweets.htm" id="list_link">Festival</a>
+					<a href="#special_sweets.htm" id="list_link">Special</a>
+					<a href="#list_tos" id="list_link">TermsofService</a>
+					<a href="#list_dmca" id="list_link">DMCA</a>
+					<a href="#list_contact" id="list_link">Contact</a><br>
+				</div>
+				<p id="mithai_footer_info">
+					Mithai offers you the best quality of sweet and free home delivery all accross India. We use the best quality ingredients for the best sweets you can ever taste.<br>
+					&#169Mithai
+				</p>
+			</div>
+		</div>
+	</div>	
+
+<script>
+//function to add background to nav bar on scroll
+	var navbar = document.getElementById("nav_bar");
+	window.onscroll = function() {
+		navColor();
+	};
+	
+	
+    function navColor(){
+		if (window.pageYOffset != 0) {
+	    	navbar.style.backgroundColor = "rgba(198, 0, 0, 0.7)";
+	  	} 
+	  	else if(window.pageYOffset == 0){
+	    	navbar.style.backgroundColor = "";
+	  	}	
+	}
+
+//slideshow script
+	let slideIndex = 1;
+	showSlides(slideIndex);
+
+	// Next/previous controls
+	 function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    //current slide 
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+    
+    //function to change slides automatically 
+    function cng() {
+    	if(slideIndex < 6)
+    		slideIndex++;
+    	else
+    		slideIndex = 1;
+    	showSlides(slideIndex);
+    }
+    setInterval(cng, 8000);
+
+    //show slide 
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("slides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+    }
+
+//multiple slideshow script
+    //card index
+	let cardIndex = 6;
+	showCard(cardIndex);
+
+	// Next/previous controls
+	 function plusCard(n) {
+        showCard(cardIndex += n);
+    }
+
+    //current cards
+    function currentCard(n) {
+        showCard(cardIndex = n);
+    }
+    
+    //show cards
+    function showCard(n) {
+        let i;
+        let cards = document.getElementsByClassName("card");
+        
+        if (n > cards.length) {cardIndex = cards.length;}    
+        if (n < 6) {cardIndex = 6;}
+        /*to display all as none*/
+        for (i = 0; i < cards.length; i++) {
+            cards[i].style.display = "none";  
+        }
+        /*to set all visible cards as inline-block*/
+        for (i = cardIndex-6; i < cardIndex; i++) {
+            cards[i].style.display = "inline-block";  
+        } 
+    }
+
+
+</script>
+</body>
+</html>
