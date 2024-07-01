@@ -1,0 +1,385 @@
+/*donator pahe css*/
+   /*basics styling*/
+    body, html {
+        height: 100%;
+        margin: 0;
+	}
+	
+    body::-webkit-scrollbar {
+        display: none;
+    }
+	
+	::selection {
+	  background-color: #b993d6; /* Set your desired background color here */
+	  color: white; /* Set the text color for the selected text */
+	}
+/*parallax part*/
+    #p1{
+       /* The image used */
+      background-image: url('images/ssImg4.jpg');
+      height: 100%;
+    }
+    
+	/*donate part*/
+	#p2{
+       /* The image used */
+      background-image: url('images/ssImg6.jpg');
+      height: 100%;
+    }
+	
+	
+	/*footer part*/
+	#p3{
+        height: 40%;
+        background: #B993D6;
+		background: linear-gradient(to right, #8CA6DB, #B993D6); 
+
+    }
+  
+    .parallax {  
+      overflow: hidden;
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+/*first part styling*/
+    /*logo style*/
+	#logo{
+        position: absolute;
+        left: 1.2em;
+        top: 0.35em;
+        z-index: 2;
+		font-size: 2.5em;
+        height: 4em;
+		color: white;
+		font-family: 'Comfortaa', sans-serif;
+    }
+    /*navigation bar style*/
+    ul#nav1{
+        position: absolute;
+        top: 1em;
+        right: 0px;
+    }
+
+    ul{
+        font-size: 25px;
+        list-style-type: none;
+        margin: 0;
+        padding: 0px;
+        overflow: hidden;
+        background-color: none;
+    }
+
+    li{
+        float: right;
+        padding: 0px 20px 0px 5px;
+    }
+
+    li a{
+        display: block;
+        color:  white;
+		border-left: 2px solid #b993d6;
+        padding: 24px 20px;
+        text-decoration: none;
+		transition: background-position 0.5s ease;
+        background-size: 200% 100%;
+        background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0), rgba(0,0,0,0), #b993d6 ,#b993d6);
+    }
+
+    li a:hover{
+        color: white;
+		background-position: -90% 0;
+    }
+	
+	/*content1 style*/
+	#content1{
+		position: relative;
+		top: -28em;
+		text-align: center; 
+		color: white;
+	}
+	/*heading1 style*/
+	#heading1{ 
+		color: #b993d6;
+		font-size: 6em;
+	}
+	
+	/*donate here styling*/
+	button.btn{
+		background: #b993d6;
+		color: white;
+		font-size: 2em;
+		margin-left: 1em;
+		margin-top: -1.3em;
+		padding: 0.5em 1em;
+		border-radius: 5px;
+		border: 2px solid #b993d6;
+        cursor: pointer;
+        transition: background-position 0.3s ease;
+        background-size: 200% 100%;
+        background-image: linear-gradient(to right, #b993d6, #b993d6,white ,white);
+	}
+	button.btn:hover{
+		color: purple;
+		border: 2px solid purple;
+		background-position: -100% 0;
+	}
+	
+	#quote{
+		font-size: 2em; 
+	}
+	
+/*second part styling*/
+	#container2{
+		position: relative;
+		top: -18em;
+	}
+
+	/*heading style*/
+	p#heading2{
+		text-align: center;
+		font-size: 3em;
+		color: purple;
+		border-bottom: 3px solid #b993d6;
+	}
+	
+	/*quote below heading*/
+	p#content2{
+		font-size: 1.5em;
+	}
+	
+	/*card content style*/
+	#cardContent{
+		margin-left: 0.7em;
+	}
+	
+	/* Create three equal columns that floats next to each other */
+	#cardBox {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr); 
+		gap: 10px;
+		margin-left: 8%;
+	}
+	 
+	/*card styling*/
+	#card{
+		width: 20em;
+		background: rgba(0,0,0,0.1);
+		height: 34em;
+		border-radius: 2em;
+		overflow: hidden;
+	}
+	
+	/*donate here styling*/
+	button#more{
+		background: #b993d6;
+		color: white;
+		font-size: 1sem;
+		padding: 0.4em;
+		border-radius: 5px;
+		border: 2px solid #b993d6;
+		transition: 0.5s ease;
+	}
+	button#more:hover{
+		background: white;
+		color: #b993d6;
+		cursor: pointer;
+	}
+	
+	/*card image style*/
+	img#cardImage{
+		width: 20em;
+		height: 13em;
+		border-radius: 2em 0;
+		filter: grayscale(80%);
+	}
+	/*hover effect*/
+	img#cardImage:hover{
+		cursor: pointer;
+		filter: invert(20%);
+	}
+		
+	/*card heading style*/
+	h2#cardHeading{
+		color: B993D6; 
+	}
+	
+	/*card content style*/
+	div#cardContent{
+		position: relative;
+		
+	}
+
+/*third part styling*/
+	div#container3{
+		display: grid;
+		border: 2px solid #B993D6;
+		margin-top: -8em;
+		margin-bottom: 8em;
+		grid-template-columns: repeat(2, 1fr); 
+		padding: 2em ;
+		background-color: rgba(0,0,0,0.1);
+	}
+
+	/*image style*/
+	img#aboutImage{
+		width: 35em;
+		border-radius: 27px;
+		box-shadow:  14px 14px 21px #b1b1b1, -14px -14px 21px #ffffff;
+	}
+	
+	h1#aboutHeading{
+		color: #8CA6DB ;
+		border-bottom: 2px solid #B993D6;
+	}
+	/*content2 style*/
+	div#about{
+		font-size: 1.1em;
+		margin-right: 5em;
+	}
+
+
+/*Forth part*/
+	#container4{
+        height: 100%;
+        margin: 0;
+        background-color: black;
+        opacity: 0.4;
+    }
+    /*logo style*/
+	#logo2{
+		position: relative;
+		top: -39em;
+        height: 130px;
+    }
+	
+	#content4{
+		display: grid;
+		margin-top: 5em;
+		grid-template-columns: repeat(2, 1fr); 
+		position: relative;
+		z-index: 2;
+		top: -30em;
+	}
+	
+	/*info style*/
+	div#info{
+		color: white;
+		margin-top: -13em;
+		width: 30em;
+		margin-left: 7em;
+	}
+		
+	/*info heading style*/
+	h2#infoHeading{
+		border-bottom: 2px solid #b993d6;
+	}
+	
+	/*form style*/
+	form#joinUsForm{
+		width: 30em;
+		color: white;
+		position: relative;
+		top: -18em;
+		border-radius: 50px;
+		background: transparent;
+		margin-left: 5em;
+	}
+
+	/*imput style*/
+	input{
+		background: transparent;
+		color: white;
+		margin-top: 1em;
+		border-top: 2px solid grey;
+		border-bottom: 2px solid black;
+		padding: 0.6em 2em;
+		width: 30em;
+	}
+	input::placeholder{color:white}
+	#email, #phone{width: 12em;}
+	
+	/*input fields style*/
+	.field{
+		margin: 1em;
+	}
+	
+	/*text are style*/
+	textarea{
+		background: transparent;
+		color: white;
+		border-left: 2px solid black;
+		border-bottom: 2px solid black;	
+		width: 30em;
+		margin-top: 1em;
+		height: 5em;
+	}
+	textarea::placeholder{color:white}
+	
+	/*button style*/
+	input#formBtn{
+		width: 10em;
+		cursor: pointer;
+		border-radius: 20px;
+		border: none;
+		background: #b993d6;
+		transition: 0.2s ease;
+		margin-left: 4em;
+	}
+	/*hover effect*/
+	#formBtn:hover {
+		background-color: #0c3343;
+	    box-shadow: 0px 15px 20px #fff;
+	    color: #fff;
+	    transform: translateY(-7px);
+	}
+
+/*footer part*/
+    a#flinks{
+        text-decoration: none;
+        color: white;
+        padding-left: 2%;   
+    }
+
+    #icon{
+        position: relative;
+        left: 9.5em;
+        border-radius: 3%;
+        height: 4em;
+        padding: 0.5em;
+
+    }
+
+    #line{
+        width: 37%;
+        margin-left: 10em;
+    }
+
+    #links{
+        position: relative;
+        left: 10em;
+    }
+
+    #copyright{
+        position: relative;
+        left: 13em;
+    }
+
+    #footer{
+        position: relative;
+        top: -80%;
+        color: white;
+        left: 50%;
+    }
+
+    #calligraphy{
+        position: relative;
+        height: 90%;
+        width: 60%;
+    }
+
+
+
+

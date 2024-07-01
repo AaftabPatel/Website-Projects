@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+<meta charset="UTF-8">
+<title>SupportSail-Donate</title>
+
+	<link rel = "stylesheet" href = "donate.css">
+	<link rel = "icon" type = "image" href="images/ssLogo_nobg.png">
+
+</head>
+<body>
+	<div class="parallax" class="Container1" id="p1">
+        <div id="container1">
+        </div>
+        <a href="index.htm"><img src="images/ssLogo.png" id="logo" alt="logo"></img></a>
+        <ul id="nav1">
+            <li><a href = "Contact.htm">Contact</a></li>
+            <li><a href = "Volunteer.htm">Volunteer</a></li>
+			<li><a href = "Events.htm">Events</a></li>
+            <li><a href = "About.htm">About</a></li>
+            <li><a href = "index.htm">Home</a></li>
+        </ul>
+        <div id="content1">
+            <p>"Your <font color = "magenta">Donation</font><br>
+			is others Inspiration."</p>
+            
+            <a href="#jump"><button id="donateButton" class="donateButton1" onClick = "">Donate Now</button></a>
+        </div>
+    </div>
+	
+	<div id = "container2">
+		<img src="images/hand.jpg" id="hand" alt="donate"></img>
+		<div id="content2">
+            <p>"It's not how much we give,<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			but how much love we put into giving"</p>
+            <a href = "#jump"><button id="donateButton" class  ="donateBtn">Donate Now</button></a>
+        </div>
+	</div>
+	
+	<div div="container3">
+		<center><p id = "heading3"> <u>Waiting For Help</u></p>
+		<p id ="content3">"The smallest act of kindness <br>
+		is worth more than the grandest intention." <br>
+		- <font color="gold">Oscar Wilde</font></p></center>
+		<div id="cardBox">
+			<div id = "card">
+				<img src="images/img_3.jpg" id="cardImage" alt="donate"></img>
+				<div id="gradient"></div>
+				<div id="cardContent">
+					<h2 id="cardHeading">Hunger and Malnutrition:</h2>
+					More than 2 billion people suffer from malnutrition, 
+					with 9 million people dying of hunger-related causes annually. 
+					Donations play a crucial role in providing food aid and supporting
+					sustainable agriculture to combat hunger and food insecurity.
+					<br><br><a href="#more" id="more">READ MORE...</a>
+				</div>	
+			</div><div id = "card">
+				<img src="images/img_7.jpg" id="cardImage" alt="donate"></img>
+				<div id="gradient"></div>
+				<div id="cardContent">
+					<h2 id="cardHeading">Malnutrition and Health Issues:</h2>
+					 Poverty contributes to malnutrition and health-related concerns, 
+					particularly among children. India has one of the highest rates of child malnutrition globally, 
+					leading to long-term health and developmental challenges.
+					<br><br><a href="#more" id="more">READ MORE...</a>
+				</div>	
+			</div>
+			<div id = "card">
+				<img src="images/img_8.jpg" id="cardImage" alt="donate"></img>
+				<div id="gradient"></div>
+				<div id="cardContent">
+					<h2 id="cardHeading">Magnitude of Poverty:</h2>
+					 India has one of the largest populations living in poverty, 
+					with approximately 176 million people living below the poverty line as of 2021.
+					<br><br><a href="#more" id="more">READ MORE...</a>
+				</div>	
+			</div>
+		</div>
+	</div>
+	
+	
+	<div id = "container4">
+		<img src="images/aboutImg.jpg" id="aboutImage" alt="donate"></img>
+		<div id="content4">
+			<h1 id="heading4">All Help Is Welcomed</h1>
+			"Your generosity has the power to make a real difference. 
+			At SupportSail, we believe that every small act of kindness counts. 
+			Your donation, no matter the amount, helps us create positive change,
+			support those in need, and build a brighter future. Together, 
+			let's make a meaningful impact and spread the joy of giving. 
+			Donate today and be a part of something beautiful!"
+		</div>
+	</div>
+
+	<div class="parallax" class="Container1" id="p2">
+		<div id="jump"></div>
+        <div id="container5">
+        </div>
+        <a href="index.htm"><img src="images/ssLogo.png" id="logo2" alt="logo"></img></a>
+        
+        <div id="content5">
+            <div id = "info">
+				<h2 id="infoHeading">Transperancy </h2>
+				Our platform takes pride in its commitment to transparency. 
+				We ensure that donors receive clear and comprehensive insights into the impact of their contributions, 
+				fostering trust and accountability.
+				<br><br>
+				<h2 id="infoHeading">Convenience:</h2>
+				
+				With our one-stop solution, we've streamlined the donation process. 
+				Individuals and organizations can easily connect, collaborate, and share resources—all within 
+				a user-friendly interface. 
+				<br><br>
+				<h2 id="infoHeading">Community Hub:</h2>
+				Our platform serves as a thriving community hub, bringing together like-minded individuals and organizations. 
+				It provides a centralized space for users to connect, collaborate, and collectively make a positive impact. 
+			</div>
+
+			<!-- donation form -->
+			<form id="donateForm" action="donate.jsp" method="post">
+				<h1 id="heading5">Donate Now</h1>
+				<input type="text" id="organization" name="organizationName" placeholder="Select where you want to donate" onkeyup="showOptions(this.value)" autocomplete="off" required>
+					<!-- Uses java script to run showoptions to get list-->
+					<div id="options" class="options">
+					</div>
+				<input type="text" id="name" class="field" name="name" pattern="[A-Za-z\s]{2,}" placeholder="Enter your Full Name" required>
+		        <input type="email" id="email" class="field" name="email" placeholder="Enter your Email Address" required>
+		        <input type="text" id="mob" class="field" name="mobileNumber" pattern="[0-9]{10}" placeholder="Enter your Mobile Number" required>
+		        <input type="text" id="amount" class="field" name="amount" placeholder="Enter Amount to donate" required>						
+
+				<input id="formBtn" type="submit"></input><input id="formBtn" type="reset"></input>
+			</form>
+        </div>
+        <button id="donateButton">Donate Now</button>
+        
+    </div>
+
+
+    <div class="parallax" id="p3">
+        <img src="images/donation_calligraphy2.png" id="calligraphy" alt="donate blood"></img>
+        <div id="footer">
+            <a href="#instagram"><img src="images/instagram_icon.png" id="icon" alt="instagram icon"></img></a>
+            <a href="#facebook"><img src="images/facebook_icon.png" id="icon" alt="facebook icon"></img></a>
+            <a href="#gmail"><img src="images/gmail_icon.png" id="icon" alt="gmail icon"></img></a>
+            <a href="#pintrest"><img src="images/pintrest_icon.png" id="icon" alt="pintrest icon"></img></a>
+            <a href="#linkedin"><img src="images/linkedin_icon.png" id="icon" alt="linkedin icon"></img></a>
+            <a href="#twitter"><img src="images/twitter_icon.png" id="icon" alt="twitter icon"></img></a>
+            <hr id="line">
+            <div id="links">
+                <a href="#" id="flinks">About</a>
+                <a href="#" id="flinks">Need Help?</a>
+                <a href="#" id="flinks">Privacy</a>
+                <a href="#" id="flinks">Terms of Use </a>
+                <a href="#" id="flinks">Advertising 
+                <br><br><span id="copyright">©2023</span>
+            </div>
+        </div>
+    </div>
+
+
+
+ <script>
+      function showOptions(str) {
+            var xhttp;
+            if (str.length == 0) {
+                document.getElementById("options").innerHTML = "";
+                return;
+            }
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var responseText = this.responseText;
+                    var optionsArray = responseText.split('\n'); // Assuming each option is on a new line in the response
+                    
+                    // Limit the displayed options to 5
+                    var limitedOptions = optionsArray.slice(0, 8).join('\n');
+                    
+                    document.getElementById("options").innerHTML = limitedOptions;
+
+                    // Get all elements with class 'option'
+                    var optionElements = document.querySelectorAll('.option');
+
+                    // Iterate through each 'option' element
+                    optionElements.forEach(function(element) {
+                        element.addEventListener('click', function() {
+                            // Get the text content of the clicked option
+                            var clickedText = this.textContent;
+
+                            // Fill the input field with the clicked text
+                            document.getElementById("organization").value = clickedText;
+
+                            // Clear options after clicking
+                            document.getElementById("options").innerHTML = "";
+                        });
+                    });
+                }
+            };
+            xhttp.open("GET", "donateSearch.jsp?q=" + str, true);
+            xhttp.send();
+        }
+
+
+        // Click event listener for document body
+        document.addEventListener('click', function(event) {
+            var optionsContainer = document.getElementById('options');
+            var organizations = document.getElementById('organization');
+
+            // Check if the click is outside the options container and the input field
+            if (event.target !== optionsContainer && event.target !== organizations) {
+                // Hide the options
+                optionsContainer.innerHTML = ""; // Clear the options list
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+

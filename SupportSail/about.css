@@ -1,0 +1,225 @@
+/*donator pahe css*/
+   /*basics styling*/
+    body, html {
+        height: 100%;
+        margin: 0;
+	}
+	
+    body::-webkit-scrollbar {
+        display: none;
+    }
+	
+	::selection {
+	  background-color: #b993d6; /* Set your desired background color here */
+	  color: white; /* Set the text color for the selected text */
+	}
+/*parallax part*/
+    #p1{
+       /* The image used */
+      background-image: url('images/ssImg1.jpg');
+      height: 100%;
+	  
+    }
+     
+	/*footer part*/
+	#p3{
+        height: 40%;
+        background: #B993D6;
+		background: linear-gradient(to right, #8CA6DB, #B993D6); 
+
+    }
+  
+    .parallax {  
+      overflow: hidden;
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+/*first part styling*/
+    
+    /*logo style*/
+	#logo{
+        position: absolute;
+        left: 1.2em;
+        top: 0	em;
+        z-index: 2;
+		font-size: 2.5em;
+		color: white;
+		font-family: 'Comfortaa', sans-serif;
+    }
+    /*navigation bar style*/
+    ul#nav1{
+        position: absolute;
+        right: 0px;
+		background-color: rgba(0,0,0,0.5);
+		width: 100%;
+		padding: 0.5em;
+    }
+
+    ul{
+        font-size: 1.6em;
+        list-style-type: none;
+        margin: 0;
+        padding: 0px;
+        overflow: hidden;
+        background-color: none;
+    }
+
+    li{
+        float: right;
+        padding: 0px 20px 0px 5px;
+    }
+
+    li a{
+        display: block;
+        color:  white;
+		border-left: 2px solid white;
+        padding: 24px 25px;
+        text-decoration: none;
+    }
+
+    li a:hover{
+        background-color: rgb(252, 246, 246);
+        color: #0c3343;
+		font-size: 1.3em;
+		transition: ease 0.3s;
+    }
+	
+    .active{
+        background-color: #04AA6D;
+    }
+	
+/*second patrt styling*/
+	img#book{
+		height: 9.6em;
+		width: 69.5em;
+		opacity: 0.4;
+	}
+
+	div#container2{
+		background: #77a1d3;
+		background: linear-gradient(to right, #77a1d3, #79cbca, #e684ae);
+		width: 69.45em;
+		position: relative;
+		margin-left: 7em;
+		top: -2em;
+		height: 9.7em;
+	}
+	
+	div#content2{
+		position: relative;
+		top: -4.5em;
+		margin-left: 2em;
+		font-size: 2em;
+		color: white;
+	}
+	
+	button {
+		padding: 1.3em 3em;
+		font-size: 12px;
+		margin-top: -3em;
+		margin-left: 0em;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-weight: 500;
+		color: #000;
+		background-color: #fff;
+		border: none;
+		border-radius: 45px;
+		box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+		transition: all 0.3s ease 0s;
+		cursor: pointer;
+		outline: none;
+		position: relative;
+		top: -8em;
+		left: 70em;		
+	}
+
+	button:hover {
+		background-color: #0c3343;
+	    box-shadow: 0px 15px 20px #fff;
+	    color: #fff;
+	    transform: translateY(-7px);
+	}
+
+	button:active {
+	    transform: translateY(-1px);
+	}
+
+/*third part styling*/
+	div#container3{
+		display: grid;
+		border: 2px solid #B993D6;
+		margin-top: 3em;
+		margin-bottom: 5em;
+		grid-template-columns: repeat(2, 1fr); 
+		padding: 2em ;
+		background-color: rgba(0,0,0,0.1);
+	}
+
+	/*image style*/
+	img#aboutImage{
+		width: 35em;
+		border-radius: 27px;
+		box-shadow:  14px 14px 21px #b1b1b1, -14px -14px 21px #ffffff;
+	}
+	
+	h1#aboutHeading{
+		color: #8CA6DB ;
+		border-bottom: 2px solid #B993D6;
+	}
+	/*content2 style*/
+	div#about{
+		font-size: 1.1em;
+		margin-right: 5em;
+	}
+
+/*footer part*/
+    a#flinks{
+        text-decoration: none;
+        color: white;
+        padding-left: 2%;   
+    }
+
+    #icon{
+        position: relative;
+        left: 9.5em;
+        border-radius: 3%;
+        height: 4em;
+        padding: 0.5em;
+
+    }
+
+    #line{
+        width: 37%;
+        margin-left: 10em;
+    }
+
+    #links{
+        position: relative;
+        left: 10em;
+    }
+
+    #copyright{
+        position: relative;
+        left: 13em;
+    }
+
+    #footer{
+        position: relative;
+        top: -80%;
+        color: white;
+        left: 50%;
+    }
+
+    #calligraphy{
+        position: relative;
+        height: 90%;
+        width: 60%;
+    }
+
+
+
+

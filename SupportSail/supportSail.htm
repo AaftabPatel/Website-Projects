@@ -1,0 +1,520 @@
+<html>
+<head>
+<title>SupportSail</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel = "icon" type = "image" href="ssImages/ssLogo_nobg.png">
+<link rel = "stylesheet" href = "ss_nav_and_footer.css">
+<link rel = "stylesheet" href = "">
+<style>
+	body{
+		background-color: gold;
+	}
+	body::-webkit-scrollbar {
+		display: none;
+	}
+	::selection {
+	  background-color: #b993d6; /* Set your desired background color here */
+	  color: #000000; /* Set the text color for the selected text */
+	}
+<!-- the navigation and footer part is included as an external css file -->
+	/* Slideshow container */
+    .slideshow{
+	    width: 100%;
+	    position: absolute;
+	    top: -1.1em;
+	    left: 0em;
+	    z-index: -1;
+	    margin: auto;
+		transition: opacity 1s ease;
+    }
+
+    /*slides style*/
+	.slides {
+ 		display: none;
+	}
+
+	/*slideshow images style*/
+    img#slide_img{
+        width: 100%;
+        height: 32em;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+	
+	/*vignette class style*/
+	#vignette{
+	  position: absolute;
+	  height: 32.5em;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  display: block;
+	  background-size: cover;
+	}
+
+	/*vignette effect*/
+	#vignette:after {
+	  content: '';
+	  position: absolute;
+	  top: 0; left: 0; bottom: 0; right: 0;
+	  background: radial-gradient(at 70% , transparent 7%, rgba(0,0,0,0.8) 70%);
+	}
+
+	/* Next & previous buttons */
+    a#changeSlide{
+    	position: absolute;
+    	cursor: pointer;
+    	background-color: gold;
+		border: 2px solid white;
+	    padding: 1em;
+	    color: white;
+	    font-weight: bold;
+	    transition: 0.6s ease;
+	    border-radius: 0.2em;
+    }
+
+    /*positioning next*/
+    a.next{
+    	top: 40%;
+    	left: 96.8%;
+    	font-size: 1em;
+    }
+
+    /*positioning prev*/
+    a.prev{
+    	top: 40%;
+    	left: 0%;
+    	font-size: 1em;
+    }
+
+    /*hover effect of next and prev*/
+	a#changeSlide:hover{
+    	background-color: white;
+    	color: gold;
+    }
+	
+/*trending part*/
+    #topDonators{
+		padding: 0.6em;
+	}
+
+    /*trend title style*/
+    span#topTitle{
+    	color: #ff3333;
+    	font-size: 2em;
+    	position: relative;
+    	top: 0em;
+    	left: 1em;
+    }
+	
+	/*card image holder*/
+	#cardHolder{
+		position: relative;
+		top : -5em;
+	}
+	
+	/*image card style*/
+    div.card{
+    	position: relative;
+    	display: inline-block;
+    	top: 7em;
+    	left: 3em;
+    	margin-left: 2em;
+    	border-radius: 1em 0.1em;
+    	height: 13em;
+    	width: 10em;
+    	padding-right: 2em;
+    	background-color: #0c3343;
+    	color: white;
+    }
+
+    /*card image style*/
+    img#cardImg{
+    	height: 13em;
+    	width: 10em;
+    	position: relative;
+    	top: -1.65em;
+    	padding-left: 2em;
+    }
+
+	/*card anime name style*/
+	span#name{
+		writing-mode: vertical-lr;
+        transform: rotate(-180deg);
+        position: absolute;
+        overflow: hidden;
+        bottom: 2em;
+        left: 0.5em;
+        display: block;
+        width: 1em;
+    }
+
+    /*card number style*/
+    span#topNum{
+    	position: relative;
+    	left: 0.01em;
+    	top: 7.5em;
+    	color: gold;
+    	font-size: 1.5em;
+    }
+
+    /*styking change card buttons*/
+	a#changeCard{
+		font-size: 1.7em;
+		background-color: #0c3343;
+		color : white;
+		padding: 0.5em;
+		border: 2px solid white;
+		border-radius: 0.3em;
+		position: relative;
+		top: -5em;
+		cursor: pointer;
+	}
+    
+	/*positioning next card button*/
+	a.nextCard{
+    	left: 45em;
+    }
+
+    /*positioning prev card button*/
+    a.prevCard{
+    	left: 0.2em;
+    }
+	
+	
+    /*hover effect of next and prev*/
+	a#changeCard:hover{
+    	background-color: white;
+    	color: #0c3343;
+		border: 2px solid #0c3343;
+		transition: 0.5s ease;
+    }
+
+/*Register SupportSail part*/
+    /*Register SupportSail*/
+    div#register{
+    	background: #000000;  
+		background: linear-gradient(to right, #0c3343, #000000); 
+    	position: relative;
+    	top: 34em;
+    	text-align: right;
+    	width: 101.17%;
+    	height: 25em;
+    	left: -0.5em;
+    	color: white;
+    }
+
+    /*Register SupportSail image style*/
+    img#registerImg{
+    	height: 24em;
+    	position: relative;
+		right: 60%;
+		top: 0em;
+    }
+
+    /*register title style*/
+    span#registerTitle{
+    	position: relative;
+    	font-size: 3.5em;
+    	top: -5.8em;
+    	right: 1em;
+    }
+
+    /*register information style*/
+    div#registerInfo{
+    	position: relative;
+    	display: block;
+    	width: 40em;
+    	top: -7em;
+    	right: 7em;
+		font-size: 2.5em;
+    }
+
+    /*link to register page*/
+    a#registerLink{
+    	color: gold;
+    	font-size: 1.2em;
+    }
+
+    /*register button on about*/
+    button#registerButton{
+		padding: 0.6em 1.3em;
+	  	font-size: 1em;
+	  	letter-spacing: 2.5px;
+	  	font-weight: 500;
+	  	color: #fff;
+	  	background-color: gold;
+	  	border: none;
+	  	border-radius: 45px;
+	  	transition: all 0.3s ease 0s;
+	  	cursor: pointer;
+	  	outline: none;
+    	position: relative;
+		top: -8em;
+    	left: -2em;
+    	
+    }	
+
+    /*register button hover effect*/
+    button#registerButton:hover{
+    	background-color: white;
+		box-shadow: 0px 15px 20px white;
+		color: gold;
+		transform: translateY(-7px);
+    }
+
+</style>
+</head>
+<body>
+	<!-- NAVIGATION BAR -->
+	<div id="nav">
+		<div id="mySidenav" class="sidenav">
+		  <button class="closebtn" onclick="closeNav()">&times;</button>
+		  <a href="sslanding.htm">Home</a>
+			<a href="Donate.htm">Donate</a>
+			<a href="#About.htm">About Us</a>
+			<a href="#Contact.htm">Contact Us</a>
+		  
+		</div>
+		<button id="menu" onclick="openNav()">
+			<i class="material-icons" style="color: #ffd700; font-size: 3em; position:relative; top: -0.1em;">menu</i></button>
+		<img src="ssImages/ssLogo_nobg.png" alt="logo" id="logo">
+		<img src="ssImages/logo_word_nobg2.png" alt="site_name" id="name">
+		<input type="search" id="search_bar" placeholder="Search Anime ...">
+			<i id="search_icon" class="material-icons">search</i>
+		</input>
+		<button id="donate" class="nav_button">Donate</button>
+		<button id="login" class="nav_button">Login</button>
+	</div>
+	
+	<!-- slideshow -->
+	<div class="slideshow">
+	    <div class="slides">
+	    	<div id="vignette"></div>
+	        <img src="ssImages\ssImg1.jpg" id="slide_img">
+	    </div>
+	    
+		<div class="slides">
+	    	<div id="vignette"></div>
+	        <img src="ssImages\ssImg2.jpg" id="slide_img">
+	    </div>
+	    <div class="slides">
+	    	<div id="vignette"></div>
+	        <img src="ssImages\ssImg3.jpg" id="slide_img">
+	    </div>
+	    <div class="slides">
+	    	<div id="vignette"></div>
+	        <img src="ssImages\ssImg1.jpg" id="slide_img">
+	    </div>
+	    
+
+	</div>
+	<a id="changeSlide" class="prev" onclick="plusSlides(-1)">❮</a>
+	<a id="changeSlide" class="next" onclick="plusSlides(1)">❯</a>	    
+
+	<!--TRENDING-->
+	<div id="topDonators">
+		<span id="topTitle">Our Top Donators...</span>
+		<div id = "cardHolder">
+			<div class="card">
+				<span id="name">One Piece</span>
+				<span id="topNum">01</span>
+				<a href="#one_piece.htm">
+					<img src="ssImages/person.png" id="cardImg">
+				</a>
+			</div>
+			<div class="card">
+				<span id="name">One Piece</span>
+				<span id="topNum">02</span>
+				<a href="#one_piece.htm">
+					<img src="ssImages/person.png" id="cardImg">
+				</a>
+			</div>
+			<div class="card">
+				<span id="name">One Piece</span>
+				<span id="topNum">03</span>
+				<a href="#one_piece.htm">
+					<img src="ssImages/person.png" id="cardImg">
+				</a>
+			</div>
+			<div class="card">
+				<span id="name">One Piece</span>
+				<span id="topNum">04</span>
+				<a href="#one_piece.htm">
+					<img src="ssImages/person.png" id="cardImg">
+				</a>
+			</div>
+			<div class="card">
+				<span id="name">One Piece</span>
+				<span id="topNum">05</span>
+				<a href="#one_piece.htm">
+					<img src="ssImages/person.png" id="cardImg">
+				</a>
+			</div>
+			<div class="card">
+				<span id="name">One Piece</span>
+				<span id="topNum">06</span>
+				<a href="#one_piece.htm">
+					<img src="ssImages/person.png" id="cardImg">
+				</a>
+			</div>
+			<div class="card">
+				<span id="name">One Piece</span>
+				<span id="topNum">07</span>
+				<a href="#one_piece.htm">
+					<img src="ssImages/person.png" id="cardImg">
+				</a>
+			</div>
+			<div class="card">
+				<span id="name">One Piece</span>
+				<span id="topNum">08</span>
+				<a href="#one_piece.htm">
+					<img src="ssImages/person.png" id="cardImg">
+				</a>
+			</div>
+			<div class="card">
+				<span id="name">One Piece</span>
+				<span id="topNum">09</span>
+				<a href="#one_piece.htm">
+					<img src="ssImages/person.png" id="cardImg">
+				</a>
+			</div>
+			<div class="card">
+				<span id="name">One Piece</span>
+				<span id="topNum">10</span>
+				<a href="#one_piece.htm">
+					<img src="ssImages/person.png" id="cardImg">
+				</a>
+			</div>
+		</div>
+	</div>
+		<a id="changeCard" class="prevCard" onclick="plusCard(-1)">❮</a>
+	    <a id="changeCard" class="nextCard" onclick="plusCard(1)">❯</a>	    
+
+
+	<!--register-->
+	<div id="register">
+		<img src="ssImages/ssLogo_nobg.png" id="registerImg">
+		<span id="registerTitle"><u>Register</u></span>
+		<div id="registerInfo">
+			"The value of a man resides in <br> what he gives and not in <br>what he is capable of receiving."<a href="#register" id="registerLink">more..</a>
+		</div>
+		<button id="registerButton">Registor</button>
+	</div>
+	
+	
+    
+    <!-- Footer -->
+    <div id="footer">
+		<img src="ssImages/donation_calligraphy2.png" id="calligraphy" alt="help,support,donate"></img>	
+		<div id="socialIcons">
+			<a href="#instagram"><img src="D:/projects/images/instagram_icon.png" id="icon" alt="instagram icon"></img></a>
+			<a href="#facebook"><img src="D:/projects/images/facebook_icon.png" id="icon" alt="facebook icon"></img></a>
+			<a href="#gmail"><img src="D:/projects/images/gmail_icon.png" id="icon" alt="gmail icon"></img></a>
+			<a href="#pintrest"><img src="D:/projects/images/pintrest_icon.png" id="icon" alt="pintrest icon"></img></a>
+			<a href="#linkedin"><img src="D:/projects/images/linkedin_icon.png" id="icon" alt="linkedin icon"></img></a>
+			<a href="#twitter"><img src="D:/projects/images/twitter_icon.png" id="icon" alt="twitter icon"></img></a>
+		</div>
+		<br>
+		<hr id="line">
+        <div id="links">
+			<a href="#" id="flinks">About</a>
+            <a href="#" id="flinks">Need Help?</a>
+            <a href="#" id="flinks">Privacy</a>
+            <a href="#" id="flinks">Terms of Use </a>
+            <a href="#" id="flinks">Advertising 
+			<br><br><span id="copyright">©2023</span>
+        </div>
+
+	</div>
+    
+
+
+<!-- javascript -->
+<script>
+	var navbar = document.getElementById("nav");
+	window.onscroll = function() {navColor()};
+	
+//navigation color on scroll
+    function navColor(){
+		if (window.pageYOffset != 0) {
+	    	navbar.style.backgroundColor = "rgba(0,0,0,0.7)";
+	  	} 
+	  	else if(window.pageYOffset == 0){
+	    	navbar.style.backgroundColor = "";
+	  	}	
+	}
+
+//side navigation script
+	let slideIndex = 1;
+	showSlides(slideIndex);
+	//open side navigation 	
+	function openNav() {
+	  document.getElementById("mySidenav").style.width = "300px";
+	}
+
+	//close side navigation 
+	function closeNav() {
+	  document.getElementById("mySidenav").style.width = "0";
+	  document.getElementById("list").style.display = "none";
+	}
+	
+	
+//slideshow script
+	// Next/previous controls
+	 function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    //current slide 
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+    
+    //show slide 
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("slides");
+        
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slides[slideIndex-1].style.display = "block";  
+    }
+//multiple slideshow script
+    //card index
+	let cardIndex = 5;
+	showCard(cardIndex);
+
+	// Next/previous controls
+	 function plusCard(n) {
+        showCard(cardIndex += n);
+    }
+
+    //current cards
+    function currentCard(n) {
+        showCard(cardIndex = n);
+    }
+    
+    //show cards
+    function showCard(n) {
+        let i;
+        let cards = document.getElementsByClassName("card");
+        
+        if (n > cards.length) {cardIndex = cards.length;}    
+        if (n < 5) {cardIndex = 5;}
+        /*to display all as none*/
+        for (i = 0; i < cards.length; i++) {
+            cards[i].style.display = "none";  
+        }
+        /*to set all visible cards as inline-block*/
+        for (i = cardIndex-5; i < cardIndex; i++) {
+            cards[i].style.display = "inline-block";  
+        } 
+    }
+
+</script>	
+	
+</body>	
+<html>

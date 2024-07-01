@@ -1,0 +1,423 @@
+/*donator pahe css*/
+   /*basics styling*/
+    body, html {
+        height: 100%;
+        margin: 0;
+	}
+	
+    body::-webkit-scrollbar {
+        display: none;
+    }
+	
+	::selection {
+	  background-color: pink; /* Set your desired background color here */
+	  color: white; /* Set the text color for the selected text */
+	}
+/*parallax part*/
+    #p1{
+       /* The image used */
+      background-image: url('images/volunteer4.jpg');
+      height: 100%;
+    }
+     
+	/*donate part*/
+	#p2{
+       /* The image used */
+      background-image: url('images/donateImage.jpg');
+      height: 100%;
+    }
+	
+	/*footer part*/
+	#p3{
+        height: 40%;
+        background: #F09819;  
+		background: linear-gradient(to right, #EDDE5D, #F09819); 
+    }
+  
+    .parallax {  
+      overflow: hidden;
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+/*first part styling*/
+    #container1{
+        height: 100%;
+        margin: 0;
+        z-index: 2;
+        background-color: black;
+        opacity: 0.6;
+    }
+    /*logo style*/
+	#logo{
+        position: absolute;
+        left: 1.3em;
+        top: 0.35em;
+        z-index: 2;
+		font-size: 2.5em;
+        height: 4em;
+		color: white;
+		font-family: 'Comfortaa', sans-serif;
+    }
+    /*navigation bar style*/
+    ul#nav1{
+        position: absolute;
+        top: 1em;
+        right: 0px;
+    }
+
+    ul{
+        font-size: 25px;
+        list-style-type: none;
+        margin: 0;
+        padding: 0px;
+        overflow: hidden;
+        background-color: none;
+    }
+
+    li{
+        float: right;
+        padding: 0px 20px 0px 5px;
+    }
+
+    li a{
+        display: block;
+        color: white;
+        padding: 24px 25px;
+        text-decoration: none;
+    }
+
+    li a:hover{
+        background-color: rgb(252, 246, 246);
+        color: gold;
+		font-size: 1.5em;
+		transition: ease 0.3s;
+    }
+	
+    .active{
+        background-color: #04AA6D;
+    }
+
+    #content1{
+    	color: white;
+		font-family: 'Comfortaa', sans-serif;
+    	position: absolute;
+    	top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+    	font-size: 2.37em;
+		font-weight: bold;
+    }
+
+    .logo{
+        position: relative;
+        left: 0px;
+        top: 0px;
+        z-index: 1;
+        height: 150px;
+    }
+
+    button {
+		padding: 1.3em 3em;
+		font-size: 12px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-weight: 500;
+		color: #000;
+		background-color: #fff;
+		border: none;
+		border-radius: 45px;
+		box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+		transition: all 0.3s ease 0s;
+		cursor: pointer;
+		outline: none;
+	}
+
+	button:hover {
+		background-color: #0c3343;
+	    box-shadow: 0px 15px 20px #fff;
+	    color: #fff;
+	    transform: translateY(-7px);
+	}
+
+	button:active {
+	    transform: translateY(-1px);
+	}
+
+/*second part styling*/
+	/*heading style*/
+	p#heading2{
+		text-align: center;
+		font-size: 3em;
+		font-family: 'Comfortaa', sans-serif;
+		border-bottom: 20px solid #F09819;
+	}
+	
+	/*quote below heading*/
+	p#content2{
+		font-size: 1.5em;
+		font-family: 'Comfortaa', sans-serif;
+	}
+	
+	/* Create three equal columns that floats next to each other */
+	#cardBox {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr); 
+		gap: 10px;
+		margin-left: 8%;
+		
+	}
+	 
+	/*card styling*/
+	#card{
+		width: 20em;
+		background: rgba(0,0,0,0.1);
+		height: 40em;
+		border-radius: 2em;
+	}
+	
+	/*card heading style*/
+	#cardHeading{
+		border-bottom: 2px solid #F09819;
+	}
+	
+	/*read more styling*/
+	a#more{
+		color: black;
+		text-decoration: none;
+	}
+	
+	/*gradient style*/
+	div#gradient{
+		position: relative;
+		height: 22em;
+		width: 100%;
+		background: #F09819;  
+		background: linear-gradient(to right, #EDDE5D, #F09819); 
+		z-index: 1;
+		opacity: 0;
+		top: -22em;
+		transition: ease 0.5s;
+	}
+	div#gradient:hover{
+		opacity: 0.7;
+		cursor: pointer; 
+		transition: ease 0.5s;
+	}
+	
+	/*card image style*/
+	img#cardImage{
+		width: 20em;
+		border-radius: 2em 0;
+		filter: grayscale(70%);
+	}
+
+	/*card content style*/
+	div#cardContent{
+		position: relative;
+		top: -20em;
+	}
+
+/*third part stylinh */
+	div#container3{
+		display: grid;
+		margin-top: 5em;
+		margin-bottom: 5em;
+		grid-template-columns: repeat(2, 1fr); 
+		padding: 2em 0em; 
+		background-color: rgba(0,0,0,0.1);
+	}
+
+	div#imageZoom{
+		overflow: hidden;
+		width: 30em;
+		margin-left: 2em;
+		border-radius: 27px;
+		}
+	/*image style*/
+	img#aboutImage{
+		width: 30em;
+		transition: transform 0.3s ease-in-out;
+		box-shadow:  14px 14px 21px #b1b1b1, -14px -14px 21px #ffffff;
+	}
+
+	/*image hover style*/
+	img#aboutImage:hover{
+		 transform: scale(1.2);
+	}
+
+	/*heading of container3 style*/
+	h1#heading3{
+		border-bottom: 2px solid #F09819;
+		color: black;
+		
+	}
+
+	/*content3 style*/
+	div#content3{
+		text-align: center; 
+		margin-right: 5em;
+		font-size: 1.2em;
+	}
+
+/*forth-join part*/
+	#container4{
+        height: 100%;
+        background-color: black;
+        opacity: 0.6;
+    }
+    /*logo style*/
+	#logo2{
+		position: relative;
+		top: -41.1em;
+        height: 130px;
+    }
+	
+	#content4{
+		display: grid;
+		margin-top: 5em;
+		grid-template-columns: repeat(2, 1fr); 
+		position: relative;
+		z-index: 2;
+		top: -30em;
+	}
+	
+	
+	/*info style*/
+	div#info{
+		color: white;
+		margin-top: -13em;
+		width: 30em;
+		margin-left: 7em;
+	}
+		
+	/*info heading style*/
+	h2#infoHeading{
+		border-bottom: 2px solid #F09819;
+	}
+	
+	/*form style*/
+	form#volunteerForm{
+		width: 30em;
+		color: white;
+		position: relative;
+		top: -15em;
+		border-radius: 50px;
+		background: transparent;
+		margin-left: 5em;
+	}
+
+	/*imput style*/
+	input{
+		background: transparent;
+		color: white;
+		border-top: 2px solid grey;
+		padding: 0.6em 2em;
+		width: 30em;
+	}
+	#fname, #email{width: 13.8em;}
+	
+	/*input fields style*/
+	.field{
+		margin: 1em;
+	}
+	
+	/*options list styling*/
+	div.events{
+		position: absolute;
+	    background-color: #f9f9f9;
+	    margin-left: 1em;
+	    min-width: 250px;
+	    color: black;
+	    border: 1px solid #ccc;
+	    border-radius: 5px;
+	    z-index: 1;
+	}
+
+	.event{
+	    padding: 8px 12px;
+	    cursor: pointer;
+	}
+
+	.event:hover {
+	    background-color: #F09819;
+	    color: white;
+	}
+
+	/*text are style*/
+	textarea{
+		background: transparent;
+		color: white;
+		width: 30em;
+		height: 10em;
+	}
+	
+	/*button style*/
+	input#formBtn{
+		width: 10em;
+		cursor: pointer;
+		border-radius: 20px;
+		border: none;
+		background: #F09819;
+		transition: 0.2s ease;
+		margin-left: 4em;
+	}
+	/*hover effect*/
+	#formBtn:hover {
+		background-color: #0c3343;
+	    box-shadow: 0px 15px 20px #fff;
+	    color: #fff;
+	    transform: translateY(-7px);
+	}
+
+
+/*footer part*/
+    a#flinks{
+        text-decoration: none;
+        color: white;
+        padding-left: 2%;   
+    }
+
+    #icon{
+        position: relative;
+        left: 9.5em;
+        border-radius: 3%;
+        height: 4em;
+        padding: 0.5em;
+
+    }
+
+    #line{
+        width: 37%;
+        margin-left: 10em;
+    }
+
+    #links{
+        position: relative;
+        left: 10em;
+    }
+
+    #copyright{
+        position: relative;
+        left: 13em;
+    }
+
+    #footer{
+        position: relative;
+        top: -80%;
+        color: white;
+        left: 50%;
+    }
+
+    #calligraphy{
+        position: relative;
+        height: 90%;
+        width: 60%;
+    }
+
+
+
+

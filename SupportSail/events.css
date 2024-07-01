@@ -1,0 +1,478 @@
+/*donator pahe css*/
+   /*basics styling*/
+    body, html {
+        height: 100%;
+        margin: 0;
+	}
+	
+    body::-webkit-scrollbar {
+        display: none;
+    }
+	
+	::selection {
+	  background-color: pink; /* Set your desired background color here */
+	  color: white; /* Set the text color for the selected text */
+	}
+/*parallax part*/
+    #p1{
+       /* The image used */
+      background-image: url('images/ssBg7.jpg');
+      height: 100%;
+    }
+     
+	
+	/*footer part*/
+	#p3{
+        height: 40%;
+        background: #F09819;  
+		background: linear-gradient(to right, #EDDE5D, #F09819); 
+    }
+  
+    .parallax {  
+      overflow: hidden;
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+/*first part styling*/
+    #container1{
+        height: 100%;
+        margin: 0;
+        z-index: 2;
+        background-color: black;
+        opacity: 0.6;
+    }
+    /*logo style*/
+	#logo{
+        position: absolute;
+        left: 1.3em;
+        top: 0.35em;
+        z-index: 2;
+		font-size: 2.5em;
+        height: 4em;
+		color: white;
+		font-family: 'Comfortaa', sans-serif;
+    }
+    /*navigation bar style*/
+    ul#nav1{
+        position: absolute;
+        top: 1em;
+        right: 0px;
+    }
+
+    ul{
+        font-size: 25px;
+        list-style-type: none;
+        margin: 0;
+        padding: 0px;
+        overflow: hidden;
+        background-color: none;
+    }
+
+    li{
+        float: right;
+        padding: 0px 10px 0px 5px;
+    }
+
+    li a{
+        display: block;
+        color: white;
+        padding: 24px 25px;
+        text-decoration: none;
+    }
+
+    li a:hover{
+        background-color: rgb(252, 246, 246);
+        color: #0c3343;
+		font-size: 1.5em;
+		transition: ease 0.3s;
+    }
+	
+    .active{
+        background-color: #04AA6D;
+    }
+
+    #content1{
+    	color: white;
+		font-family: 'Comfortaa', sans-serif;
+    	position: absolute;
+    	top: 60%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+    	font-size: 2em;
+		font-weight: bold;
+    }
+
+    .logo{
+        position: relative;
+        left: 0px;
+        top: 0px;
+        z-index: 1;
+        height: 150px;
+    }
+
+    button {
+    	position: relative;
+		padding: 1.3em 3em;
+		font-size: 12px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-weight: 500;
+		color: #000;
+		background-color: #fff;
+		border: none;
+		border-radius: 45px;
+		box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+		transition: all 0.3s ease 0s;
+		cursor: pointer;
+		outline: none;
+	}
+	button:hover {
+		background-color: #0c3343;
+	    box-shadow: 0px 15px 20px #fff;
+	    color: #fff;
+	    transform: translateY(-7px);
+	}
+	/*searc button style*/
+	button#searchButton{
+		left: 0em;
+		z-index: 1;
+	}
+
+	button#searchButton:hover {
+		background-color: #0c3343;
+	    box-shadow: 0px 15px 20px #fff;
+	    color: #fff;
+	}
+	
+
+	button:active {
+	    transform: translateY(-1px);
+	}
+	
+	 /*nav search bar style*/
+    input#navSearch{
+        position: relative;
+        padding: 0.5em 0em 0em 5em;
+        border: none;
+        transition: all 1s ease 0s;
+        left: 0em;
+        top: -2.4em; 
+        height: 2.85em;
+        width: 0em;
+		color: black;
+        background-color: transparent;
+    }
+
+    /*search icon style*/
+    button#searchIcon{
+		position: relative;
+		top: -1.8em;
+		transition: all 1s ease 0s;
+		display: none;
+		border: 2px solid gold;
+		left: 0em;
+		height: 3.9em;
+	}
+
+    /*events list styling*/
+	div.events{
+		position: absolute;
+	    background-color: #ddd;
+	    margin-left: 10em;
+	    top: 10.2em;
+	    left: -3em;
+	    width: 0em;
+	    color: black;
+	    font-size: 0.5em;
+	    border: 1px solid #ccc;
+	    border-radius: 5px;
+	    z-index: 1;
+	}
+
+	.event{
+	    padding: 8px 12px;
+	    cursor: pointer;
+	}
+
+	.event:hover {
+	    background-color: gold;
+	}
+
+/*second part styling - Events*/
+	/*heading style*/
+	p#heading2{
+		text-align: center;
+		font-size: 3em;
+		font-family: 'Comfortaa', sans-serif;
+		border-bottom: 20px solid gold;
+	}
+	
+	/*quote below heading*/
+	p#content2{
+		font-size: 1.5em;
+		font-family: 'Comfortaa', sans-serif;
+	}
+	
+	/* Create three equal columns that floats next to each other */
+	#cardBox {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr); 
+		gap: 10px;
+		margin-left: 5em;
+		padding-top: 2em;
+	}
+	 
+	/*card styling*/
+	#card{
+		width: 35em;
+		background: rgba(0,0,0,0.1);
+		height: 20em;
+		border-radius: 2em;
+	}
+	
+	#cardHeading{
+		color: #b993d6;
+		font-family: 'Comfortaa', sans-serif;
+	}
+	
+	/*gradient style*/
+	div#gradient{
+		position: relative;
+		height: 20em;
+		width: 100%;
+		background: #F09819;  
+		background: linear-gradient(to right, #EDDE5D, #F09819); 
+		z-index: 1;
+		opacity: 0;
+		top: -20.1em;
+		border-radius: 2em 0;
+		transition: ease 0.5s;
+	}
+	div#gradient:hover{
+		opacity: 0.6;
+		cursor: pointer; 
+		transition: ease 0.5s;
+	}
+	
+	/*card image style*/
+	img#cardImage{
+		width: 18.2em;
+		height: 20em;
+		border-radius: 2em 0;
+		filter: grayscale(70%);
+	}
+
+	/*card content style*/
+	div#cardContent{
+		position: relative;
+		top: -41em;
+		left: 19em;
+		width: 15em;
+	}
+
+	/*description styling*/
+	#desc{
+		overflow: hidden;
+		display: inline-block; 
+		width:15em;
+		height: 5.4em;
+	}
+	
+	/*mrke button styling*/
+	button#moreEvents{
+		position: relative;
+		top: 1em;
+		border: 1px solid #0c3343;
+		left: 80%;
+	}
+	
+	
+/*third part styling*/
+	div#container3{
+		display: grid;
+		margin-top: 5em;
+		margin-bottom: 5em;
+		grid-template-columns: repeat(2, 1fr); 
+		padding: 2em 0em; 
+		background-color: rgba(0,0,0,0.1);
+	}
+
+	/*image style*/
+	img#aboutImage{
+		width: 30em;
+		border-radius: 27px;
+		margin-left: 2em;
+		box-shadow:  14px 14px 21px #b1b1b1, -14px -14px 21px #ffffff;
+	}
+
+	/*heading of container3 style*/
+	h1#heading3{
+		border-bottom: 2px solid gold;
+		color: black;
+		
+	}
+
+	/*content3 style*/
+	div#content3{
+		text-align: center; 
+		margin-right: 5em;
+		font-size: 1.2em;
+	}
+
+/*forth-add event part*/
+    /*logo style*/
+	#logo2{
+		position: relative;
+		top: -39em;
+        height: 130px;
+    }
+
+	/*forth- add event part styling*/
+	div#container4{
+		display: grid;
+		border: 2px solid #606c88;
+		margin-top: 5em;
+		margin-bottom: 5em;
+		grid-template-columns: repeat(2, 1fr); 
+		background-color: rgba(0,0,0,0.1);
+	}
+	
+	/*heading style*/
+	#heading4{
+		color: #F09819;
+		border-bottom: 2px solid white; 
+	}
+	/*image style*/
+	img#eventImage{
+		width: 45em;
+		border-radius: 2em 0em 0em 2em;
+		border-left: 5px solid #F09819;
+		height: 35em;
+		opacity: 0.8;
+	}
+	
+	/*form style*/
+	form#addEventForm{
+		width: 30em;
+		position: relative;
+		border-radius: 50px;
+		background: transparent;
+		margin-left: 5em;
+	}
+
+	/*imput style*/
+	input{
+		background: transparent;
+		color: #F09819;
+		border-top: 2px solid grey;
+		padding: 0.6em 2em;
+		width: 30em;
+	}
+	#fname, #email{width: 13.8em;}
+	
+	/*input fields style*/
+	.field{
+		margin: 1em;
+	}
+	
+	/*options list styling*/
+	div.options{
+		position: absolute;
+	    background-color: #f9f9f9;
+	    margin-left: 1em;
+	    min-width: 250px;
+	    color: black;
+	    border: 1px solid #ccc;
+	    border-radius: 5px;
+	    z-index: 1;
+	}
+
+	.option {
+	    padding: 8px 12px;
+	    cursor: pointer;
+	}
+
+	.option:hover {
+	    background-color: #F09819;
+	    color: white;
+	}
+
+	/*text are style*/
+	textarea{
+		background: transparent;
+		color: #F09819;
+		width: 30em;
+		height: 10em;
+	}
+	
+	/*button style*/
+	input#formBtn{
+		width: 10em;
+		cursor: pointer;
+		color:white;
+		border-radius: 20px;
+		border: none;
+		background: #F09819;
+		transition: 0.2s ease;
+		margin-left: 4em;
+	}
+	/*hover effect*/
+	#formBtn:hover {
+		background-color: #0c3343;
+	    box-shadow: 0px 15px 20px #fff;
+	    color: #fff;
+	    transform: translateY(-7px);
+	}
+
+
+/*footer part*/
+    a#flinks{
+        text-decoration: none;
+        color: white;
+        padding-left: 2%;   
+    }
+
+    #icon{
+        position: relative;
+        left: 9.5em;
+        border-radius: 30%;
+        height: 4em;
+        padding: 0.5em;
+
+    }
+
+    #line{
+        width: 37%;
+        margin-left: 10em;
+    }
+
+    #links{
+        position: relative;
+        left: 10em;
+    }
+
+    #copyright{
+        position: relative;
+        left: 13em;
+    }
+
+    #footer{
+        position: relative;
+        top: -80%;
+        color: white;
+        left: 50%;
+    }
+
+    #calligraphy{
+        position: relative;
+        height: 90%;
+        width: 60%;
+    }
+
+
+
+

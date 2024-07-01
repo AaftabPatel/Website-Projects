@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">	
+	<title>SupportSail-JoinUs</title>
+	<link rel = "stylesheet" href = "joinUs.css">
+	<link rel = "icon" type = "image" href="images/ssLogo_nobg.png">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap">
+
+</head>
+<body>
+	<div class="parallax" class="Container1" id="p1">
+        
+        <a href="index.htm"><h1 id="logo">SupportSail</h1></a>
+        <ul id="nav1">
+            <li><a href = "Contact.htm">Contact</a></li>
+            <li><a href = "Events.htm">Events</a></li>
+			<li><a href = "Volunteer.htm">Volunteer</a></li>
+            <li><a href = "About.htm">About</a></li>
+            <li><a href = "index.htm">Home</a></li>
+        </ul>
+        
+    </div>
+	
+	<div id="content1">
+		<h1 id="heading1">Need Support</h1> 
+		<a href="#jump"><button id="join" class="btn">Join Us</button></a>
+		<a href="About.htm"><button id="about" class="btn">About Us</button></a>
+		<div id="quote">
+			Giving is not just about making a <font color="#b993d6">donation</font>;<br> 
+			it's about making a <font color="#b993d6">difference</font>.<br>
+			Get One On "<font color="#b993d6">Support sail</font>"
+		</div>
+	</div>
+	
+	<div id="container2">
+		<center><p id = "heading2">Our Major Causes</p>
+		<p id ="content2">"The smallest act of kindness <br>
+		is worth more than the grandest intention." <br>
+		- <font color="gold">Oscar Wilde</font></p></center>
+		<div id="cardBox">
+			<div id = "card">
+				<img src="images/img_1.jpg" id="cardImage" alt="donate"></img>
+				
+				<div id="cardContent">
+					<h2 id="cardHeading">Connectivity Hub:</h2>
+					SupportSail serves as a comprehensive platform facilitating seamless connections between individuals 
+					and organizations. It provides a central hub for people to easily connect with charitable organizations, 
+					fellow volunteers, and other like-minded individuals. This connectivity promotes a sense of community 
+					and collaboration, fostering a stronger network for positive social impact.
+					<br><br>
+					<button id="more">Learn More</button>
+				</div>	
+			</div><div id = "card">
+				<img src="images/volunteer4.jpg" id="cardImage" alt="donate"></img>
+				
+				<div id="cardContent">
+					<h2 id="cardHeading">Resource Sharing:</h2>
+					 One standout feature of SupportSail is its resource-sharing functionality. 
+					 Organizations can efficiently share resources among themselves, optimizing the allocation of materials, 
+					 funds, and manpower. This feature enhances the overall efficiency of charitable initiatives, 
+					 ensuring that resources are utilized to their fullest potential and making a more significant 
+					 impact on the causes supported.
+					<br><br>
+					<button id="more">Learn More</button>
+				</div>	
+			</div>
+			<div id = "card">
+				<img src="images/header-bg.jpg" id="cardImage" alt="donate"></img>
+				
+				<div id="cardContent">
+					<h2 id="cardHeading">Event Showcase:</h2>
+					 SupportSail empowers organizations to showcase their latest events, creating a dedicated space 
+					 for announcements and updates. This feature allows both individuals and organizations to stay 
+					 informed about upcoming activities, campaigns, and initiatives. By providing a dynamic events platform,
+					 SupportSail encourages engagement and participation, driving greater support for various causes.
+					<br><br>
+					<button id="more">Learn More</button>
+				</div>	
+			</div>
+		</div>
+	</div>
+	
+	
+	<div id = "container3">
+		<div id="about">
+			<h1 id="aboutHeading">Why Join Us?</h1>
+			"At SupportSail, we extend a warm invitation to organizations dedicated to making a positive impact. 
+			By joining our platform, you open the doors to a dynamic community driven by a shared commitment to change. 
+			As a member, your organization gains unprecedented visibility, connecting with a network of like-minded 
+			individuals and fellow organizations. Share your initiatives, collaborate with volunteers, and 
+			amplify your reach to a broader audience. Our platform serves as a hub for resource-sharing, 
+			facilitating seamless collaboration and fostering a spirit of community support. Together,
+			let's amplify your voice, increase your influence, and collectively strive for a better, more compassionate world.
+			Join us on SupportSail and be a catalyst for meaningful change."
+		</div>
+		<img src="images/ssImg5.jpg" id="aboutImage" alt="Sbout Us"></img>
+	</div>
+
+	<div class="parallax" class="Container1" id="p2">
+        <div id = "jump"></div>
+		<div id="container4">
+        </div>
+		
+        <a href="index.htm"><img src="images/ssLogo.png" id="logo2" alt="logo"></img></a>
+        <div id="content4">
+			<div id = "info">
+				<h2 id="infoHeading">Transperancy </h2>
+				Our platform takes pride in its commitment to transparency. 
+				We ensure that donors receive clear and comprehensive insights into the impact of their contributions, 
+				fostering trust and accountability.
+				<br><br>
+				<h2 id="infoHeading">Convenience:</h2>
+				
+				With our one-stop solution, we've streamlined the donation process. 
+				Individuals and organizations can easily connect, collaborate, and share resources—all within 
+				a user-friendly interface. 
+				<br><br>
+				<h2 id="infoHeading">Community Hub:</h2>
+				Our platform serves as a thriving community hub, bringing together like-minded individuals and organizations. 
+				It provides a centralized space for users to connect, collaborate, and collectively make a positive impact. 
+			</div>
+			 	<form id="joinUsForm" action="joinUs.jsp" method="post">
+				    <h1 id="heading5">Join Now</h1>  
+				    <input type="text" id="orgName" name="organizationName" placeholder="Enter name of Organization:" autocomplete="off" required> 
+				    <input type="text" id="contactName" name="contactPersonName" pattern="[A-Za-z\s]{2,}" placeholder="Enter name of Contact Person:" required> 
+				    <input type="email" id="email" name="email" placeholder="Enter Email:" required>
+				    <input type="text" id="phone" pattern="[0-9]{10}" name="phoneNumber" placeholder="Enter Phone Number:">
+				    <input type="text" id="address" name="address" pattern="[A-Za-z0-9\s]{2,}" placeholder="Enter Full Address:" required>
+				    <input type="text" id="zipCode" name="zipCode" pattern="[0-9]{6}" placeholder="Enter Zip Code:" required>
+				    <textarea id="description" name="description" placeholder="Enter small description:"></textarea>
+		      		<input type="text" id="upiid" name="upiid" placeholder="Upload UPI ID to receive donations on:" required>
+		      		<input id="formBtn" type="submit"></input><input id="formBtn" type="reset"></input>
+		      	</form>
+        </div>
+        
+        
+    </div>
+
+    <div class="parallax" id="p3">
+        <img src="images/donation_calligraphy2.png" id="calligraphy" alt="donate blood"></img>
+        <div id="footer">
+            <a href="#instagram"><img src="images/instagram_icon.png" id="icon" alt="instagram icon"></img></a>
+            <a href="#facebook"><img src="images/facebook_icon.png" id="icon" alt="facebook icon"></img></a>
+            <a href="#gmail"><img src="images/gmail_icon.png" id="icon" alt="gmail icon"></img></a>
+            <a href="#pintrest"><img src="images/pintrest_icon.png" id="icon" alt="pintrest icon"></img></a>
+            <a href="#linkedin"><img src="images/linkedin_icon.png" id="icon" alt="linkedin icon"></img></a>
+            <a href="#twitter"><img src="images/twitter_icon.png" id="icon" alt="twitter icon"></img></a>
+            <hr id="line">
+            <div id="links">
+                <a href="#" id="flinks">About</a>
+                <a href="#" id="flinks">Need Help?</a>
+                <a href="#" id="flinks">Privacy</a>
+                <a href="#" id="flinks">Terms of Use </a>
+                <a href="#" id="flinks">Advertising 
+                <br><br><span id="copyright">©2023</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
+

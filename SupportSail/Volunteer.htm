@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SupportSail-Volunteer</title>
+
+	<link rel = "stylesheet" href = "volunteer.css">
+	<link rel = "icon" type = "image" href="images/ssLogo_nobg.png">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap">
+
+</head>
+<body>
+	<!-- join as an voluteer part-->
+	<div class="parallax" class="Container1" id="p1">
+        <div id="container1">
+        </div>
+        <a href="index.htm"><h1 id="logo">SupportSail</h1></a>
+        <ul id="nav1">
+             <li><a href = "Contact.htm">Contact</a></li>
+            <li><a href = "Donate.htm">Donate</a></li>
+			<li><a href = "Events.htm">Events</a></li>
+            <li><a href = "About.htm">About</a></li>
+            <li><a href = "index.htm">Home</a></li>
+        </ul>
+        <div id="content1">
+            <p>Volunteers are L<font color = "gold">O</font>VE in motion!<br>
+			be an Inspiration <font color = "gold">|</font> be a Volunteer</p>
+            
+            <a href="#jump"><button id="volunteerButton">Volunteer Now</button></a>
+        </div>
+    </div>
+	
+	<!-- motivation part-->
+	<div div="container2">
+		<center><p id = "heading2"> Wanting To Help </p>
+		<p id ="content2">"Volunteers are not paid — 
+		<br>not because they are worthless, but because they are priceless." <br>
+		- <font color="#F09819">Sherry Anderson</font></p></center>
+		
+		<div id="cardBox">
+			<div id = "card">
+				<img src="images/volunteer8.jpg" id="cardImage" alt="donate"></img>
+				<div id="gradient"></div>
+				<div id="cardContent">
+					<h2 id="cardHeading">Hunger and Malnutrition:</h2>
+					More than 2 billion people suffer from malnutrition, 
+					with 9 million people dying of hunger-related causes annually. 
+					Donations play a crucial role in providing food aid and supporting
+					sustainable agriculture to combat hunger and food insecurity.
+					<br><br><a href="#more" id="more">READ MORE...</a>
+				</div>	
+			</div><div id = "card">
+				<img src="images/volunteer7.jpg" id="cardImage" alt="donate"></img>
+				<div id="gradient"></div>
+				<div id="cardContent">
+					<h2 id="cardHeading">Malnutrition & Health Issues:</h2>
+					 Poverty contributes to malnutrition and health-related concerns, 
+					particularly among children. India has one of the highest rates of child malnutrition globally, 
+					leading to long-term health and developmental challenges.
+					<br><br><a href="#more" id="more">READ MORE...</a>
+				</div>	
+			</div>
+			<div id = "card">
+				<img src="images/volunteer2.jpg" id="cardImage" alt="donate"></img>
+				<div id="gradient"></div>
+				<div id="cardContent">
+					<h2 id="cardHeading">Magnitude of Poverty:</h2>
+					 India has one of the largest populations living in poverty, 
+					with approximately 176 million people living below the poverty line as of 2021.
+					<br><br><a href="#more" id="more">READ MORE...</a>
+				</div>	
+			</div>
+		</div>
+	</div>
+	
+	<!-- about part-->
+	<div id = "container3">
+		<div id="imageZoom">
+			<img src="images/volunteer.jpg" id="aboutImage" alt="donate"></img>
+		</div>
+		<div id="content3">
+			<h1 id="heading3">All Help Is Welcomed</h1>
+			Volunteering is a great way to give back to the community and make a positive impact on the world. 
+			It can be a life-changing experience that allows you to meet new people, learn new skills, 
+			and gain a new perspective on life. By volunteering, you can help those in need, 
+			support a cause you believe in, and make a difference in the world. 
+			Volunteering can also help you develop new skills, gain valuable work experience, 
+			and build your resume. It's a great way to network and meet new people, 
+			and it can be a lot of fun too! So why not give it a try? 
+			There are many organizations that are looking for volunteers, 
+			and there are many ways to get involved. Whether you want to work with children, 
+			animals, the environment, or any other cause, there is a volunteer opportunity out there for you. 
+			So take the first step and start making a difference today!
+			
+		</div>
+	</div>
+
+	<!-- register part-->
+	<div class="parallax" class="Container1" id="p2">
+	<div id = "jump"></div>
+		<div id="container4">
+        </div>
+		
+        <a href="index.htm"><img src="images/ssLogo.png" id="logo2" alt="logo"></img></a>
+        <div id="content4">
+			<div id = "info">
+				<h2 id="infoHeading">Transperancy </h2>
+				Our platform takes pride in its commitment to transparency. 
+				We ensure that donors receive clear and comprehensive insights into the impact of their contributions, 
+				fostering trust and accountability.
+				<br><br>
+				<h2 id="infoHeading">Convenience:</h2>
+				
+				With our one-stop solution, we've streamlined the donation process. 
+				Individuals and organizations can easily connect, collaborate, and share resources—all within 
+				a user-friendly interface. 
+				<br><br>
+				<h2 id="infoHeading">Community Hub:</h2>
+				Our platform serves as a thriving community hub, bringing together like-minded individuals and organizations. 
+				It provides a centralized space for users to connect, collaborate, and collectively make a positive impact. 
+			</div>
+			<form id="volunteerForm" action="volunteer.jsp" method="post">
+				<h1 id="heading4">Volunteer:</h1>
+				<input type="text" id="project" name="project" class = "field" placeholder="Event you want to Volunteer" onkeyup="showEvents(this.value)" autocomplete = "off" required></input><br>
+					<div id="events" class="events">
+					</div>
+			
+				<input type="text" id="fname" name="fname" pattern="[A-Za-z\s]{2,}" class = "field" placeholder="Enter your Full Name" required></input>
+				
+				<input type="email" id="email" name="email" class = "field" placeholder="Enter your Email Address" required></input><br>
+				
+				<input type="text" id="mob" name="mob" pattern="[0-9]{10}" class = "field" placeholder="Enter your Mobile Number" required></input><br>
+				
+				<input id="formBtn" type="submit"></input><input id="formBtn" type="reset"></input>
+			</form>
+        </div>
+       
+        
+    </div>
+
+    <!-- footer part-->
+    <div class="parallax" id="p3">
+        <img src="images/donation_calligraphy2.png" id="calligraphy" alt="donate blood"></img>
+        <div id="footer">
+            <a href="#instagram"><img src="images/instagram_icon.png" id="icon" alt="instagram icon"></img></a>
+            <a href="#facebook"><img src="images/facebook_icon.png" id="icon" alt="facebook icon"></img></a>
+            <a href="#gmail"><img src="images/gmail_icon.png" id="icon" alt="gmail icon"></img></a>
+            <a href="#pintrest"><img src="images/pintrest_icon.png" id="icon" alt="pintrest icon"></img></a>
+            <a href="#linkedin"><img src="images/linkedin_icon.png" id="icon" alt="linkedin icon"></img></a>
+            <a href="#twitter"><img src="images/twitter_icon.png" id="icon" alt="twitter icon"></img></a>
+            <hr id="line">
+            <div id="links">
+                <a href="#" id="flinks">About</a>
+                <a href="#" id="flinks">Need Help?</a>
+                <a href="#" id="flinks">Privacy</a>
+                <a href="#" id="flinks">Terms of Use </a>
+                <a href="#" id="flinks">Advertising 
+                <br><br><span id="copyright">©2023</span>
+            </div>
+        </div>
+    </div>
+
+<script>
+//function to show list
+      function showEvents(str) {
+            var xhttp;
+            if (str.length == 0) {
+                document.getElementById("events").innerHTML = "";
+                return;
+            }
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var responseText = this.responseText;
+                    var optionsArray = responseText.split('\n'); // Assuming each option is on a new line in the response
+                    
+                    // Limit the displayed options to 5
+                    var limitedOptions = optionsArray.slice(0, 8).join('\n');
+                    
+                    document.getElementById("events").innerHTML = limitedOptions;
+
+                    // Get all elements with class 'event'
+                    var optionElements = document.querySelectorAll('.event');
+
+                    // Iterate through each 'option' element
+                    optionElements.forEach(function(element) {
+                        element.addEventListener('click', function() {
+                            // Get the text content of the clicked option
+                            var clickedText = this.textContent;
+
+                            // Fill the input field with the clicked text
+                            document.getElementById("project").value = clickedText;
+
+                            // Clear options after clicking
+                            document.getElementById("events").innerHTML = "";
+                        });
+                    });
+                }
+            };
+            xhttp.open("GET", "eventSearch.jsp?q=" + str, true);
+            xhttp.send();
+        }
+
+        // Click event listener for document body
+        document.addEventListener('click', function(event) {
+            var optionsContainer = document.getElementById('events');
+            var eventList = document.getElementById('project');
+
+            // Check if the click is outside the options container and the input field
+            if (event.target !== optionsContainer && event.target !== eventList) {
+                // Hide the options
+                optionsContainer.innerHTML = ""; // Clear the options list
+            }
+        });
+
+
+    function validateForm() {
+        var mobno = document.getElementById('mobno').value;
+        var digitsOnly = /^\d+$/;
+
+        if (mobno.length !== 10 || !digitsOnly.test(mobno)) {
+            alert("Mobile number should be 10 digits long and contain only numbers.");
+            return false;
+        }
+
+        return true;
+    }
+
+</script>
+
+</body>
+</html>
+
+
+
+
+

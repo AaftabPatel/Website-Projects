@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SupportSail - Events</title>
+	<link rel = "stylesheet" href = "events.css">
+	<link rel = "icon" type = "image" href="images/ssLogo_nobg.png">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  
+</head>
+<body>
+	<!-- first search event part -->
+	<div class="parallax" class="Container1" id="p1">
+        <div id="container1">
+        </div>
+        <a href="index.htm"><h1 id="logo">SupportSail</h1></a>
+        <ul id="nav1">
+             <li><a href = "Contact.htm">Contact</a></li>
+			<li><a href = "JoinUs.htm">Register</a></li>
+			<li><a href = "Volunteer.htm">Volunteer</a></li>
+            <li><a href = "About.htm">About</a></li>
+            <li><a href = "index.htm">Home</a></li>
+        </ul>
+        <div id="content1">
+			"Kindness is a language that <br>the deaf can hear and the blind can see." 
+			<br>- <font color = "gold">Mark Twain</font>
+			</font> <br> <br>
+			<button id="searchButton" onclick="search_bar()">Search</button>
+            <form action="eventsPage.jsp" method="get">            
+            <input type="text" id="navSearch" name="navSearch" onkeyup="showEvents(this.value)" placeholder="search for any event"  autocomplete="off"></input> 
+            	<!-- Uses java script to run showoptions to get list-->
+				<div id="events" class="events">
+				</div>
+			<button type="submit" id="searchIcon" value=""><i class="material-icons" id="search_icon">search</i></button>
+			</form>
+        </div>
+    </div>
+
+    <!-- top events part -->
+	<div div="container2">
+		<center><p id = "heading2"> <font color="gold">|</font>Top Events <font color="gold">|</font> </p>
+		<p id ="content2">"We make a living by what we get, <br>but we make a life by what we give." 
+		 <br>
+		- <font color="gold">Winston Churchill</font></p></center>
+		
+		<div id="cardBox">
+			<div id = "card">
+				<img src="images/volunteer8.jpg" id="cardImage" alt="donate"></img>
+				<a href="#CharityGala"><div id="gradient"></div></a>
+				<div id="cardContent">
+					<h2 id = "cardHeading">Charity Gala:</h2>
+					<p><b>Date:</b> January 20, 2024</p>
+					<p><b>Time:</b> 10:00 AM - 4:00 PM</p>
+					<p><b>Location:</b> XYZ Community Center</p>
+					<span id="desc"><b>Description:</b> Join us for an evening of elegance and philanthropy at our annual Charity Gala. 
+					Funds raised will support local shelters.</span>
+					
+				</div>	
+			</div>
+			<div id = "card">
+				<img src="images/volunteer9.jpg" id="cardImage" alt="donate"></img>
+				<a href="#CommunityCleanup"><div id="gradient"></div></a>
+				<div id="cardContent">
+					<h2 id = "cardHeading">Community Cleanup:</h2>
+					<p><b>Date:</b> December 20, 2023</p>
+					<p><b>Time:</b> 11:00 AM - 3:00 PM</p>
+					<p><b>Location:</b> Nahay Community Complex</p>
+					<span id="desc"><b>Description:</b> Join us for an evening of elegance and philanthropy at our annual Charity Gala. 
+					Funds raised will support local shelters.</span>
+					
+				</div>	
+			</div>
+		</div>
+		
+		<div id="cardBox">
+			<div id = "card">
+				<img src="images/cardImg1.jpg" id="cardImage" alt="donate"></img>
+				<a href="#CharityGala"><div id="gradient"></div></a>
+				<div id="cardContent">
+					<h2 id = "cardHeading">Fundraising Concert for Educa:</h2>
+					<p><b>Date:</b> January 1, 2024</p>
+					<p><b>Time:</b> 5:00 pm - 8:00 PM</p>
+					<p><b>Location:</b> IIPS DAVV Indore</p>
+					<span id="desc"><b>Description:</b> Join us at IIps for ana fundrasing Concert by none other than Atif Aslam
+					Funds raised will support students whi cannot pay tuition.</span>
+					
+				</div>	
+			</div>
+			<div id = "card">
+			
+			
+				<img src="images/cardImg2.jpg" id="cardImage" alt="donate"></img>
+				<a href="#CommunityCleanup"><div id="gradient"></div></a>
+				<div id="cardContent">
+					<h2 id = "cardHeading">Health Awareness Workshop:</h2>
+					<p><b>Date:</b> December 25, 2023</p>
+					<p><b>Time:</b> 11:00 AM - 3:00 PM</p>
+					<p><b>Location:</b> Frost square Indore</p>
+					<span id="desc"><b>Description:</b> Join us for an evening of elegance and philanthropy for an health awareness wrokshop
+					Chief Guest none other than Dr. Oatkar, regarding health and fitness.</span>
+					
+				</div>	
+			</div>
+		</div>
+		
+		<div id="cardBox">
+			<div id = "card">
+				<img src="images/cardImg4.jpg" id="cardImage" alt="donate"></img>
+				<a href="#CharityGala"><div id="gradient"></div></a>
+				<div id="cardContent">
+					<h2 id = "cardHeading">Food Drive for the Homeless:</h2>
+					<p><b>Date:</b> January 2, 2024</p>
+					<p><b>Time:</b> 10:00 AM - 4:00 PM</p>
+					<p><b>Location:</b> City Night Center</p>
+					<span id="desc"><b>Description:</b> Join us for an event to serve and earn self satisaction help others and heal yoir self 
+					, Help the one in need with the gift of food.</span>
+					
+				</div>	
+			</div>
+			<div id = "card">
+			
+			
+				<img src="images/cardImg5.jpg" id="cardImage" alt="donate"></img>
+				<a href="#CommunityCleanup"><div id="gradient"></div></a>
+				<div id="cardContent">
+					<h2 id = "cardHeading">Blood Donation:</h2>
+					<p><b>Date:</b> December 31, 2023</p>
+					<p><b>Time:</b> 11:00 AM - 3:00 PM</p>
+					<p><b>Location:</b> MY hosoital Indore</p>
+					<span id="desc"><b>Description:</b> Join us for an amazing blood donation event with iver 2000 heros and more.
+					Give blood and save a Life.</span>
+					
+				</div>	
+			</div>
+		</div>
+		<button id="moreEvents"> < </button>  <button id="moreEvents"> > </button> 
+	</div>
+	
+	<!-- info part -->
+	<div id = "container3">
+		<img src="images/ssImg3.jpg" id="aboutImage" alt="donate"></img>
+		<div id="content3">
+			<h1 id="heading3">All Help Is Welcomed</h1>
+			"Joining charity and social events is a chance to make a difference firsthand. Your presence matters.
+			It's an opportunity to bring joy, offer support, and create positive change in our community. 
+			Together, let's make moments that matter and create ripples of kindness that touch lives and hearts."
+			 Every step taken, every smile shared, and every moment spent contributes to a collective effort to 
+			 make the world a kinder, better place. So, step forward, join hands, and let's together make a real 
+			 difference in the lives of those who need it most."
+			
+		</div>
+	</div>
+
+	<!-- add event part -->
+	<div id = "container4">
+		<form action="addEvent.jsp" method="post" id="addEventForm">
+        <form id="addEventForm" method="POST" action="connect.jsp" enctype="multipart/form-data">
+                <h1 id="heading4">Add Event</h1>
+                <input type="text" id="etitle" name="etitle" class = "field" placeholder="Enter title of Event" required></input>
+                <input type="text" id="location" name ="location" pattern="[A-Za-z\s]{2,}" class = "field" placeholder="Enter Location of Event" required></input><br>
+                <input type="text" id="organizer" name ="organizer" class = "field" placeholder="Select Organizer of Event" onkeyup="showOptions(this.value)"  autocomplete="off" required></input><br>
+                <!-- Uses java script to run showoptions to get list-->
+                    <div id="options" class="options">
+                    </div>
+                
+                <input type="date" id="date" name = "date" class = "field" placeholder="Enter Date" required></input><br>
+                
+                <textarea id="description" name="description" class = "field" rows="4" placeholder="write a message"></textarea><br>
+                <input id="formBtn" type="submit"></input><input id="formBtn" type="reset"></input>
+        </form>
+        
+		<img src="images/ssBg8.jpg" id="eventImage" alt="join"></img>
+	</div>
+
+	<!-- footer part -->
+    <div class="parallax" id="p3">
+        <img src="images/donation_calligraphy2.png" id="calligraphy" alt="donate blood"></img>
+        <div id="footer">
+            <a href="#instagram"><img src="images/instagram_icon.png" id="icon" alt="instagram icon"></img></a>
+            <a href="#facebook"><img src="images/facebook_icon.png" id="icon" alt="facebook icon"></img></a>
+            <a href="#gmail"><img src="images/gmail_icon.png" id="icon" alt="gmail icon"></img></a>
+            <a href="#pintrest"><img src="images/pintrest_icon.png" id="icon" alt="pintrest icon"></img></a>
+            <a href="#linkedin"><img src="images/linkedin_icon.png" id="icon" alt="linkedin icon"></img></a>
+            <a href="#twitter"><img src="images/twitter_icon.png" id="icon" alt="twitter icon"></img></a>
+            <hr id="line">
+            <div id="links">
+                <a href="#" id="flinks">About</a>
+                <a href="#" id="flinks">Need Help?</a>
+                <a href="#" id="flinks">Privacy</a>
+                <a href="#" id="flinks">Terms of Use </a>
+                <a href="#" id="flinks">Advertising 
+                <br><br><span id="copyright">©2023</span>
+            </div>
+        </div>
+    </div>
+
+<script>
+    var clicked = 0;
+    //search bar animation
+    function search_bar() {
+        var navsearch = document.getElementById("navSearch");
+        var navsearchicon = document.getElementById("searchButton");
+        var icon = document.getElementById("searchIcon")
+        var events = document.getElementById("events");
+        if(clicked === 0){
+           	clicked = 1;
+            navsearch.style.backgroundColor = "white";
+            navsearchicon.style.display = "none"; 
+            icon.style.display = "inline";
+            icon.style.left = "-3em";
+            navsearch.style.width = "22em";
+            events.style.width = "20em";
+        }   
+        else if(clicked === 1){
+            clicked = 0;
+            navsearch.style.backgroundColor = "transparent";    
+            navsearch.style.width = "0em";
+            icon.style.left = "0em";
+            events.style.width = "0em";
+        }
+    }
+
+    //function to show list
+      function showEvents(str) {
+            var xhttp;
+            if (str.length == 0) {
+                document.getElementById("events").innerHTML = "";
+                return;
+            }
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var responseText = this.responseText;
+                    var optionsArray = responseText.split('\n'); // Assuming each option is on a new line in the response
+                    
+                    // Limit the displayed options to 5
+                    var limitedOptions = optionsArray.slice(0, 8).join('\n');
+                    
+                    document.getElementById("events").innerHTML = limitedOptions;
+
+                    // Get all elements with class 'event'
+                    var optionElements = document.querySelectorAll('.event');
+
+                    // Iterate through each 'option' element
+                    optionElements.forEach(function(element) {
+                        element.addEventListener('click', function() {
+                            // Get the text content of the clicked option
+                            var clickedText = this.textContent;
+
+                            // Fill the input field with the clicked text
+                            document.getElementById("navSearch").value = clickedText;
+
+                            // Clear options after clicking
+                            document.getElementById("events").innerHTML = "";
+                        });
+                    });
+                }
+            };
+            xhttp.open("GET", "eventSearch.jsp?q=" + str, true);
+            xhttp.send();
+        }
+
+        // Click event listener for document body
+        document.addEventListener('click', function(event) {
+            var optionsContainer = document.getElementById('events');
+            var eventList = document.getElementById('navSearch');
+
+            // Check if the click is outside the options container and the input field
+            if (event.target !== optionsContainer && event.target !== eventList) {
+                // Hide the options
+                optionsContainer.innerHTML = ""; // Clear the options list
+            }
+        });
+
+        //function to show list
+      function showOptions(str) {
+            var xhttp;
+            if (str.length == 0) {
+                document.getElementById("options").innerHTML = "";
+                return;
+            }
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var responseText = this.responseText;
+                    var optionsArray = responseText.split('\n'); // Assuming each option is on a new line in the response
+                    
+                    // Limit the displayed options to 5
+                    var limitedOptions = optionsArray.slice(0, 8).join('\n');
+                    
+                    document.getElementById("options").innerHTML = limitedOptions;
+
+                    // Get all elements with class 'option'
+                    var optionElements = document.querySelectorAll('.option');
+
+                    // Iterate through each 'option' element
+                    optionElements.forEach(function(element) {
+                        element.addEventListener('click', function() {
+                            // Get the text content of the clicked option
+                            var clickedText = this.textContent;
+
+                            // Fill the input field with the clicked text
+                            document.getElementById("organizer").value = clickedText;
+
+                            // Clear options after clicking
+                            document.getElementById("options").innerHTML = "";
+                        });
+                    });
+                }
+            };
+            xhttp.open("GET", "donateSearch.jsp?q=" + str, true);
+            xhttp.send();
+        }
+
+
+        // Click event listener for document body
+        document.addEventListener('click', function(event) {
+            var optionsContainer = document.getElementById('options');
+            var organizations = document.getElementById('organizer');
+
+            // Check if the click is outside the options container and the input field
+            if (event.target !== optionsContainer && event.target !== organizations) {
+                // Hide the options
+                optionsContainer.innerHTML = ""; // Clear the options list
+            }
+        });
+</script>
+</body>
+</html>

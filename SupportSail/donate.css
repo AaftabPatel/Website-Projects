@@ -1,0 +1,455 @@
+/*donator pahe css*/
+   /*basics styling*/
+    body, html {
+        height: 100%;
+        margin: 0;
+    }
+		
+    body::-webkit-scrollbar {
+        display: none;
+    }
+	
+	::selection {
+	  background-color: #b993d6; /* Set your desired background color here */
+	  color: white; /* Set the text color for the selected text */
+	}
+/*parallax part*/
+    #p1{
+       /* The image used */
+      background-image: url('images/header-bg.jpg');
+      height: 100%;
+    }
+     
+	/*donate part*/
+	#p2{
+       /* The image used */
+      background-image: url('images/hand2.jpg');
+      height: 100%;
+    }
+	
+	/*footer part*/
+	#p3{
+        height: 40%;
+        background: #FC354C;  
+		background: linear-gradient(to right, #0ABFBC, #FC354C); 
+		opacity: 0.9;
+		
+    }
+  
+    .parallax {  
+      overflow: hidden;
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+/*first part styling*/
+    #container1{
+        height: 100%;
+        margin: 0;
+        z-index: 2;
+        background-color: black;
+        opacity: 0.6;
+    }
+    /*logo style*/
+	#logo{
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 2;
+        height: 130px;
+    }
+    /*navigation bar style*/
+    ul#nav1{
+        position: absolute;
+        top: 0px;
+        right: 0px;
+    }
+
+    ul{
+        font-size: 25px;
+        list-style-type: none;
+        margin: 0;
+        padding: 0px;
+        overflow: hidden;
+        background-color: none;
+    }
+
+    li{
+        float: right;
+        padding: 0px 20px 0px 5px;
+    }
+
+    li a{
+        display: block;
+        color: white;
+        padding: 24px 25px;
+        text-decoration: none;
+    }
+
+    li a:hover{
+        background-color: rgb(252, 246, 246);
+        color: #0c3343;
+		font-size: 1.5em;
+		transition: ease 0.3s;
+    }
+	
+    .active{
+        background-color: #04AA6D;
+    }
+
+    #content1{
+    	color: white;
+    	position: absolute;
+    	top: 3.8em;
+    	left: 2em;
+    	font-size: 4em;
+		font-weight: bold;
+    }
+
+    .logo{
+        position: relative;
+        left: 0px;
+        top: 0px;
+        z-index: 1;
+        height: 150px;
+    }
+
+    button {
+		padding: 1.3em 3em;
+		font-size: 12px;
+		margin-top: -3em;
+		margin-left: 0em;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-weight: 500;
+		color: #000;
+		background-color: #fff;
+		border: none;
+		position: relative;
+		border-radius: 45px;
+		box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+		transition: all 0.3s ease 0s;
+		cursor: pointer;
+		outline: none;
+	}
+
+	button:hover {
+		background-color: #0c3343;
+	    box-shadow: 0px 15px 20px #fff;
+	    color: #fff;
+	    transform: translateY(-7px);
+	}
+
+	button:active {
+	    transform: translateY(-1px);
+	}
+
+	.donateButton1{
+		top: -6em;
+	}
+
+/*second patrt styling*/
+	img#hand{
+		opacity: 0.4;
+	}
+
+	div#container2{
+		background: #FC354C;  
+		background: linear-gradient(to right, #0ABFBC, #FC354C); 
+		width: 69.45em;
+		position: relative;
+		margin-left: 7em;
+		top: -2em;
+		height: 9.7em;
+	}
+	
+	div#content2{
+		position: relative;
+		top: -4.5em;
+		margin-left: 2em;
+		font-size: 2em;
+		color: white;
+	}
+	
+	.donateBtn{
+		position: relative;
+		top: -8em;
+		left: 70em;		
+	}
+
+/*third part styling*/
+	/*heading style*/
+	p#heading3{
+		text-align: center;
+		font-size: 3em;
+		color: purple;
+	}
+	
+	/*quote below heading*/
+	p#content3{
+		font-size: 1.5em;
+	}
+	
+	/*card content style*/
+	#cardContent{
+		margin-left: 0.7em;
+	}
+	
+	/* Create three equal columns that floats next to each other */
+	#cardBox {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr); 
+		gap: 10px;
+		margin-left: 8%;
+	}
+	 
+	/*card styling*/
+	#card{
+		width: 20em;
+		background: rgba(0,0,0,0.1);
+		height: 40em;
+		border-radius: 2em;
+	}
+	
+	/*read more styling*/
+	a#more{
+		border-bottom: 2px solid #B993D6;
+		text-decoration: none;
+		color: black;
+	}
+	
+	/*gradient style*/
+	div#gradient{
+		position: relative;
+		height: 21.5em;
+		width: 100%;
+		background: #FC354C;  
+		background: linear-gradient(to right, #0ABFBC, #FC354C); 
+		z-index: 1;
+		opacity: 0;
+		top: -21.5em;
+		transition: ease 0.5s;
+	}
+	div#gradient:hover{
+		opacity: 0.5;
+		cursor: pointer; 
+		transition: ease 0.5s;
+	}
+	
+	/*card image style*/
+	img#cardImage{
+		width: 20em;
+		border-radius: 2em 0;
+		filter: grayscale(80%);
+	}
+
+	/*card heading style*/
+	h2#cardHeading{
+		color: B993D6; 
+	}
+	
+	/*card content style*/
+	div#cardContent{
+		position: relative;
+		top: -22em;
+	}
+
+/*fourth part styling*/
+	/*heading part style*/
+	h1#heading4{
+		border-bottom: 2px solid #0ABFBC;
+		color: #0ABFBC;
+	}
+	
+	div#container4{
+		display: grid;
+		margin-top: 5em;
+		margin-bottom: 8em;
+		grid-template-columns: repeat(2, 1fr); 
+		padding: 2em 0em; 
+		border: 2px solid #0ABFBC;
+		background-color: rgba(0,0,0,0.1);
+	}
+
+	/*image style*/
+	img#aboutImage{
+		width: 40em;
+	}
+	
+	/*content4 style*/
+	div#content4{
+		font-size: 1.5em;
+	}
+
+
+/*fifth-donate part*/
+	#container5{
+        height: 100%;
+        margin: 0;
+        background-color: black;
+        opacity: 0.8;
+    }
+    /*logo style*/
+	#logo2{
+		position: relative;
+		top: -41.1em;
+        height: 130px;
+    }
+	
+	#content5{
+		display: grid;
+		margin-top: 5em;
+		grid-template-columns: repeat(2, 1fr); 
+		position: relative;
+		z-index: 2;
+		top: -30em;
+	}
+
+	/*info style*/
+	div#info{
+		color: white;
+		margin-top: -13em;
+		width: 30em;
+		margin-left: 7em;
+	}
+		
+	/*info heading style*/
+	h2#infoHeading{
+		border-bottom: 2px solid #FC354C;
+	}
+	
+	/*form style*/
+	form#donateForm{
+		width: 30em;
+		color: white;
+		position: relative;
+		top: -18em;
+		border-radius: 50px;
+		background: transparent;
+		margin-left: 5em;
+	}
+	
+	/*form haeading style*/
+	#heading5{
+		color: #FC354C;
+		border-bottom: 2px solid white;
+	}
+
+	/*imput style*/
+	input{
+		background: transparent;
+		color: white;
+		border-top: 2px solid grey;
+		padding: 0.6em 2em;
+		width: 30em;
+	}
+	input::placeholder{color:white;}
+	#fname, #email{width: 13.8em;}
+	
+	/*input fields style*/
+	.field{
+		margin: 1em;
+	}
+	
+	#organization{
+		margin-left: 1em;
+	}
+
+	/*options list styling*/
+	div.options{
+		position: absolute;
+	    background-color: #f9f9f9;
+	    margin-left: 1em;
+	    min-width: 250px;
+	    color: black;
+	    border: 1px solid #ccc;
+	    border-radius: 5px;
+	    z-index: 1;
+	}
+
+	.option {
+	    padding: 8px 12px;
+	    cursor: pointer;
+	}
+
+	.option:hover {
+	    background-color: #FC354C;
+	    color: white;
+	}
+
+	/*text are style*/
+	textarea{
+		background: transparent;
+		color: white;
+		width: 30em;
+		height: 10em;
+	}
+	textarea::placeholder{color:white}
+	
+	/*button style*/
+	input#formBtn{
+		width: 10em;
+		cursor: pointer;
+		border-radius: 20px;
+		border: none;
+		background: #FC354C;
+		transition: 0.2s ease;
+		margin-left: 4em;
+	}
+	/*hover effect*/
+	#formBtn:hover {
+		background-color: #0c3343;
+	    box-shadow: 0px 15px 20px #fff;
+	    color: #fff;
+	    transform: translateY(-7px);
+	}
+	
+/*footer part*/
+    a#flinks{
+        text-decoration: none;
+        color: white;
+        padding-left: 2%;   
+    }
+
+    #icon{
+        position: relative;
+        left: 9.5em;
+        border-radius: 3%;
+        height: 4em;
+        padding: 0.5em;
+
+    }
+
+    #line{
+        width: 37%;
+        margin-left: 10em;
+    }
+
+    #links{
+        position: relative;
+        left: 10em;
+    }
+
+    #copyright{
+        position: relative;
+        left: 13em;
+    }
+
+    #footer{
+        position: relative;
+        top: -80%;
+        color: white;
+        left: 50%;
+    }
+
+    #calligraphy{
+        position: relative;
+        height: 90%;
+        width: 60%;
+    }
+
+
+
+

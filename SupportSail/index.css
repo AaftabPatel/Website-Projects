@@ -1,0 +1,323 @@
+/*suport sail landing page css sheet*/
+/*basics styling*/
+    body, html {
+        height: 100%;
+        margin: 0;
+    }
+
+    body::-webkit-scrollbar {
+        display: none;
+    }
+/*parallax part*/
+    #p1{
+       /* The image used */
+      background-image: url('images/ssBg3.jpg');
+      height: 100%;
+    }
+    
+    #p2{
+        height: 50%;
+        background: #136a8a;
+        background: linear-gradient(to left, #000, #0c3343,#0c3343);
+        border-top: 2px solid white; 
+        border-bottom: 2px solid white;  
+    }
+
+    #p3{
+       /* The image used */
+      background-image: url('images/ssBg5.png');
+      height: 100%;
+    }
+    
+    #p4{
+        height: 50%;
+        background: #136a8a;
+        background: linear-gradient(to left, #000, #0c3343,#0c3343);
+        border-top: 2px solid white; 
+        border-bottom: 2px solid white; 
+    }
+
+    #p5{
+       /* The image used */
+      background-image: url('images/ssBg4.png');
+      height: 100%;
+    }
+    
+    #p6{
+        height: 40%;
+        background: #085078;  /* fallback for old browsers */
+        background: linear-gradient(to left, #85D8CE, #085078); 
+    }
+
+    .parallax {  
+      overflow: hidden;
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+/*first part styling*/
+    #container1{
+        height: 100%;
+        margin: 0;
+        z-index: 2;
+        background-color: black;
+        opacity: 0.4;
+    }
+    /*logo style*/
+	#logo{
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 2;
+        height: 130px;
+    }
+    
+    ul#nav1{
+        position: absolute;
+        top: 0px;
+        right: 0px;
+    }
+    
+    #logo2{
+        position: relative;
+        left: 2em;
+        top: -38em;
+    }
+
+    ul#nav2{
+        position: relative;
+        top: -31em;
+        right: -0.8em;
+    }
+
+    ul{
+        font-size: 25px;
+        list-style-type: none;
+        margin: 0;
+        padding: 0px;
+        overflow: hidden;
+        background-color: none;
+    }
+
+    li{
+        float: right;
+        padding: 0px 20px 0px 5px;
+    }
+
+    li a{
+        display: block;
+        color: white;
+        padding: 24px 25px;
+        text-decoration: none;
+    }
+
+    li a:hover{
+        background-color: rgb(252, 246, 246);
+        color: #0c3343;
+		font-size: 1.5em;
+		transition: ease 0.3s;
+    }
+	
+    .active{
+        background-color: #04AA6D;
+    }
+
+    #content1{
+    	color: white;
+    	position: absolute;
+    	top: 6em;
+    	left: 5em;
+    	font-size: 2.5em;
+    }
+
+    .logo{
+        position: relative;
+        left: 0px;
+        top: 0px;
+        z-index: 1;
+        height: 150px;
+    }
+
+    button {
+		padding: 1.3em 3em;
+		font-size: 12px;
+		margin-top: -2em;
+		margin-left: 7em;
+		text-transform: uppercase;
+		letter-spacing: 2.5px;
+		font-weight: 500;
+		color: #000;
+		background-color: #fff;
+		border: none;
+		border-radius: 45px;
+		box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+		transition: all 0.3s ease 0s;
+		cursor: pointer;
+		outline: none;
+	}
+
+	button:hover {
+		background-color: #0c3343;
+	    box-shadow: 0px 15px 20px #fff;
+	    color: #fff;
+	    transform: translateY(-7px);
+	}
+
+	button:active {
+	    transform: translateY(-1px);
+	}
+
+/*second part styling*/
+    #Dicon1{
+        position: relative;
+        left: 5%;
+        top: 2em;
+    }
+
+    #Dicon2{
+        position: relative;
+        left: 75%;
+        top: -26.5em;
+    }
+
+    span#help{
+        position: relative;
+        text-align: center;
+        color:  aqua;
+    }
+
+    #content2{
+        position: relative;
+        text-align: center;
+        top: -12em;
+        color: white;
+    }
+    #logo2{
+        position: relative;
+        left: -0em;
+        top: -41.3em;
+        cursor: pointer;
+    }
+	
+    span#speaker2,#speaker1{color: gold;}
+    
+    #donate{
+        position: relative;
+        left: -6%;
+        top: -5em;
+    }
+
+
+    #content3{
+        color: white;
+        position: relative;
+        top: -12em;
+        left: 15em;
+        font-size: 3em;
+    }
+
+    span#want{
+        color: aqua;
+        margin-left: 5em;
+    }
+    
+
+    #content4 {
+        position: relative;
+        top: -8em;
+        text-align: center;
+        color: white;
+    }
+
+    #Dicon3{
+        position: relative;
+        top: 20%;
+        left: 5%;
+    }
+
+    #Dicon4{
+        position: relative;
+        top: -105%;
+        left: 70%;
+    }
+
+    #container3{
+        height: 100%;
+        margin: 0;
+        position: relative;
+        top:    0;
+        z-index: 1;
+        background-color: rgba(0,0,0,0.5);
+    }
+
+    #content5{
+        color: white;
+        font-size: 1.8em;
+        position: relative;
+        top: -27em;
+        z-index: 2;
+        left: 27.2em;
+    }
+    
+    #logo3{
+        position: relative;
+        top: -100%;
+    }
+
+    .register{
+        z-index: 2;
+        position: relative;
+        left: -6%;
+    }
+
+    .register:hover{
+        background-color: #0c3343;
+        box-shadow: 0px 15px 20px white;
+    }
+	
+/*footer part*/
+    a#flinks{
+        text-decoration: none;
+        color: white;
+        padding-left: 2%;   
+    }
+
+    #icon{
+        position: relative;
+        left: 9.5em;
+        border-radius: 3%;
+        height: 4.1em;
+        padding: 0.5em;
+
+    }
+
+    #line{
+        width: 37%;
+        margin-left: 10em;
+    }
+
+    #links{
+        position: relative;
+        left: 10em;
+    }
+
+    #copyright{
+        position: relative;
+        left: 13em;
+    }
+
+    #footer{
+        position: relative;
+        top: -13em;
+        color: white;
+        left: 50%;
+    }
+
+    #calligraphy{
+        position: relative;
+        height: 90%;
+        width: 60%;
+    }
+
