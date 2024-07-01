@@ -1,0 +1,1133 @@
+<html>
+<head>
+<title>The Bookshelf</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aboreto">
+<link rel="icon" type="image" href="bookshelf_images\logo_nobg.png">
+<style>
+	body{
+		background-color: #1B1B1B;
+		font-family:"Aboreto";
+	}
+
+/*navigation bar style*/
+	img#logo{
+		position: absolute;
+		left: 4em;
+		top: 0.7em;
+		width: 3em;
+		height: 4em;
+	}
+
+	/*search icon style*/
+	i#nav_search_icon{
+		position: absolute;
+		top: 0.4em;
+		left: 3em;
+		cursor: pointer;
+		font-size: 3em;
+		z-index: 2;
+		color: turquoise;
+	}
+
+	/*nav search bar style*/
+	input#nav_search{
+		position: absolute;
+		padding: 0.5em 0em 0em 3.5em;
+		border: none;
+		transition: all 0.5s ease 0s;
+		border-radius: 0.5em;
+		left: 10.8em;
+		top: 1.3em;	
+		height: 3.5em;
+		width: 0em;
+		background-color: transparent;
+	}
+
+	/*nav bar style*/
+	nav#nav_bar{
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 1;	
+		width: 100%;
+		text-align: right;
+		background-color: none;
+	}
+
+	/*navigation link style*/
+	a#nav_link{
+		text-decoration: none;
+		display: inline-block;
+		color: white;
+		font-size: 1.3em;
+		padding: 1.3em;
+		transition: all 0.4s ease 0s;
+	}
+
+/*home part style*/
+	/*background image style*/
+	img#bookshelf_img{
+		width: 100%;
+		height: 100%;	
+	}
+
+	/*image gradient style*/
+	div#img_gradient{
+	  position: absolute;
+	  height: 100%;
+	  top: 0;
+	  left: 0;
+	  z-index: -1;
+	  width: 100%;
+	  background-size: cover;
+	}
+
+	/*image gradient after style*/
+	div#img_gradient:after {
+	  content: '';
+	  position: absolute;
+	  top: 0; left: 0; bottom: 0; right: 0;
+	  background: linear-gradient(to top, turquoise, transparent , rgba(0,0,0,0.7), black);
+	}
+
+	/*home div part*/
+	div#home{
+		position: absolute;
+		color: white;
+		display: block;
+		height: 100%;
+		left: 0;
+		top: 0;
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.6);
+	}
+
+	/*site name style*/
+	h1#name{
+		position: absolute;
+		top: 28%;
+		width: 100%;
+		text-align: center;
+		font-size: 5em;
+	}
+
+	/*quote style*/
+	h2#quote{
+		position: absolute;
+		top: 60%;
+		width: 100%;
+		text-align: center;
+	}
+
+	/*search bar div style*/
+	div#search_bar{
+		position: absolute;
+		left: 30%;
+		top: 52%;
+	}
+
+	/*search icon style*/
+	i#search_icon{
+		position: relative;
+		top: 0.4em;
+		left: -17.5em;
+		font-size: 2em;
+		color: white;
+	}
+
+	/*search bar style*/
+	input#search{
+		position: relative;
+		padding: 0em 3em;
+		border: none;
+		border-radius: 0.5em;
+		height: 2.8em;
+		width: 42em;
+		background-color: rgba(48, 213, 200, 1);
+	}
+
+/*popular part*/
+    div#popular{
+    	position: relative;
+    	top: 40em;
+		padding: 0.6em;
+	}
+
+    /*popular title style*/
+    span#popular_title{
+    	color: turquoise;
+    	font-size: 2.5em;
+    	position: relative;
+    	top: -12.5em;
+    	left: 0.7em;
+    }
+
+/*classic part*/
+	#classic{
+		position: relative;
+		top: 30em;
+		padding: 0.6em;
+	}
+
+    /*popular title style*/
+    span#classic_title{
+    	color: turquoise;
+    	font-size: 2.5em;
+    	position: relative;
+    	top: -12.5em;
+    	left: 0.7em;
+    }
+
+/*Card style for multiple slideshow*/
+	/*image card style*/
+    div#card{
+    	position: relative;
+    	display: inline-block;
+    	margin-left: 2em;
+    	border-radius: 1em 0.1em 0.2em 0em;
+    	height: 19em;
+    	width: 10.3em;
+    	top: 5em;
+    	padding-right: 1.5em;	
+    	background-color: #353935;
+    	color: white;
+    }
+
+    div.pcard{left: -12em;}
+    div.ccard{left: -10.5em;}
+
+    /*card image style*/
+    img#card_img{
+    	height: 15em;
+    	width: 10em;
+    	top: -16.65em;	
+    	position: relative;
+    	padding-left: 1.8em;
+    }
+
+	/*card anime name style*/
+	span#name{
+		writing-mode: vertical-lr;
+        transform: rotate(-180deg);
+        position: relative;
+        overflow: hidden;
+        top: -0.5em; 
+        left: 0.5em;
+        display: block;
+        width: 1em;
+        height: 15em;
+    }
+
+    /*card number style*/
+    span#card_no{
+    	position: relative;
+    	left: 0.01em;
+    	color: turquoise;
+    	font-size: 1.5em;
+    }
+
+    /*Book Author name style*/
+    a#author{
+    	text-decoration: none;
+    	position: relative;
+    	display: block;
+    	width: 9.2em;
+    	height: 2.5em;
+    	overflow-y: hidden;
+    	left: 2.2em;
+    	top: -15.5em;
+    	color: white;
+    }
+
+    /*hover over author*/
+    a#author:hover{
+    	color: turquoise;
+    }
+
+/* Next & previous buttons */
+    a#change_card{
+    	position: relative;
+    	cursor: pointer;
+    	background-color: turquoise;
+	    padding: 1em;
+	    color: white;
+	    font-weight: bold;
+	    transition: 0.6s ease;
+	    border-radius: 0.2em;
+    }
+
+    /*positioning next card button*/
+    a.next_pcard{
+    	top: 40%;
+    	left: 84.5%;
+    	font-size: 1.7em;
+    }
+
+    /*positioning prev card button*/
+    a.prev_pcard{
+    	top: 60%;
+    	left: 90%;
+    	font-size: 1.7em;
+    }
+
+    /*positioning next card button*/
+    a.next_ccard{
+    	top: 12%;
+    	left: 84.5%;
+    	font-size: 1.7em;
+    }
+
+    /*positioning prev card button*/
+    a.prev_ccard{
+    	top: 30%;
+    	left: 90%;
+    	font-size: 1.7em;
+    }
+
+    /*hover effect of next and prev*/
+	a#change_card:hover{
+    	background-color: white;
+    	color: turquoise;
+    }
+
+/*About the bookshelf part*/
+    /*about the bookshelf*/
+    div#about{
+    	position: relative;
+    	top: 25em;
+    	height: 25em;
+    	color: white;
+    }
+
+    /*about luffy image style*/
+    img#aboutbookshelf_img{
+    	display: block;
+    	position: relative;
+    	height: 35em;
+    	width: 100%;
+		top: 0em;
+		left: 0em;
+		background-size: cover;
+    }
+
+    /*title style*/
+    span#about_title{
+    	position: relative;
+    	color: turquoise;
+    	font-size: 3.5em;
+    	top: -8.5em;
+    	left: 0.2em;
+    }
+
+    /*about information style*/
+    div#about_info{
+    	position: relative;
+    	display: block;
+    	width: 39em;
+    	top: -28em;
+    	left: 0;
+    }
+
+    /*link to about page*/
+    a#about_link{
+    	color: turquoise;
+    	font-size: 1.2em;
+    }
+
+    /*buttos style*/
+	button.buttons{
+		padding: 0.6em 1.3em;
+	  	font-size: 1.5em;
+	  	letter-spacing: 2.5px;
+	  	color: #fff;
+	  	background-color: turquoise;
+	  	border: none;
+	  	transition: all 0.3s ease 0s;
+	  	cursor: pointer;
+	}
+
+    /*donate button on about*/
+    button#donate_about{
+    	position: relative;
+    	top: -18em;
+    	left: 0em;
+    }	
+
+    /*donate button hover effect*/
+    button#donate_about:hover{
+    	background-color: white;
+		box-shadow: 0px 15px 20px turquoise;
+		color: turquoise;
+		transform: translateY(-7px);
+    }
+
+/*books list tables part*/
+	/*best seller title positioning*/
+    span#best_title{
+    	color: turquoise;
+    	font-size: 3em;
+    	position: relative;
+    	top: 13em;
+    	display: block;
+    	height: auto;
+    	width: 8em;
+    	left: 0.7em;
+    }
+
+    /*top tables style*/
+    table.top_table{
+    	background-color: #121212;
+    	position: relative;
+    	display: inline-block;
+    	top: 40em;
+    	border: 0;
+    	border-radius: 0em 1em 0em 1em;
+    	margin-left: 1.5em;
+    }
+
+    /*table image style*/
+    img#table_img{
+    	width: 3em;
+    	height: 4em;
+    }
+
+    /*table anime data style*/
+    span#table_bname{
+    	display: block;
+    	position: relative;
+    	top: -3.8em;
+    	left: 3.5em;
+    	color: turquoise;
+    }
+
+    /*table links style*/
+    a#table_blink{
+    	display: block;
+    	height: 2.5em;
+    	width: 12em;
+    	overflow: hidden;
+    	text-decoration: none;
+    	color: white;
+    }
+
+    /*hover effect on link on names*/
+    a#table_blink:hover{
+    	color: turquoise;
+    }
+  
+    /*table heading style*/
+    th#heading{
+    	color: turquoise;
+    	padding: 0.5em;
+    	text-align: left;
+    	font-size: 1.2em;
+    }
+
+    /*table data style*/
+    td#list_data{
+    	padding: 0.5em;
+    	display: block;
+    	width: 17em;
+    	height: 4em;
+    }
+
+    /*even color change*/
+    tr#list_row:nth-child(even) {
+		background-color: #282C35;
+	}
+
+	/*view more style*/
+	td#more{
+		text-align: center;
+		display: block;
+		height: 2em;	
+		padding-top: 1em;
+		color: white;
+		transition: all 0.4s ease 0s;	
+	}
+
+	/*more hiver effect*/
+	td#more:hover{
+		cursor: pointer;
+		background-color: turquoise;
+		border-radius: 2em 0em;
+	}
+
+/*footer part*/
+	div#footer{
+		position: relative;
+		top: 48em;
+		display: block;
+		width: 100%;
+	}
+	
+	/*footer image style*/
+	img#footer_img{
+		position: absolute;
+		top: -2em;
+		left: -0.5em;
+		display: block;	
+		width: 100.5%;
+		height: 25em;
+	}
+
+	/*image gradient class style*/
+	div#footer_effect{
+	  	position: absolute;
+		top: -2em;
+		left: -0.5em;
+		display: block;	
+		width: 101.1%;
+		height: 25em;
+	  	z-index: 1;
+	  	background-color: rgba(0, 0, 0, 0.8);
+	}
+
+
+	/*footer logo style*/
+	img#footer_logo{
+		position: relative;
+		left: 0em;
+		width: 3.5em;
+		height: 4.5em;
+	}
+
+	/*site name style*/
+	img#name{
+		position: relative;
+		left: 2.5em;
+	}
+
+	/*social media site style*/
+	img#icon{
+		position: relative;
+		border-radius: 51%;
+		height: 2em;
+		width: 2em;
+	}	
+
+	/*social media icons positioning*/
+	div#social_icons{
+		position: relative;
+		display: block;
+		width: 14em;
+		top: -4em;
+		left: 50em;
+	}
+
+	/*all content of footer style*/
+	div#footer_content{
+		position: relative;
+		top: 0em;
+		display: block;
+		width: 80em;
+		z-index: 2;
+		left: 3em;
+		color: white;
+		background-color: none;
+	}
+
+	/*search links div styling*/
+	div#search_links{
+		word-spacing: 0.8em;
+	}
+
+	/*footer links style*/
+	a#list_link{
+		text-decoration: none;
+		color: white;
+		padding: 0.3em;
+		border-radius: 10%;
+		background-color: rgba(256, 256, 256, 0.3);
+	}
+
+	/*the bookshelf footer info*/
+	p#bookshelf_footer_info{
+		color: white;
+	}
+
+</style>
+</head>
+<body>
+	<!--navbar-->
+	<nav id="nav_bar">
+		<img src="bookshelf_images\logo_nobg.png" id="logo">
+		<i class="material-icons" id="nav_search_icon" onclick="search_bar()">search</i>
+		<input type="text" id="nav_search" placeholder="search for Title, Author, ISBN, Publisher..."></input>	
+		<a href="#home" id="nav_link" class="link">Home</a>
+		<a href="#popular" id="nav_link" class="link">Books</a>
+		<a href="#about" id="nav_link" class="link">About</a>
+		<a href="#best_title" id="nav_link" class="link">Best Sellers</a>
+	</nav>
+
+	<!--home-->
+	<div id="home">
+		<div id="img_gradient">
+			<img src="bookshelf_images\bookshelf_img8.jpg" id="bookshelf_img">
+		</div>
+    	<h1 id="name">THE <font color="turquoise">BOOKSHELF</font ></h1>
+	    <div id="search_bar"> 	
+	        <input type="text" id="search" placeholder="search for Title, Author, ISBN, Publisher..."></input>
+	    	<i class="material-icons" id="search_icon">search</i>
+	    </div>
+	    <h2 id="quote">"There is no <font color="turquoise">friend</font> as loyal as a <font color="turquoise">book</font>"<br>
+	    Find It <font color="turquoise">On</font> The Bookshelf</h2>
+    </div>
+
+    <!--popular-->
+    <div id="popular">
+    	<span id="popular_title">Popular</span>
+		<div class="pcard" id="card">
+			<span id="name">Atomic Habit</span>
+			<span id="card_no">01</span>
+			<a href="#atomic_habit.htm">
+				<img src="bookshelf_images\popular_img1.jpg" id="card_img" class="pcard_img">
+			</a>
+			<a id="author" href="#atomic_habit.htm">James Clear</a>
+		</div>
+
+		<div class="pcard" id="card">
+			<span id="name">The Subtle Art Of Not Giving A F*ck</span>
+			<span id="card_no">02</span>
+			<a href="#the_subtle_art_of_not_giving_a_fuck.htm">
+				<img src="bookshelf_images\popular_img2.jpg" id="card_img">
+			</a>
+			<a id="author" href="#the_subtle_art_of_not_giving_a_fuck.htm">Mark Manson</a>
+		</div>
+		
+		<div class="pcard" id="card">
+			<span id="name">It Ends With Us</span>
+			<span id="card_no">03</span>
+			<a href="#it_ends_with_us.htm">
+				<img src="bookshelf_images\popular_img3.jpg" id="card_img">
+			</a>
+			<a id="author" href="#it_ends_with_us.htm">Colleen Hoover</a>
+		</div>
+		
+		<div class="pcard" id="card">
+			<span id="name">I'm Glad My Mom Died</span>
+			<span id="card_no">04</span>
+			<a href="#im_glad_my_mom_died.htm">
+				<img src="bookshelf_images\popular_img4.jpg" id="card_img">
+			</a>
+			<a id="author" href="#im_glad_my_mom_died.htm">Jennette McCurdy</a>
+		</div>
+		
+		<div class="pcard" id="card">
+			<span id="name">Rich Dad Poor Dad</span>
+			<span id="card_no">05</span>
+			<a href="#rich_dad_poor_dad.htm">
+				<img src="bookshelf_images\popular_img5.jpg" id="card_img">
+			</a>
+			<a id="author" href="#rich_dad_poor_dad.htm">Robert T. Kiyosaki</a>	
+		</div>
+		
+		<div class="pcard" id="card">
+			<span id="name">Power</span>
+			<span id="card_no">06</span>
+			<a href="#power.htm">
+				<img src="bookshelf_images\popular_img6.jpg" id="card_img">
+			</a>
+			<a id="author" href="#power.htm">Robert Greene</a>
+		</div>
+
+		<div class="pcard" id="card">
+			<span id="name">Verity</span>
+			<span id="card_no">07</span>
+			<a href="#verity.htm">
+				<img src="bookshelf_images\popular_img7.jpg" id="card_img">
+			</a>
+			<a id="author" href="#verity.htm">Colleen Hoover</a>
+		</div>
+
+		<div class="pcard" id="card">
+			<span id="name">Harry Potter</span>
+			<span id="card_no">08</span>
+			<a href="#harry_potter.htm">
+				<img src="bookshelf_images\popular_img8.jpg" id="card_img">
+			</a>
+			<a id="author" href="#harry_potter.htm">J. K. Rowling</a>
+		</div>
+		
+		<div class="pcard" id="card">
+			<span id="name">It Starts With Us</span>
+			<span id="card_no">09</span>
+			<a href="#it_starts_with_us.htm">
+				<img src="bookshelf_images\popular_img9.jpg" id="card_img">
+			</a>
+			<a id="author" href="#it_starts_with_us.htm">Colleen Hoover</a>
+		</div>
+		
+		<div class="pcard" id="card">
+			<span id="name">Ogien Krew</span>
+			<span id="card_no">10</span>
+			<a href="#ogien_krew.htm">
+				<img src="bookshelf_images\popular_img10.jpg" id="card_img">
+			</a>
+			<a id="author" href="#ogien_krew.htm">George R. R. Martin</a>
+		</div>
+	</div>
+		<a id="change_card" class="prev_pcard" onclick="plusPcard(-1)">❮</a>
+	    <a id="change_card" class="next_pcard" onclick="plusPcard(1)">❯</a>	    
+
+
+	<!--classic-->
+    <div id="classic">
+    	<span id="classic_title">Classic</span>
+		<div class="ccard" id="card">
+			<span id="name">An Inland Voyage</span>
+			<span id="card_no">01</span>
+			<a href="#an_inland_voyage.htm">
+				<img src="bookshelf_images\classic_img1.jpg" id="card_img" class="ccard_img">
+			</a>
+			<a id="author" href="#an_inland_voyage.htm">George Munro</a>
+		</div>
+
+		<div class="ccard" id="card">
+			<span id="name">Veranilda</span>
+			<span id="card_no">02</span>
+			<a href="#veranilda.htm">
+				<img src="bookshelf_images\classic_img2.jpg" id="card_img">
+			</a>
+			<a id="author" href="#veranilda.htm">George Gissing</a>
+		</div>
+		
+		<div class="ccard" id="card">
+			<span id="name">Friedrich Schiller</span>
+			<span id="card_no">03</span>
+			<a href="#friedrich_schiller.htm">
+				<img src="bookshelf_images\classic_img3.jpg" id="card_img">
+			</a>
+			<a id="author" href="#friedrich_schiller.htm">Wallenstein</a>
+		</div>
+		
+		<div class="ccard" id="card">
+			<span id="name">Swallow</span>
+			<span id="card_no">04</span>
+			<a href="#swallow.htm">
+				<img src="bookshelf_images\classic_img4.jpg" id="card_img">
+			</a>
+			<a id="author" href="#swallow.htm">H. Rider Haggard</a>
+		</div>
+		
+		<div class="ccard" id="card">
+			<span id="name">Beowulf</span>
+			<span id="card_no">05</span>
+			<a href="#beowulf.htm">
+				<img src="bookshelf_images\classic_img5.jpg" id="card_img">
+			</a>
+			<a id="author" href="#beowulf.htm">Joseph E. Tuso</a>
+		</div>
+		
+		<div class="ccard" id="card">
+			<span id="name">The Master Christian</span>
+			<span id="card_no">06</span>
+			<a href="#the_master_christian.htm">
+				<img src="bookshelf_images\classic_img6.jpg" id="card_img">
+			</a>
+			<a id="author" href="#the_master_christian.htm">Marie Corelli</a>
+		</div>
+		
+		<div class="ccard" id="card">
+			<span id="name">Rhymes Of Childhood</span>
+			<span id="card_no">07</span>
+			<a href="#rhymes_of_childhood.htm">
+				<img src="bookshelf_images\classic_img7.jpg" id="card_img">
+			</a>
+			<a id="author" href="#rhymes_of_childhood.htm">James Whitcomb Riley</a>
+		</div>
+
+		<div class="ccard" id="card">
+			<span id="name">Port-Tarascon:To Which Is Added Studies And Landscaape</span>
+			<span id="card_no">08</span>
+			<a href="port_tarascon.htm">
+				<img src="bookshelf_images\classic_img8.jpg" id="card_img">
+			</a>
+			<a id="author" href="port_tarascon.htm">Alphonse Daudet</a>
+		</div>
+		
+		<div class="ccard" id="card">
+			<span id="name">The House Of Souls</span>
+			<span id="card_no">09</span>
+			<a href="#the_house_of_souls.htm">
+				<img src="bookshelf_images\classic_img9.jpg" id="card_img">
+			</a>
+			<a id="author" href="#the_house_of_souls.htm">Arthur Machen</a>
+		</div>
+		
+		<div class="ccard" id="card">
+			<span id="name">Cattle Brands</span>
+			<span id="card_no">10</span>
+			<a href="#cattle_brands.htm">
+				<img src="bookshelf_images\classic_img10.jpg" id="card_img">
+			</a>
+			<a id="author" href="#cattle_brands.htm">Andy Adams</a>
+		</div>
+	</div>
+		<a id="change_card" class="prev_ccard" onclick="plusCcard(-1)">❮</a>
+	    <a id="change_card" class="next_ccard" onclick="plusCcard(1)">❯</a>	    
+
+
+	<!--about-->
+	<div id="about">
+		<img src="bookshelf_images\bookshelf_img6.jpg" id="aboutbookshelf_img">
+		<span id="about_title">About</span>
+		<div id="about_info">
+			The Bookshelf is a free site to read  books for free and you can even download  books in best quality without any registration or payment. By having No Ads in all kinds, I aM trying to make it the safest site for free books.<br><br>
+
+			 Before building THE BOOKSHELF, I've checked many other free and paid book sites, and learnt from them. I only keep the good things and remove all the bad things from all the competitors, to put it in my books website.<a href="#about" id="about_link">more..</a>
+		</div>
+		<button id="donate_about" class="buttons">Donate</button>
+	</div>
+
+
+	<!--tables-->
+		<span id="best_title">Best Seller</span>
+
+		<!--Recently returned Table-->
+		<table id="recent" class="top_table">
+			<th id="heading">Recently Returned</th>
+			<tr id="list_row"><td id="list_data">
+				<img src="bookshelf_images\recent_img1.jpg" id="table_img">
+				<span id="table_bname">
+					<a href="#mistaken_mistress.htm" id="table_blink">Mistaken Mistress</a>	
+					by Margaret McPhee 
+				</span>
+			</td></tr>
+			<tr id="list_row"><td id="list_data">
+				<img src="bookshelf_images\recent_img2.jpg" id="table_img">
+				<span id="table_bname">
+					<a href="#big_nate_makes-the_grade.htm" id="table_blink">Big Nate Makes the Grade</a>
+					by Lincoln Pierce
+				</span>
+			</td></tr>
+			<tr id="list_row"><td id="list_data">
+				<img src="bookshelf_images\recent_img3.jpg" id="table_img">
+				<span id="table_bname">
+					<a href="#conrads_western_world.htm" id="table_blink">Conrad's Western world.</a>
+					by Norman Sherry
+				</span>
+			</td></tr>
+			<tr id="list_row"><td id="list_data">
+				<img src="bookshelf_images\recent_img4.jpg" id="table_img">
+				<span id="table_bname">
+					<a href="#cherub_peoples_republic.htm" id="table_blink">Cherub People's Republic</a>
+					by robert muchamore
+				</span>
+			</td></tr>
+			<tr id="list_row"><td id="list_data">
+				<img src="bookshelf_images\recent_img5.jpg" id="table_img">
+				<span id="table_bname">
+					<a href="#the_art_and_craft_of_making_jewelry.htm" id="table_blink">The art & craft of making jewelry</a>
+					by Joanna Gollberg					
+				</span>
+			</td></tr>
+			<tr id="list_row"><td id="more">
+				View More >
+			</td></tr>
+		</table>
+
+		<!--Romance Table-->
+		<table id="romance" class="top_table">
+			<th id="heading">Romance</th>
+			<tr id="list_row"><td id="list_data">
+				<img src="bookshelf_images\romance_img1.jpg" id="table_img">
+				<span id="table_bname">
+					<a href="#rock_my_world_the_wrong_bed.htm" id="table_blink">Rock My World The Wrong Bed</a>	
+					by Cindi Myers
+				</span>
+			</td></tr>
+			<tr id="list_row"><td id="list_data">
+				<img src="bookshelf_images\romance_img2.jpg" id="table_img">
+				<span id="table_bname">
+					<a href="#tempestuous_reunion.htm" id="table_blink">Tempestuous Reunion</a>
+					by Lynne Graham
+				</span>
+			</td></tr>
+			<tr id="list_row"><td id="list_data">
+				<img src="bookshelf_images\romance_img3.jpg" id="table_img">
+				<span id="table_bname">
+					<a href="#a_kind_of_madness.htm" id="table_blink">A Kind of Madness</a>
+					by Penny Jordan
+				</span>
+			</td></tr>
+			<tr id="list_row"><td id="list_data">
+				<img src="bookshelf_images\romance_img4.jpg" id="table_img">
+				<span id="table_bname">
+					<a href="#animal_lust.htm" id="table_blink">Animal Lust</a>	
+					by Lacy Danes
+				</span>
+			</td></tr>
+			<tr id="list_row"><td id="list_data">
+				<img src="bookshelf_images\romance_img5.jpg" id="table_img">
+				<span id="table_bname">
+					<a href="#the_royal_baby_bargain.htm" id="table_blink">The Royal Baby Bargain (Harlequin Presents)</a>
+					by Robyn Donald
+				</span>
+			</td></tr>
+			<tr id="list_row"><td id="more">
+				View More >
+			</td></tr>
+		</table>
+
+		<!--Kids Table-->
+		<table id="kids" class="top_table">
+			<th id="heading">Kids</th>
+			<tr id="list_row"><td id="list_data">
+				<img src="bookshelf_images\kids_img1.jpg" id="table_img">
+				<span id="table_bname">
+					<a href="#mercer_mayers_Little_monster_at_school.htm" id="table_blink">Mercer Mayer's Little Monster at School</a>
+					by Mercer Mayer	
+				</span>
+			</td></tr>
+			<tr id="list_row"><td id="list_data">
+				<img src="bookshelf_images\kids_img2.jpg" id="table_img">
+				<span id="table_bname">
+					<a href="#Of_witches_and_wind.htm" id="table_blink">Of witches and wind</a>
+					by Shelby Bach
+				</span>
+			</td></tr>
+			<tr id="list_row"><td id="list_data">
+				<img src="bookshelf_images\kids_img3.jpg" id="table_img">
+				<span id="table_bname">
+					<a href="#family_book.htm" id="table_blink">Family Book</a>
+					by Todd Parr
+				</span>
+			</td></tr>
+			<tr id="list_row"><td id="list_data">
+				<img src="bookshelf_images\kids_img4.jpg" id="table_img">
+				<span id="table_bname">
+					<a href="#the_most_dangerous_game.htm" id="table_blink">The Most Dangerous Game</a>
+					by Richard Connell
+				</span>
+			</td></tr>
+			<tr id="list_row"><td id="list_data">
+				<img src="bookshelf_images\kids_img5.jpg" id="table_img">
+				<span id="table_bname">
+					<a href="#best_bunny_book_ever.htm" id="table_blink">BEST BUNNY BOOK EVER</a>
+					by Richard Scarry
+				</span>
+			</td></tr>
+			<tr id="list_row"><td id="more">
+				View More >
+			</td></tr>
+		</table>
+
+		<!--Thriller Table-->
+		<table id="thriller" class="top_table">
+			<th id="heading">Thriller</th>
+			<tr id="list_row"><td id="list_data">
+				<img src="bookshelf_images\thriller_img1.jpg" id="table_img">
+				<span id="table_bname">
+					<a href="#cell.htm" id="table_blink">Cell</a>	
+					by Stephen King
+				</span>
+			</td></tr>
+			<tr id="list_row"><td id="list_data">
+				<img src="bookshelf_images\thriller_img2.jpg" id="table_img">
+				<span id="table_bname">
+					<a href="#the_shining.htm" id="table_blink">The Shining</a>
+					by Stephen King
+				</span>
+			</td></tr>
+			<tr id="list_row"><td id="list_data">
+				<img src="bookshelf_images\thriller_img3.jpg" id="table_img">
+				<span id="table_bname">
+					<a href="#it.htm" id="table_blink">IT</a>
+					by Stephen King
+				</span>
+			</td></tr>
+			<tr id="list_row"><td id="list_data">
+				<img src="bookshelf_images\thriller_img4.jpg" id="table_img">
+				<span id="table_bname">
+					<a href="#eyes_of_barkness.htm" id="table_blink">Eyes of Darkness</a>
+					by Dean R. Koontz
+				</span>
+			</td></tr>
+			<tr id="list_row"><td id="list_data">
+				<img src="bookshelf_images\thriller_img5.jpg" id="table_img">
+				<span id="table_bname">
+					<a href="tom_clancy_communist_strike_back.htm" id="table_blink">Tom Clancy communist Strike Back</a>
+					by Tom Clancy
+				</span>
+			</td></tr>
+			<tr id="list_row"><td id="more">
+				View More >
+			</td></tr>
+		</table>
+
+
+	<!--Footer-->
+	<div id="footer">
+		<div id="footer_effect"></div>
+		<img src="bookshelf_images/bookshelf_img2.jpg" id="footer_img">
+		<div id="footer_content">
+			<img src="bookshelf_images/logo_nobg.png" alt="logo" id="footer_logo">
+			<img src="bookshelf_images/site_name.png" alt="site_name" id="name">
+			<div id="social_icons">
+				<a href="#instagram"><img src="bookshelf_images/instagram_icon.png" id="icon" alt="instagram icon"></a>
+				<a href="#facebook"><img src="bookshelf_images/facebook_icon.jpg" id="icon" alt="facebook icon"></a>
+				<a href="#gmail"><img src="bookshelf_images/mail_icon.png" id="icon" alt="gmail icon"></a>
+				<a href="#pintrest"><img src="bookshelf_images/pintrest_icon.png" id="icon" alt="pintrest icon"></a>
+				<a href="#linkedin"><img src="bookshelf_images/linkedin_icon.png" id="icon" alt="linkedin icon"></a>
+				<a href="#twitter"><img src="bookshelf_images/twitter_icon.png" id="icon" alt="twitter icon"></a>
+			</div>
+				<div id="search_option"><h3>A-Z LIST</h3>
+				Searching anime order by alphabet name A to Z<br><br>
+				<div id="search_links">
+					<a href="#list_" id="list_link">All</a>
+					<a href="#list_hash" id="list_link">#</a> <a href="#list_0to9" id="list_link">0-9</a>
+					<a href="#list_A" id="list_link">A</a> <a href="#list_B" id="list_link">B</a>
+					<a href="#list_C" id="list_link">C</a> <a href="#list_D" id="list_link">D</a>
+					<a href="#list_E" id="list_link">E</a> <a href="#list_F" id="list_link">F</a>
+					<a href="#list_G" id="list_link">G</a> <a href="#list_H" id="list_link">H</a>
+					<a href="#list_I" id="list_link">I</a> <a href="#list_J" id="list_link">J</a>
+					<a href="#list_K" id="list_link">K</a> <a href="#list_L" id="list_link">L</a>
+					<a href="#list_M" id="list_link">M</a> <a href="#list_N" id="list_link">N</a>
+					<a href="#list_O" id="list_link">O</a> <a href="#list_O" id="list_link">O</a>
+					<a href="#list_P" id="list_link">P</a> <a href="#list_Q" id="list_link">Q</a>
+					<a href="#list_R" id="list_link">R</a> <a href="#list_S" id="list_link">S</a>
+					<a href="#list_T" id="list_link">T</a> <a href="#list_U" id="list_link">U</a>
+					<a href="#list_V" id="list_link">V</a> <a href="#list_W" id="list_link">W</a>
+					<a href="#list_X" id="list_link">X</a> <a href="#list_Y" id="list_link">Y</a>
+					<a href="#list_Z" id="list_link">Z</a><br><br>
+					<a href="#list_tos" id="list_link">TermsofService</a>
+					<a href="#list_dmca" id="list_link">DMCA</a>
+					<a href="#list_contact" id="list_link">Contact</a><br>
+				</div>
+				<p id="luffy_footer_info">
+					THE BOOKSHELF does not store any files on our server, we only linked to the media which is hosted on 3rd party services.<br>
+					&#169The Bookshelf
+				</p>
+			</div>
+		</div>
+	</div>	
+
+<script>
+//search bar animation
+	function search_bar() {
+		var navsearch = document.getElementById("nav_search");
+		if(navsearch.style.width = "0em"){
+			navsearch.style.backgroundColor = "white";	
+			navsearch.style.width = "22em";
+		}	
+		else if(navsearch.style.width = "22em"){
+			navsearch.style.backgroundColor = "transparent";	
+			navsearch.style.width = "0em";
+		}
+	}
+
+//navigation on scroll
+	var navbar = document.getElementById("nav_bar");
+	window.onscroll = function() {
+		navLinkColor();
+		navColor();
+	};
+	
+	//function to add background to nav bar on scroll
+    function navColor(){
+		if (window.pageYOffset != 0) {
+	    	navbar.style.backgroundColor = "rgba(0,0,0,0.7)";
+	  	} 
+	  	else if(window.pageYOffset == 0){
+	    	navbar.style.backgroundColor = "";
+	  	}	
+	}
+
+	//function to change color of navbar elements
+	function change_color(n) {
+		var navlink = document.getElementsByClassName("link");
+		for(var i=0;i<4;i++){
+			if(i == n){
+				navlink[i].style.color = "turquoise";
+				navlink[i].style.backgroundColor = "white";
+				navlink[i].style.textDecoration = "underline";
+			}
+			else{
+				navlink[i].style.color = "white";
+				navlink[i].style.backgroundColor = "transparent";
+				navlink[i].style.textDecoration = "none";
+			}
+		}
+	}
+
+	//function to detect scroll to change color of navbar elements
+	function navLinkColor(){		
+	  	if(document.body.scrollTop >= 0 && document.body.scrollTop <= 340){
+	    	change_color(0);//home
+	  	}
+	  	if(document.body.scrollTop >= 640 && document.body.scrollTop <= 1620){
+	    	change_color(1);//book
+	  	}
+	  	if(document.body.scrollTop >= 1620 && document.body.scrollTop <= 2200){
+	    	change_color(2);//about
+	  	}
+	  	if(document.body.scrollTop >= 2200){
+	    	change_color(3);//best sellers
+	  	}
+	}
+
+//multiple slideshow script
+    //card index
+	let ccardIndex = 5;
+	let pcardIndex = 5;
+	showCcard(ccardIndex);
+	showPcard(pcardIndex);
+
+	// Next/previous controls
+	 function plusCcard(n) {
+        showCcard(ccardIndex += n);
+    }
+
+    //current cards
+    function currentCcard(n) {
+        showCcard(ccardIndex = n);
+    }
+
+    // Next/previous controls
+	 function plusPcard(m) {
+        showPcard(pcardIndex += m);
+    }
+
+    //current cards
+    function currentPcard(m) {
+        showPcard(pcardIndex = m);
+    }
+    
+    //show cards
+    function showCcard(n) {
+        let i;
+        let ccards = document.getElementsByClassName("ccard");
+        
+        if (n > ccards.length) {ccardIndex = ccards.length;}    
+        if (n < 5) {ccardIndex = 5;}
+        /*to display all as none*/
+        for (i = 0; i < ccards.length; i++) {
+            ccards[i].style.display = "none";  
+        }
+        /*to set all visible cards as inline-block*/
+        for (i = ccardIndex-5; i < ccardIndex; i++) {
+            ccards[i].style.display = "inline-block";  
+        } 
+    }
+
+    function showPcard(m) {
+        let i;
+        let cards = document.getElementsByClassName("pcard");
+        
+        if (m > cards.length) {pcardIndex = cards.length;}    
+        if (m < 5) {pcardIndex = 5;}
+        /*to display all as none*/
+        for (i = 0; i < cards.length; i++) {
+            cards[i].style.display = "none";  
+        }
+        /*to set all visible cards as inline-block*/
+        for (i = pcardIndex-5; i < pcardIndex; i++) {
+            cards[i].style.display = "inline-block";  
+        } 
+    }
+</script>
+
+</body>
+</html>
