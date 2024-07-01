@@ -1,0 +1,512 @@
+<html>
+<head>
+<title>PixelIT</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair Display">
+<link rel="icon" type="image" href="pixelit_images\logo_nobg.png">
+<style>
+/*body part*/
+	body{
+		font-family: "Playfair Display";
+		margin: 0;
+		background-color: #1B1B1B;
+	}
+
+	/*scrollbar removal*/
+	body::-webkit-scrollbar {
+  	display: none;
+	}
+
+/*navigation bar style*/
+	img#logo{
+			position: absolute;
+			left: 4em;
+			top: 0.7em;
+			width: 4em;
+			height: 4em;
+		}
+
+	/*nav logo text image style*/
+	img#logo_text_nav{
+			position: absolute;
+			left: 9em;
+			top: 0.5em;	
+			height: 4em;
+		}
+
+	/*nav bar style*/
+	nav#nav_bar{
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 1;	
+		width: 100%;
+		text-align: right;
+		background-color: none;
+	}
+
+	/*navigation link style*/
+	a#nav_link{
+		text-decoration: none;
+		display: inline-block;
+		color: white;
+		font-size: 1.3em;
+		padding: 1.5em 1.5em;
+		transition: all 0.4s ease 0s;
+	}
+
+	a#nav_link:hover{
+		background-color: white;
+		color: black;
+	}
+
+/*home part style*/
+	/*home content style*/
+	div#container{
+		position: relative;
+		top: 2em;
+		z-index: 1;
+	}
+
+	/*logo text style*/
+	img#logo_text{
+		position: relative;
+		height: 12em;
+		left: 33%;
+		top: -30em;
+	}
+
+	/*bgimg effect style*/
+	div#bgimg_effect{
+		z-index: -1;
+	}
+
+	/*image gradient after style*/
+	div#bgimg_effect:after { 
+	  content: '';
+	  position: absolute;
+	  top: 0; left: 0; bottom: 0; right: 0;
+	  background-color: rgba(0,0,0,0.6);
+	}
+
+	/*bgimg style*/
+	img#bg_img{
+		position: relative;
+		top: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	/*quote style*/
+	h2#quote{
+		position: relative;
+		top: -20em;
+		left: 27%;
+		display: block;
+		width: 30em;
+		color: white;
+	}
+
+	/*search bar style*/
+	input#search{
+		position: relative;
+		top: -36em;
+		left: 22%;
+		padding: 2em 2em 2em 4em;
+		border: none;
+		border-radius: 0.5em;
+		width: 55em;
+		height: 4em;
+		background-image: linear-gradient(to right ,#20BF55,#01BAEF);
+		color: white;
+	}
+
+	/*placeholder color style*/
+	input#search::placeholder { 
+  	color: white;
+	}
+	
+	/*search icon style*/
+	i#search_icon{
+		position: relative;
+		top: -9.55em;
+		font-size: 3em;
+		color: white;
+		left: -9em;
+	}
+
+/*images display part*/
+	/*title image style*/
+	img#image_title{
+		position: relative;
+		display: block;
+		top: -3em;
+		left: 31em;
+		width: auto;
+		height: 10em;
+	}
+
+	/*pixilit images style*/
+	div#pixilit_images{
+		position: relative;
+		top: -17em;
+	}
+
+	/*images container style*/
+	div#images_container1,#images_container2,#images_container3{
+		display: block;
+		width: 30%;
+		height: auto;
+		padding-right: 2em;
+		position: relative;
+	}
+
+	/*left position of images container*/
+	div#images_container1{
+		float: left;
+		left: 2%;
+	}
+	div#images_container2{
+		float: left;
+		left: 1.5%;
+	}
+	div#images_container3{
+		float: right;
+		right: 2%;
+	}
+
+	/*pixilit images style*/
+	img#pixilit_img{
+		width: 100%;
+		height: auto;
+		padding: 0.5em;
+		transition: all 0.2s ease 0s;
+	}
+
+	/*pixilit images hover style*/
+	img#pixilit_img:hover{
+		opacity: 0.5;
+	}
+
+	/*more images button style*/
+	button#more_images_btn{
+		background: linear-gradient(to right ,#20BF55,#01BAEF); 
+		position: relative;
+		left: 14em;
+		top: 0em;
+		padding: 0.2em 0.8em;
+		border: none;
+		cursor: pointer;
+		border-radius: 1.2em;	 
+		color: white;
+		transition: all 0.4s ease 0s;
+		font-size: 2.5em;
+	}
+
+	/*more images button hover style*/
+	button#more_images_btn:hover{
+		border-radius: 0em;
+		border: 2px solid white;
+		background: linear-gradient(to right ,#20BF55,#01BAEF); 
+	  -webkit-background-clip: text;
+	  -webkit-text-fill-color: transparent;
+	}
+
+	/*set more images display to none*/
+	img.more_img{display: none;}
+
+/*footer style part*/
+	div#footer{
+		position: relative;		
+		display: block;
+		height: 25em;
+		width: 100%;
+	}
+	
+	/*footer image style*/
+	img#footer_img{
+		position: relative;
+		display: block;	
+		width: 100%;
+		height: auto;
+		opacity: 0.5;
+		filter: brightness(50%);
+	}
+
+	/*footer logo style*/
+	img#footer_logo{
+		position: relative;
+		left: -1em;
+		top: -3em;
+		width: 4em;
+		height: 4em;
+	}
+
+	/*site name style*/
+	img#name{
+		position: relative;
+		left: 0em;
+		top: -2em;
+		height: 6em;
+	}
+
+	/*footer donate button style*/
+	button#footer_donate{
+		background: linear-gradient(to right ,#20BF55,#01BAEF); 
+		position: relative;
+		left: 27.37em;
+		top: -3.2em;
+		padding: 0.2em 0.8em;
+		border: none;
+		cursor: pointer;
+		border-radius: 1.2em 0em 0em 1.2em;	 
+		color: white;
+		transition: all 0.4s ease 0s;
+		font-size: 2em;
+	}
+
+	/*footer donate button hover style*/
+	button#footer_donate:hover{
+		border-radius: 0em 0em 1.2em 1.2em;
+		background: linear-gradient(to right ,#20BF55,#01BAEF); 
+	  -webkit-background-clip: text;
+	  -webkit-text-fill-color: transparent;
+	  box-shadow: 0px 15px 20px #01BAEF;	
+	}
+
+	/*popular title style*/
+	h3#popular_title{
+		position: relative;
+		top: -2em;
+	}
+
+	/*all content of footer style*/
+	div#footer_content{
+		position: relative;
+		top: -23em;
+		display: block;
+		width: 80em;
+		z-index: 2;
+		left: 3em;
+		color: white;
+		background-color: none;
+	}
+
+	/*search links div styling*/
+	div#search_links{
+		word-spacing: 0.8em;
+		position: relative;
+		top: -2em;
+	}
+
+	/*footer links style*/
+	a#list_link{
+		text-decoration: none;
+		color: white;
+		line-height: 2.2em;
+		padding: 0.3em;
+		border-radius: 0.5em;
+		background-color: rgba(256, 256, 256,0.2);
+		transition: all 0.2s ease 0s;
+	}
+
+	/*footer links hover style*/
+	a#list_link:hover{
+		background-color: black;
+		background: linear-gradient(to right ,#20BF55,#01BAEF); 
+	  -webkit-background-clip: text;
+	  -webkit-text-fill-color: transparent;
+	}
+
+	/*the bookshelf footer info*/
+	p#bookshelf_footer_info{
+		color: white;
+	}
+
+</style>
+</head>
+<body>
+<!--navigation part-->
+	<nav id="nav_bar">
+		<img src="pixelit_images\logo_nobg.png" id="logo">
+		<img src="pixelit_images/logo_text_nobg.png" id="logo_text_nav">
+		<a href="#photos.htm" id="nav_link">Photos</a>
+		<a href="#illustrations.htm" id="nav_link">Illustrations</a>
+		<a href="#vectors.htm" id="nav_link">Vectors</a>
+		<a href="#videos.htm" id="nav_link">Videos</a>
+		<a href="#music.htm" id="nav_link">Music</a>
+		<a href="#sound_effect.htm" id="nav_link">Sound Effect</a>
+	</nav>
+
+<!--home part-->
+	<div id="home">
+		<div id="bgimg_effect">
+			<img src="pixelit_images/pixelit_img4.jpg" id="bg_img">
+		</div>
+			<div id="content">
+				<img src="pixelit_images/logo_text_nobg.png" id="logo_text">
+	    	<h2 id="quote">“I don’t trust words. I trust pictures.”
+						— Gilles Peress
+				</h2>
+	    	<div id="search_bar"> 
+	      	<input type="text" id="search" placeholder="search for Images, Illustrations, Videos, Music and more...">
+	      	<i class="material-icons" id="search_icon">search</i>
+	      </input>
+    	</div>
+    </div>
+    
+    </div>
+
+<!--images display part-->
+	<div id="pixilit_images">
+		<img src="pixelit_images/images_text_nobg.png" id="image_title">
+		<div id="images_container1">
+			<a href="pixelit_images/pixelit_img1.jpg"><img src="pixelit_images/pixelit_img1.jpg" id="pixilit_img"></a>
+			<a href="pixelit_images/pixelit_img4.jpg"><img src="pixelit_images/pixelit_img4.jpg" id="pixilit_img"></a>
+			<a href="pixelit_images/pixelit_img7.jpg"><img src="pixelit_images/pixelit_img7.jpg" id="pixilit_img"></a>
+			<a href="pixelit_images/pixelit_img10.jpg"><img src="pixelit_images/pixelit_img10.jpg" id="pixilit_img"></a>
+			<a href="pixelit_images/pixelit_img13.jpg"><img src="pixelit_images/pixelit_img13.jpg" id="pixilit_img"></a>
+			<a href="pixelit_images/pixelit_img16.jpg"><img src="pixelit_images/pixelit_img16.jpg" id="pixilit_img"></a>
+			<a href="pixelit_images/pixelit_img19.jpg"><img src="pixelit_images/pixelit_img19.jpg" id="pixilit_img"></a>
+			<a href="pixelit_images/pixelit_img22.jpg"><img src="pixelit_images/pixelit_img22.jpg" id="pixilit_img"></a>
+			<a href="pixelit_images/pixelit_img25.jpg"><img src="pixelit_images/pixelit_img25.jpg" id="pixilit_img"></a>
+			<a href="pixelit_images/pixelit_img28.jpg"><img src="pixelit_images/pixelit_img28.jpg" id="pixilit_img"></a>
+			<a href="pixelit_images/pixelit_img31.jpg"><img src="pixelit_images/pixelit_img31.jpg" id="pixilit_img"></a>
+			<!--more images-->
+			<a href="pixelit_images/pixelit_img34.jpg"><img src="pixelit_images/pixelit_img34.jpg" id="pixilit_img" class="more_img"></a>
+			<a href="pixelit_images/pixelit_img37.jpg"><img src="pixelit_images/pixelit_img37.jpg" id="pixilit_img" class="more_img"></a>
+			<a href="pixelit_images/pixelit_img40.jpg"><img src="pixelit_images/pixelit_img40.jpg" id="pixilit_img" class="more_img"></a>
+			<a href="pixelit_images/pixelit_img43.jpg"><img src="pixelit_images/pixelit_img43.jpg" id="pixilit_img" class="more_img"></a>
+			<a href="pixelit_images/pixelit_img46.jpg"><img src="pixelit_images/pixelit_img46.jpg" id="pixilit_img" class="more_img"></a>
+			<a href="pixelit_images/pixelit_img49.jpg"><img src="pixelit_images/pixelit_img49.jpg" id="pixilit_img" class="more_img"></a>
+
+		</div>
+		<div id="images_container2">
+			<a href="pixelit_images/pixelit_img2.jpg"><img src="pixelit_images/pixelit_img2.jpg" id="pixilit_img"></a>
+			<a href="pixelit_images/pixelit_img5.jpg"><img src="pixelit_images/pixelit_img5.jpg" id="pixilit_img"></a>
+			<a href="pixelit_images/pixelit_img8.jpg"><img src="pixelit_images/pixelit_img8.jpg" id="pixilit_img"></a>
+			<a href="pixelit_images/pixelit_img11.jpg"><img src="pixelit_images/pixelit_img11.jpg" id="pixilit_img"></a>
+			<a href="pixelit_images/pixelit_img14.jpg"><img src="pixelit_images/pixelit_img14.jpg" id="pixilit_img"></a>
+			<a href="pixelit_images/pixelit_img17.jpg"><img src="pixelit_images/pixelit_img17.jpg" id="pixilit_img"></a>
+			<a href="pixelit_images/pixelit_img20.jpg"><img src="pixelit_images/pixelit_img20.jpg" id="pixilit_img"></a>
+			<a href="pixelit_images/pixelit_img23.jpg"><img src="pixelit_images/pixelit_img23.jpg" id="pixilit_img"></a>
+			<a href="pixelit_images/pixelit_img26.jpg"><img src="pixelit_images/pixelit_img26.jpg" id="pixilit_img"></a>
+			<a href="pixelit_images/pixelit_img29.jpg"><img src="pixelit_images/pixelit_img29.jpg" id="pixilit_img"></a>
+			<a href="pixelit_images/pixelit_img32.jpg"><img src="pixelit_images/pixelit_img32.jpg" id="pixilit_img"></a>
+			<!--more images-->
+			<a href="pixelit_images/pixelit_img35.jpg"><img src="pixelit_images/pixelit_img35.jpg" id="pixilit_img" class="more_img"></a>
+			<a href="pixelit_images/pixelit_img38.jpg"><img src="pixelit_images/pixelit_img38.jpg" id="pixilit_img" class="more_img"></a>
+			<a href="pixelit_images/pixelit_img41.jpg"><img src="pixelit_images/pixelit_img41.jpg" id="pixilit_img" class="more_img"></a>
+			<a href="pixelit_images/pixelit_img44.jpg"><img src="pixelit_images/pixelit_img44.jpg" id="pixilit_img" class="more_img"></a>
+			<a href="pixelit_images/pixelit_img47.jpg"><img src="pixelit_images/pixelit_img47.jpg" id="pixilit_img" class="more_img"></a>
+			<a href="pixelit_images/pixelit_img50.jpg"><img src="pixelit_images/pixelit_img50.jpg" id="pixilit_img" class="more_img"></a>
+
+		</div>
+		<div id="images_container3">
+			<a href="pixelit_images/pixelit_img3.jpg"><img src="pixelit_images/pixelit_img3.jpg" id="pixilit_img"></a>
+			<a href="pixelit_images/pixelit_img6.jpg"><img src="pixelit_images/pixelit_img6.jpg" id="pixilit_img"></a>
+			<a href="pixelit_images/pixelit_img9.jpg"><img src="pixelit_images/pixelit_img9.jpg" id="pixilit_img"></a>
+			<a href="pixelit_images/pixelit_img12.jpg"><img src="pixelit_images/pixelit_img12.jpg" id="pixilit_img"></a>
+			<a href="pixelit_images/pixelit_img15.jpg"><img src="pixelit_images/pixelit_img15.jpg" id="pixilit_img"></a>
+			<a href="pixelit_images/pixelit_img18.jpg"><img src="pixelit_images/pixelit_img18.jpg" id="pixilit_img"></a>
+			<a href="pixelit_images/pixelit_img21.jpg"><img src="pixelit_images/pixelit_img21.jpg" id="pixilit_img"></a>
+			<a href="pixelit_images/pixelit_img24.jpg"><img src="pixelit_images/pixelit_img24.jpg" id="pixilit_img"></a>
+			<a href="pixelit_images/pixelit_img27.jpg"><img src="pixelit_images/pixelit_img27.jpg" id="pixilit_img"></a>
+			<a href="pixelit_images/pixelit_img30.jpg"><img src="pixelit_images/pixelit_img30.jpg" id="pixilit_img"></a>
+			<a href="pixelit_images/pixelit_img33.jpg"><img src="pixelit_images/pixelit_img33.jpg" id="pixilit_img"></a>
+			<!--more images-->
+			<a href="pixelit_images/pixelit_img36.jpg"><img src="pixelit_images/pixelit_img36.jpg" id="pixilit_img" class="more_img"></a>
+			<a href="pixelit_images/pixelit_img39.jpg"><img src="pixelit_images/pixelit_img39.jpg" id="pixilit_img" class="more_img"></a>
+			<a href="pixelit_images/pixelit_img42.jpg"><img src="pixelit_images/pixelit_img42.jpg" id="pixilit_img" class="more_img"></a>
+			<a href="pixelit_images/pixelit_img45.jpg"><img src="pixelit_images/pixelit_img45.jpg" id="pixilit_img" class="more_img"></a>
+			<a href="pixelit_images/pixelit_img48.jpg"><img src="pixelit_images/pixelit_img48.jpg" id="pixilit_img" class="more_img"></a>
+
+		</div>
+		<button id="more_images_btn" onclick="more_image()">MORE</button>
+	</div>
+
+<!--footer part-->
+	<div id="footer">
+		<img src="pixelit_images/footer_img.jpg" id="footer_img">
+		<div id="footer_content">
+			<img src="pixelit_images/logo_nobg.png" alt="logo" id="footer_logo">
+			<img src="pixelit_images/logo_text_nobg.png" alt="site_name" id="name">
+			<button id="footer_donate">Donate</button>
+			<div id="popular_searches">
+					<h3 id="popular_title">Popular Searches:</h3>	
+					<div id="search_links">
+						<a href="#pixelit_travel" id="list_link">Travel</a>
+						<a href="#pixelit_current_event" id="list_link">Curren Event</a> 
+						<a href="#pixelit_wallpaper" id="list_link">Wallpaper</a> 
+						<a href="#pixelit_3d_render" id="list_link">3D Render</a> 
+						<a href="#pixelit_texture_and_pattern" id="list_link">Texture & Pattern</a> 
+						<a href="#pixelit_experimental" id="list_link">Experimental</a> 
+						<a href="#pixelit_architecture" id="list_link">Architecture</a> 
+						<a href="#pixelit_nature" id="list_link">Nature</a> 
+						<a href="#pixelit_bussiness_and_work" id="list_link">Bussiness & Work</a> 
+						<a href="#pixelit_fashion" id="list_link">Fashion</a> 
+						<a href="#pixelit_film" id="list_link">Film</a> 
+						<a href="#pixelit_food_and_drinks" id="list_link">Food & Drink</a> 
+						<a href="#pixelit_health_and_wellness" id="list_link">Health & Wellness</a> 
+						<a href="#pixelit_people" id="list_link">People</a> 
+						<a href="#pixelit_iterior" id="list_link">Interior</a> 
+						<a href="#pixelit_street_photography" id="list_link">Street Photography</a> 
+						<a href="#pixelit_animals" id="list_link">Animals</a>
+						<a href="#pixelit_spirituality" id="list_link">Spirituality</a>
+						<a href="#pixelit_art_and_culture" id="list_link">Arts & Culture</a>
+						<a href="#pixelit_history" id="list_link">History</a>
+						<a href="#pixelit_atheletics" id="list_link">Athletics</a>
+
+
+						<a href="#list_tos" id="list_link">TermsofService</a>
+						<a href="#list_dmca" id="list_link">DMCA</a>
+						<a href="#list_contact" id="list_link">Contact</a><br>
+					</div>
+					<p id="_footer_info">
+						PixelIt is internet’s source of freely-usable images. For the lovers of image and photography.<br>
+						Powered by artists everywhere..<br>
+						&#169PixelIt
+					</p>
+			</div>
+	</div>	
+
+<script>
+//navigation on scroll
+	var navbar = document.getElementById("nav_bar");
+		window.onscroll = function() {
+			navColor();
+	};
+	
+	//function to add background to nav bar on scroll
+    function navColor(){
+		if (window.pageYOffset != 0) {
+	    	navbar.style.backgroundColor = "rgba(0,0,0,0.7)";
+	  	} 
+	  	else if(window.pageYOffset == 0){
+	    	navbar.style.backgroundColor = "";
+	  	}	
+	}
+
+//more images script
+	var imgs = document.getElementsByClassName("more_img");
+	var btn = document.getElementById("more_images_btn");
+	//more images function 
+	function more_image() {
+		if(btn.innerHTML == "MORE"){
+			for(let i=0;i<imgs.length;i++){
+				imgs[i].style.display = "block";
+				btn.innerHTML = "LESS";
+			}
+		}
+		else if(btn.innerHTML == "LESS"){
+			for(let i=0;i<imgs.length;i++){
+				imgs[i].style.display = "none";
+				btn.innerHTML = "MORE";
+			}
+		}
+	}
+
+
+</script>
+</body>
+</html>
